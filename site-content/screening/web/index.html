@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indiana Screening</title>
+    <style>
+        /* Base Styles */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #303030, #000000);
+            color: #ffffff;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #selected {
+            color: #acd224;
+            font-size: 1em;
+        }
+
+        /* Logo Styles */
+        #logo {
+            display: block;
+            margin: 1em auto;
+            max-width: 350px;
+            height: auto;
+            padding-top: 50px;
+            transition: opacity 0.5s ease-in-out;
+            opacity: 0;
+        }
+
+        /* Sidebar Styles */
+        #sidebar {
+            width: 250px;
+            background-color: #313131;
+            padding: 1em;
+            padding-right: 5px;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            transform: translateX(0);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+            overflow-y: auto;
+            /* Enable vertical scrolling */
+        }
+
+        /* Scrollbar Styles */
+        #sidebar::-webkit-scrollbar {
+            width: 10px;
+        }
+
+
+        /* Selected Project Name Styles */
+        #project-name {
+            font-size: 1em;
+            color: #828920;
+            margin-bottom: 1em;
+            text-align: center;
+        }
+
+        #sidebar::-webkit-scrollbar-thumb {
+            background-color: #4a5d73;
+            border-radius: 5px;
+        }
+
+        #sidebar::-webkit-scrollbar-track {
+            background-color: #1c2a38;
+        }
+
+        #sidebar.closed {
+            transform: translateX(-100%);
+        }
+
+        #sidebar h2 {
+            font-size: 1.5em;
+            margin-bottom: 1em;
+            color: #8d9c3a;
+            text-align: center;
+            /* text-transform: uppercase; */
+        }
+
+        #sidebar ul {
+            list-style: none;
+            padding: 0;
+            /* margin-right: 10px; */
+        }
+
+        #sidebar ul li {
+            margin-bottom: 1em;
+        }
+
+        #sidebar ul li a {
+            color: #dcdcdc;
+            text-decoration: none;
+            font-size: 01em;
+            display: block;
+            padding: 0.5em;
+            border-radius: 5px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        #sidebar ul li a:hover {
+            background-color: #515151;
+            color: #ffffff;
+        }
+
+        /* Toggle Button Styles */
+        #toggle-sidebar {
+            position: fixed;
+            left: 250px;
+            top: 20px;
+            background-color: #8f8b2b;
+            color: #ffffff;
+            border: none;
+            padding: 0.5em 1em;
+            cursor: pointer;
+            font-size: 1.1em;
+            border-radius: 5px;
+            z-index: 1001;
+            transition: left 0.5s ease;
+        }
+
+        #toggle-sidebar.closed {
+            left: 20px;
+        }
+
+        /* Content Area */
+        #content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2em;
+            margin-left: 250px;
+            transition: margin-left 0.3s ease;
+        }
+
+        #content.closed {
+            margin-left: 0;
+        }
+
+        /* Title Styles */
+        h1 {
+            font-size: 2em;
+            margin-bottom: 0.5em;
+            text-align: center;
+            font-weight: 700;
+            /* text-transform: uppercase; */
+            letter-spacing: 2px;
+            color: #27565e;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+            font-family: cursive;
+        }
+
+        /* Description Styles */
+        p {
+            font-size: 1.2em;
+            margin-bottom: 2em;
+            text-align: center;
+            max-width: 80%;
+            color: #dcdcdc;
+            line-height: 1.6;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Video Container Styles */
+        #video-container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            background-color: #000;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s ease-in-out;
+            display: none;
+        }
+
+        /* Video Styles */
+        video {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+        }
+
+        /* Play Button Styles */
+        #play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2.2em;
+            color: #b2b2b2;
+            background: rgba(28, 28, 28, 0.8);
+            border: none;
+            border-radius: 50%;
+            padding: 0.6em 0.9em;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        /* Play Button Hover Styles */
+        #play-button:hover {
+            background: rgba(0, 0, 0, 0.9);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        /* Video Container Hover Animation */
+        #video-container:hover {
+            transform: scale(1.02);
+        }
+
+        /* Footer Styles */
+        footer {
+            margin-top: 2em;
+            font-size: 0.9em;
+            color: #999;
+            text-align: center;
+            font-style: italic;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            #sidebar {
+                width: 200px;
+            }
+
+            #toggle-sidebar {
+                left: 200px;
+                font-size: 1em;
+                padding: 0.4em 0.8em;
+            }
+
+            #content {
+                margin-left: 200px;
+                padding: 1.5em;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            p {
+                font-size: 1.1em;
+                max-width: 90%;
+            }
+
+            #video-container {
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #sidebar {
+                width: 180px;
+            }
+
+            #toggle-sidebar {
+                left: 180px;
+                font-size: 0.9em;
+                padding: 0.3em 0.7em;
+            }
+
+            #content {
+                margin-left: 180px;
+                padding: 1em;
+            }
+
+            h1 {
+                font-size: 1.2em;
+            }
+
+            p {
+                font-size: 1em;
+                max-width: 100%;
+            }
+
+            #video-container {
+                width: 100%;
+            }
+
+            #logo {
+                max-width: 250px;
+                padding-top: 0px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div id="sidebar">
+        <h2>Augest 2024</h2>
+        <ul>
+            <li><a href="#" onclick="changeVideo('https://screening.indianashort.com/videos/Dojo.mp4', 'ِDojo')">BEST
+                    SHORT FILM: <span style="color: #ffb700">Dojo</span></a></li>
+            <li><a href="#"
+                    onclick="changeVideo('https://screening.indianashort.com/videos/Burning_Love.mp4', 'Burning Love')">BEST
+                    EXPERIMENTAL: <span style="color: #ffb700">Burning Love</span></a></li>
+            <li><a href="#"
+                    onclick="changeVideo('https://screening.indianashort.com/videos/THE_FOREST_OF_THE_HONEY_BEES.mp4', 'The Forest of the Honey Bees')">BEST
+                    ANIMATION: <span style="color: #ffb700">The Forest of the Honey Bees</span></a></li>
+            <li><a href="#"
+                    onclick="changeVideo('https://screening.indianashort.com/videos/meat_the_one.mp4', 'Meat the One')">BEST
+                    STUDENT: <span style="color: #ffb700">Meat the One</span></a></li>
+            <li><a href="#"
+                    onclick="changeVideo('https://screening.indianashort.com/videos/The_Scalpel.mp4', 'The Scalpel')">BEST
+                    DIRECTOR: <span style="color: #ffb700">The Scalpel</span></a></li>
+            <li><a href="#" onclick="changeVideo('https://screening.indianashort.com/videos/Escape.mp4', 'Escape')">BEST
+                    SCREENPLAY: <span style="color: #ffb700">Escape</span></a></li>
+            <li><a href="#"
+                    onclick="changeVideo('https://screening.indianashort.com/videos/Vanités.mp4', 'Vanités')">BEST
+                    SCRIPT: <span style="color: #ffb700">Vanités</span></a></li>
+            <li><a href="#"
+                    onclick="changeVideo('https://screening.indianashort.com/videos/edge_of_invisibility.mp4', 'Edge of Invisibility')">BEST
+                    SHORT SHORT: <span style="color: #ffb700">Edge of Invisibility</span></a></li>
+            <li><a href="#"
+                    onclick="changeVideo('https://screening.indianashort.com/videos/lines-of-a-woman.mp4', 'ِLines of a Woman')">BEST
+                    FIRST-TIME DIRECTOR: <span style="color: #ffb700">Lines of a Woman</span></a></li>
+            <li><a href="#"
+                    onclick="changeVideo('https://screening.indianashort.com/videos/lines-of-a-woman.mp4', 'ِLines of a Woman')">BEST
+                    COMPOSER: <span style="color: #ffb700">Lines of a Woman</span></a></li>
+            <li><a href="#"
+                    onclick="changeVideo('https://screening.indianashort.com/videos/the_girl_who_faded_away.mp4', 'The Girl Who Faded Away (Trailer)')">BEST
+                    MUSIC VIDEO: <span style="color: #ffb700">The Girl Who Faded Away</span></a></li>
+            <li><a href="#"
+                    onclick="changeVideo('https://screening.indianashort.com/videos/An_impossible_secret.mp4', 'An Impossible Secret')">BEST
+                    ACTRESS: <span style="color: #ffb700">An Impossible Secret / Sofia Sotiria Mavrou</span></a></li>
+            <li><a href="#" onclick="changeVideo('https://screening.indianashort.com/videos/Dojo.mp4', 'ِDojo')">BEST
+                    ACTOR: <span style="color: #ffb700">Dojo/Jon Paul</span></a></li>
+            <li><a href="#" onclick="changeVideo('https://screening.indianashort.com/videos/asaka.mp4', 'ِÀSAKA')">BEST
+                    CINEMATOGRAPHY: <span style="color: #ffb700">ÀSAKA</span></a></li>
+            <li><a href="#" onclick="changeVideo('https://screening.indianashort.com/videos/asaka.mp4', 'ِÀSAKA')">BEST
+                    EDITING: <span style="color: #ffb700">ÀSAKA</span></a></li>
+            <li><a href="#"
+                    onclick="changeVideo('https://screening.indianashort.com/videos/Bergamota.mkv', 'Bergamota')">BEST
+                    LGBTQ: <span style="color: #ffb700">Bergamota</span></a></li>
+            <li><a href="#"
+                    onclick="changeVideo('https://screening.indianashort.com/videos/Drone_Runner_II.mp4', 'Drone Runner II')">BEST
+                    SCI-FI: <span style="color: #ffb700">Drone Runner II</span></a></li>
+        </ul>
+    </div>
+    </div>
+
+    <!-- Toggle Button -->
+    <button id="toggle-sidebar">Hide Movies List</button>
+
+    <!-- Content Area -->
+    <div id="content">
+        <img id="logo" src="https://screening.indianashort.com/videos/indianalogo.png" alt="Site Logo">
+        <h1>Indiana Short Film Festival Screening</h1>
+        <div id="project-name">Please Select a Project From Sidebar</div>
+        <div id="video-container">
+            <video id="screening-video" controls disablePictureInPicture controlsList="nodownload noplaybackrate">
+                <source src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <button id="play-button">play</button>
+        </div>
+
+        <footer>&copy; 2024 Indiana Short Film Festival. All rights reserved.</footer>
+    </div>
+
+    <script>
+        const video = document.getElementById('screening-video');
+        const playButton = document.getElementById('play-button');
+        const toggleSidebarBtn = document.getElementById('toggle-sidebar');
+        const sidebar = document.getElementById('sidebar');
+        const content = document.getElementById('content');
+        const logo = document.getElementById("logo");
+        const projectName = document.getElementById('project-name');
+        const videocontainer = document.getElementById('video-container');
+
+        playButton.addEventListener('click', function () {
+            video.play();
+            playButton.style.display = 'none';
+        });
+
+        video.addEventListener('pause', function () {
+            playButton.style.display = 'block';
+        });
+
+        video.addEventListener('play', function () {
+            playButton.style.display = 'none';
+        });
+
+        function changeVideo(sourceUrl, name) {
+            video.pause();
+            video.querySelector('source').src = sourceUrl;
+            video.load();
+            playButton.style.display = 'block';
+            projectName.textContent = name;
+            sidebar.classList.toggle('closed');
+            content.classList.toggle('closed');
+            toggleSidebarBtn.classList.toggle('closed');
+            videocontainer.style.display = 'inline';
+            if (sidebar.classList.contains('closed')) {
+                toggleSidebarBtn.textContent = 'Show Movies List';
+                logo.style.opacity = 1;
+            } else {
+                toggleSidebarBtn.textContent = 'Hide Movies List';
+                logo.style.opacity = 0;
+            }
+        }
+
+        toggleSidebarBtn.addEventListener('click', function () {
+            sidebar.classList.toggle('closed');
+            content.classList.toggle('closed');
+            toggleSidebarBtn.classList.toggle('closed');
+            if (sidebar.classList.contains('closed')) {
+                toggleSidebarBtn.textContent = 'Show Movies List';
+                logo.style.opacity = 1;
+            } else {
+                toggleSidebarBtn.textContent = 'Hide Movies List';
+                logo.style.opacity = 0;
+            }
+        });
+        // Get the video element
+        const videoitem = document.getElementById('screening-video');
+
+        // Disable right-click on the video to prevent downloading
+        videoitem.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+
+        // Enable fullscreen functionality on a separate button
+        videoitem.addEventListener('dblclick', function (e) {
+            e.preventDefault();
+            toggleFullScreen(videoitem);
+        });
+
+        // Function to toggle fullscreen
+        function toggleFullScreen(element) {
+            if (!document.fullscreenElement) {
+                if (element.requestFullscreen) {
+                    element.requestFullscreen();
+                } else if (element.mozRequestFullScreen) { // Firefox
+                    element.mozRequestFullScreen();
+                } else if (element.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                    element.webkitRequestFullscreen();
+                } else if (element.msRequestFullscreen) { // IE/Edge
+                    element.msRequestFullscreen();
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.mozCancelFullScreen) { // Firefox
+                    document.mozCancelFullScreen();
+                } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) { // IE/Edge
+                    document.msExitFullscreen();
+                }
+            }
+        }
+
+        // Prevent video from restarting on double-click
+        videoitem.addEventListener('click', function (e) {
+            e.stopPropagation();
+        });
+    </script>
+
+</body>
+
+</html>
