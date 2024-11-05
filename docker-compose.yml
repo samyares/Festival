@@ -95,6 +95,7 @@ services:
     volumes:
       - ./site-content/pariswomencinefest/web:/usr/share/nginx/html
       - ./site-content/pariswomencinefest/nginx:/etc/nginx/conf.d
+      - ./site-content/pariswomencinefest/certs/s1:/var/www/html/certs
     labels:
       - "traefik.http.routers.pariswomencinefest.rule=Host(`pariswomencinefest.world`)"
       - "traefik.http.routers.pariswomencinefest.entrypoints=websecure"
@@ -107,7 +108,7 @@ services:
     volumes:
       - ./site-content/indianashort/web:/usr/share/nginx/html
       - ./site-content/indianashort/nginx:/etc/nginx/conf.d
-      - ./site-content/indianashort/movies:/var/www/html/videos
+      # - ./site-content/indianashort/movies:/var/www/html/videos
       - ./site-content/indianashort/certs/s1:/var/www/html/certs
     labels:
       - "traefik.http.routers.indianashort.rule=Host(`indianashort.com`)"
