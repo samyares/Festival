@@ -135,7 +135,7 @@ services:
     volumes:
       - ./site-content/ottawafilm/web:/usr/share/nginx/html
       - ./site-content/ottawafilm/nginx:/etc/nginx/conf.d
-      - ./site-content/ottawafilm/certs/s1:/var/www/html/certs
+      - ./site-content/ottawafilm/certs:/var/www/html/certs
     labels:
       - "traefik.http.routers.ottawa.rule=Host(`ottawafilm.site`)"
       - "traefik.http.routers.ottawa.entrypoints=websecure"
