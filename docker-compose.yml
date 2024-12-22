@@ -109,7 +109,7 @@ services:
       - ./site-content/indianashort/web:/usr/share/nginx/html
       - ./site-content/indianashort/nginx:/etc/nginx/conf.d
       # - ./site-content/indianashort/movies:/var/www/html/videos
-      - ./site-content/indianashort/certs/s1:/var/www/html/certs
+      - ./site-content/indianashort/certs/:/var/www/html/certs
     labels:
       - "traefik.http.routers.indianashort.rule=Host(`indianashort.com`)"
       - "traefik.http.routers.indianashort.entrypoints=websecure"
