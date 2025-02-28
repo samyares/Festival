@@ -33,8 +33,10 @@ services:
       - --entrypoints.websecure.http.tls.domains[1].sans=*.ottawafilm.site
       - --entrypoints.websecure.http.tls.domains[2].main=indianashort.com.
       - --entrypoints.websecure.http.tls.domains[2].sans=*.indianashort.com
-      - --entrypoints.websecure.http.tls.domains[2].main=frameofnewyork.info.
-      - --entrypoints.websecure.http.tls.domains[2].sans=*.frameofnewyork.info
+      - --entrypoints.websecure.http.tls.domains[3].main=frameofnewyork.info
+      - --entrypoints.websecure.http.tls.domains[3].sans=*.frameofnewyork.info
+      - --entrypoints.websecure.http.tls.domains[4].main=londonwomenfilmfestival.com
+      - --entrypoints.websecure.http.tls.domains[4].sans=*.londonwomenfilmfestival.com
 
       - --metrics.prometheus=true
       - --metrics.prometheus.addEntryPointsLabels=true
@@ -152,7 +154,19 @@ services:
       - ./site-content/frameofnewyork/nginx:/etc/nginx/conf.d
       # - ./site-content/frameofnewyork/certs:/var/www/html/certs
     labels:
-      - "traefik.http.routers.frameofnewyork.rule=Host(`C`)"
+      - "traefik.http.routers.frameofnewyork.rule=Host(``)"
       - "traefik.http.routers.frameofnewyork.entrypoints=websecure"
       - "traefik.http.services.frameofnewyork.loadbalancer.server.port=80"
       - "traefik.http.routers.frameofnewyork.tls.certresolver=letsencrypt"
+
+  londonwomen:
+    image: nginx:alpine
+    container_name: londonwomen
+    volumes:
+      - ./site-content/londonwomen/web:/usr/share/nginx/html
+      - ./site-content/londonwomen/nginx:/etc/nginx/conf.d
+    labels:
+      - "traefik.http.routers.londonwomen.rule=Host(`londonwomenfilmfestival.com`)"
+      - "traefik.http.routers.londonwomen.entrypoints=websecure"
+      - "traefik.http.services.londonwomen.loadbalancer.server.port=80"
+      - "traefik.http.routers.londonwomen.tls.certresolver=letsencrypt"

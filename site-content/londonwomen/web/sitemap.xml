@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+         <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+                        <loc>http:///home.html</loc>
+                     </url>
+<url>
+                        <loc>http:///about.html</loc>
+                     </url>
+<url>
+                        <loc>http:///rules-and-terms.html</loc>
+                     </url>
+<url>
+                        <loc>http:///award-winners.html</loc>
+                     </url>
+<url>
+                        <loc>http:///contact.html</loc>
+                     </url>
+<url>
+                        <loc>http:///season-1.html</loc>
+                     </url>
+<url>
+                        <loc>http:///season-2.html</loc>
+                     </url>
+<url>
+                        <loc>http:///season-3.html</loc>
+                     </url>
+</urlset>
