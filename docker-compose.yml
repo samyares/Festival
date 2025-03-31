@@ -37,6 +37,8 @@ services:
       - --entrypoints.websecure.http.tls.domains[3].sans=*.frameofnewyork.info
       - --entrypoints.websecure.http.tls.domains[4].main=londonwomenfilmfestival.com
       - --entrypoints.websecure.http.tls.domains[4].sans=*.londonwomenfilmfestival.com
+      - --entrypoints.websecure.http.tls.domains[5].main=californiawomenff.info
+      - --entrypoints.websecure.http.tls.domains[5].sans=*.californiawomenff.info
 
       - --metrics.prometheus=true
       - --metrics.prometheus.addEntryPointsLabels=true
@@ -159,17 +161,17 @@ services:
       - "traefik.http.services.frameofnewyork.loadbalancer.server.port=80"
       - "traefik.http.routers.frameofnewyork.tls.certresolver=letsencrypt"
 
-  # londonwomen:
-  #   image: nginx:alpine
-  #   container_name: londonwomen
-  #   volumes:
-  #     - ./site-content/londonwomen/web:/usr/share/nginx/html
-  #     - ./site-content/londonwomen/nginx:/etc/nginx/conf.d
-  #   labels:
-  #     - "traefik.http.routers.londonwomen.rule=Host(`londonwomenfilmfestival.com`)"
-  #     - "traefik.http.routers.londonwomen.entrypoints=websecure"
-  #     - "traefik.http.services.londonwomen.loadbalancer.server.port=80"
-  #     - "traefik.http.routers.londonwomen.tls.certresolver=letsencrypt"
+  californiawomen:
+    image: nginx:alpine
+    container_name: californiawomen
+    volumes:
+      - ./site-content/californiawomen/web:/usr/share/nginx/html
+      - ./site-content/californiawomen/nginx:/etc/nginx/conf.d
+    labels:
+      - "traefik.http.routers.californiawomen.rule=Host(`californiawomenff.info`)"
+      - "traefik.http.routers.californiawomen.entrypoints=websecure"
+      - "traefik.http.services.californiawomen.loadbalancer.server.port=80"
+      - "traefik.http.routers.californiawomen.tls.certresolver=letsencrypt"
 
   londonwomen:
     container_name: londonwomen
