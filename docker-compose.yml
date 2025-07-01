@@ -59,27 +59,27 @@ services:
       - "traefik.http.routers.traefik.entrypoints=websecure"
       - "traefik.http.routers.traefik.tls.certresolver=letsencrypt"
 
-#  whoami:
-#    image: docker.io/traefik/whoami:v1.10.1
-#    labels:
-#    - traefik.http.routers.whoami.rule=Host(`whoami.pariswomencinefest.world`)
-#    - traefik.http.services.whoami.loadbalancer.server.port=80
-#    - traefik.http.routers.whoami.entrypoints=websecure
-#    - traefik.http.routers.whoami.tls.certresolver=letsencrypt
+  # whoami:
+  #   image: docker.io/traefik/whoami:v1.10.1
+  #   labels:
+  #   - traefik.http.routers.whoami.rule=Host(`whoami.pariswomencinefest.world`)
+  #   - traefik.http.services.whoami.loadbalancer.server.port=80
+  #   - traefik.http.routers.whoami.entrypoints=websecure
+  #   - traefik.http.routers.whoami.tls.certresolver=letsencrypt
 
-#  prometheus:
-#    container_name: prometheus
-#    image: docker.io/prom/prometheus:v2.48.1
-#    volumes:
-#    - ./config/prometheus.yml:/etc/prometheus/prometheus.yml
-#    - prometheus_data:/prometheus
-#    labels:
-#      - traefik.enable=true
-#      - traefik.http.services.prometheus.loadbalancer.server.port=9090
-#      - traefik.http.routers.prometheus.rule=Host(`prometheus.pariswomencinefest.world`)
-#      - traefik.http.middlewares.prometheus.basicauth.users=root:{SHA}3Hbp8MAAbo+RngxRXGbbujmC94U= # root:root
-#      - traefik.http.routers.prometheus.middlewares=prometheus
-#    restart: always
+  # prometheus:
+  #   container_name: prometheus
+  #   image: docker.io/prom/prometheus:v2.48.1
+  #   volumes:
+  #   - ./config/prometheus.yml:/etc/prometheus/prometheus.yml
+  #   - prometheus_data:/prometheus
+  #   labels:
+  #     - traefik.enable=true
+  #     - traefik.http.services.prometheus.loadbalancer.server.port=9090
+  #     - traefik.http.routers.prometheus.rule=Host(`prometheus.pariswomencinefest.world`)
+  #     - traefik.http.middlewares.prometheus.basicauth.users=root:{SHA}3Hbp8MAAbo+RngxRXGbbujmC94U= # root:root
+  #     - traefik.http.routers.prometheus.middlewares=prometheus
+  #   restart: always
 
 #  grafana:
 #    container_name: grafana
@@ -172,6 +172,18 @@ services:
       - "traefik.http.routers.californiawomen.entrypoints=websecure"
       - "traefik.http.services.californiawomen.loadbalancer.server.port=80"
       - "traefik.http.routers.californiawomen.tls.certresolver=letsencrypt"
+
+  cineloom:
+    image: nginx:alpine
+    container_name: cineloom
+    volumes:
+      - ./site-content/cineloom/web:/usr/share/nginx/html
+      - ./site-content/cineloom/nginx:/etc/nginx/conf.d
+    labels:
+      - "traefik.http.routers.cineloom.rule=Host(`cineloom.californiawomenff.info`)"
+      - "traefik.http.routers.cineloom.entrypoints=websecure"
+      - "traefik.http.services.cineloom.loadbalancer.server.port=80"
+      - "traefik.http.routers.cineloom.tls.certresolver=letsencrypt"
 
   londonwomen:
     container_name: londonwomen
