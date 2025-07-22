@@ -48,6 +48,14 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
+          <li>
+            <!-- <a href="https://cineloom.californiawomenff.info/"
+            class="btn btn-warning"
+            style=" font-size: 1.1rem;"> -->
+            <a href="#" class="btn btn-warning" style="font-size: 1.1rem;" data-bs-toggle="modal" data-bs-target="#screeningModal">
+              <i class="bi bi-film me-2"></i>Screening
+            </a>
+          </li>
           <li><a href="#hero" class="active">Home</a></li>
           <!-- <li><a href="#about">Winners</a></li> -->
           <li><a href="#call-to-action">Submit</a></li>
@@ -58,8 +66,8 @@
               <!-- <li><a href="#">Dropdown 1</a></li> -->
               <li class="dropdown"><a href="#"><span>2025</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
-                  <li><a href="#">Session 1: Jan 2025</a></li>
-                  <li><a href="#">Session 2: Apr 2025</a></li>
+                  <li><a href="#" data-bs-toggle="modal" data-bs-target="#winnersSession1Modal">Session 1: April–June</a></li>
+                  <!-- <li><a href="#">Session 2: Apr 2025</a></li> -->
                   <!-- <li><a href="#">Deep Dropdown 3</a></li>
                   <li><a href="#">Deep Dropdown 4</a></li>
                   <li><a href="#">Deep Dropdown 5</a></li> -->
@@ -104,12 +112,12 @@
             <p>
               The California Woman Film Festival is a bold and independent platform dedicated to showcasing the creative power, depth, and diversity of women in film. Born out of a desire to amplify the voices too often overlooked in the mainstream industry, our festival celebrates female-driven storytelling in all its forms—raw, poetic, daring, and unapologetically honest.            </p>
             <p>
-              We champion independent cinema that pushes boundaries and challenges conventions, created by women who dare to tell their truths. Whether it’s a first-time filmmaker or an established visionary, we believe every story told from a woman’s perspective has the power to shift culture, provoke thought, and move hearts.
+              We champion independent cinema that pushes boundaries and challenges conventions, created by women who dare to tell their truths. Whether it's a first-time filmmaker or an established visionary, we believe every story told from a woman's perspective has the power to shift culture, provoke thought, and move hearts.
             </p>
             <p>
               As a fully online film festival, we provide a digital stage where selected films are featured and recognized without the constraints of physical venues. Our goal is to make space for underrepresented voices and to celebrate the work of women in cinema with a global audience. This format allows for accessibility, flexibility, and a wider reach—making it easier for filmmakers and audiences alike to connect through the art of film.            </p>
             <p>
-              We are proudly independent, fiercely inclusive, and rooted in the belief that women’s stories are not a niche—they are essential. The California Woman Film Festival exists to uplift those stories and honor the women who bring them to life.            </p>
+              We are proudly independent, fiercely inclusive, and rooted in the belief that women's stories are not a niche—they are essential. The California Woman Film Festival exists to uplift those stories and honor the women who bring them to life.            </p>
           </div>
         </div>
       </div>
@@ -143,35 +151,17 @@
       <div class="container section-title" data-aos="fade-up">
         <h2>Winners</h2>
         <!-- <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p> -->
+        <p class="lead mb-3">Discover the outstanding films and filmmakers recognized in our latest session.</p>
+        <div class="d-flex justify-content-center">
+          <button type="button" class="btn btn-warning btn-lg shadow-sm px-4 py-2" data-bs-toggle="modal" data-bs-target="#winnersSession1Modal">
+            <i class="bi bi-trophy-fill me-2"></i>Show Session 1 Winners
+          </button>
+        </div>
       </div><!-- End Section Title -->
 
       <div class="container">
 
         <div class="row gy-4 justify-content-center">
-
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-activity icon"></i></div>
-              <h4><a href="#" class="stretched-link">Session One (soon ..)</a></h4>
-              <p>you can find the winners of the first session here</p>
-            </div>
-          </div>
-
-          <!-- <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-activity icon"></i></div>
-              <h4><a href="service-details.html" class="stretched-link">Session One - Jan 2025</a></h4>
-              <p>you can find the winners of the first session here</p>
-            </div>
-          </div>
-
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-activity icon"></i></div>
-              <h4><a href="service-details.html" class="stretched-link">Session One - Jan 2025</a></h4>
-              <p>you can find the winners of the first session here</p>
-            </div>
-          </div> -->
 
         </div>
 
@@ -466,6 +456,77 @@
       color: #6c757d;
     }
   </style>
+
+  <!-- Winners Session 1 Modal -->
+  <div class="modal fade" id="winnersSession1Modal" tabindex="-1" aria-labelledby="winnersSession1ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="winnersSession1ModalLabel">Session 1: April–June 2025 Winners</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped align-middle">
+              <thead class="table-dark">
+                <tr>
+                  <th>Category</th>
+                  <th>Winner</th>
+                  <th>Download Certificate</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Best Short Film</td><td>Laughing Again</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s1/best-short-film.pdf" download>Download</a></td></tr>
+                <tr><td>Best Short Director</td><td>Heavenly Bodies</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s1/best-short-director.pdf" download>Download</a></td></tr>
+                <tr><td>Best Short Actress</td><td>A-MORS / Eleonora Gasparotto</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s1/best-short-actress.pdf" download>Download</a></td></tr>
+                <tr><td>Best Short Actor</td><td>Place of Hawks / Nate Sapriken</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s1/best-short-actor.pdf" download>Download</a></td></tr>
+                <tr><td>Best Short Script</td><td>Dysphoria?</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s1/best-short-script.pdf" download>Download</a></td></tr>
+                <tr><td>Best Short Documentary</td><td>Nina</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s1/best-short-documentary.pdf" download>Download</a></td></tr>
+                <tr><td>Best Short Narrative</td><td>SHE</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s1/best-short-narrative.pdf" download>Download</a></td></tr>
+                <tr><td>Best Feature Film</td><td>Citrotoxic</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s1/best-feature-film.pdf" download>Download</a></td></tr>
+                <tr><td>Best Feature Director</td><td>The Life Coach</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s1/best-feature-director.pdf" download>Download</a></td></tr>
+                <tr><td>Best Feature Actress</td><td>The Life Coach / Lindo Osifo</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s1/best-feature-actress.pdf" download>Download</a></td></tr>
+                <tr><td>Best Feature Actor</td><td>Thank You For Her / K Evans</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s1/best-feature-actor.pdf" download>Download</a></td></tr>
+                <tr><td>Best Feature Script</td><td>My Name is Henrietta</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s1/best-feature-script.pdf" download>Download</a></td></tr>
+                <tr><td>Best Feature Documentary</td><td>Julia Alvarez: A Life Reimagined</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s1/best-feature-documentary.pdf" download>Download</a></td></tr>
+                <tr><td>Best Feature Narrative</td><td>Mother - Sisterhood in the wild</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s1/best-feature-narrative.pdf" download>Download</a></td></tr>
+                <tr><td>Best Film About Women</td><td>Under Mango Trees</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s1/best-film-about-women.pdf" download>Download</a></td></tr>
+                <tr><td>Best Student</td><td>Unsilenced</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s1/best-student.pdf" download>Download</a></td></tr>
+                <tr><td>Best Animation</td><td>Ball Lightning</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s1/best-animation.pdf" download>Download</a></td></tr>
+                <tr><td>Best Cinematographer</td><td>Place of Hawks</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s1/best-cinematographer.pdf" download>Download</a></td></tr>
+                <tr><td>Best Producer</td><td>Aneyshia</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s1/best-producer.pdf" download>Download</a></td></tr>
+                <tr><td>Best Composer</td><td>Achaiah 7-Love Into Patience</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s1/best-composer.pdf" download>Download</a></td></tr>
+                <tr><td>Best Human Rights</td><td>Dishonour</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s1/best-human-rights.pdf" download>Download</a></td></tr>
+                <tr><td>Best Unproduced Script</td><td>Red Sea</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s1/best-unproduced-script.pdf" download>Download</a></td></tr>
+                <tr><td>Best Biographical Film</td><td>Professor Maria Kopp</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s1/best-biographical-film.pdf" download>Download</a></td></tr>
+                <tr><td>Best Youth Artist</td><td>Thank You For Her</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s1/best-youth-artist.pdf" download>Download</a></td></tr>
+                <tr><td>Best First Time Filmmaker</td><td>It's Not Me, It's You</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s1/best-first-time-filmmaker.pdf" download>Download</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Winners Session 1 Modal -->
+
+  <!-- Screening Modal -->
+  <div class="modal fade" id="screeningModal" tabindex="-1" aria-labelledby="screeningModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="screeningModalLabel"><i class="bi bi-film me-2"></i>Screening</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <!-- <p class="fs-5 mb-3">The screening day is on <strong>7 July 2025</strong> and is not open now.</p> -->
+          <p class="fs-5 mb-3">The screening is end.</p>
+          <i class="bi bi-calendar-event" style="font-size: 2rem; color: #ffc107;"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Screening Modal -->
 
 </body>
 

@@ -27,10 +27,10 @@ services:
       # Set up the TLS configuration for our websecure listener
       - --entrypoints.websecure.http.tls=true
       - --entrypoints.websecure.http.tls.certResolver=letsencrypt
-      - --entrypoints.websecure.http.tls.domains[0].main=pariswomencinefest.world
-      - --entrypoints.websecure.http.tls.domains[0].sans=*.pariswomencinefest.world
-      - --entrypoints.websecure.http.tls.domains[1].main=ottawafilm.site
-      - --entrypoints.websecure.http.tls.domains[1].sans=*.ottawafilm.site
+      - --entrypoints.websecure.http.tls.domains[0].main=pariswomencinefest.art
+      - --entrypoints.websecure.http.tls.domains[0].sans=*.pariswomencinefest.art
+      - --entrypoints.websecure.http.tls.domains[1].main=ottawafilm.website
+      - --entrypoints.websecure.http.tls.domains[1].sans=*.ottawafilm.website
       - --entrypoints.websecure.http.tls.domains[2].main=indianashort.com.
       - --entrypoints.websecure.http.tls.domains[2].sans=*.indianashort.com
       - --entrypoints.websecure.http.tls.domains[3].main=frameofnewyork.info
@@ -55,14 +55,14 @@ services:
       - certs:/letsencrypt
     labels:
       - "traefik.http.services.traefik.loadbalancer.server.port=8080"
-      - "traefik.http.routers.traefik.rule=Host(`traefik.pariswomencinefest.world`)"
+      - "traefik.http.routers.traefik.rule=Host(`traefik.pariswomencinefest.art`)"
       - "traefik.http.routers.traefik.entrypoints=websecure"
       - "traefik.http.routers.traefik.tls.certresolver=letsencrypt"
 
   # whoami:
   #   image: docker.io/traefik/whoami:v1.10.1
   #   labels:
-  #   - traefik.http.routers.whoami.rule=Host(`whoami.pariswomencinefest.world`)
+  #   - traefik.http.routers.whoami.rule=Host(`whoami.pariswomencinefest.art`)
   #   - traefik.http.services.whoami.loadbalancer.server.port=80
   #   - traefik.http.routers.whoami.entrypoints=websecure
   #   - traefik.http.routers.whoami.tls.certresolver=letsencrypt
@@ -76,7 +76,7 @@ services:
   #   labels:
   #     - traefik.enable=true
   #     - traefik.http.services.prometheus.loadbalancer.server.port=9090
-  #     - traefik.http.routers.prometheus.rule=Host(`prometheus.pariswomencinefest.world`)
+  #     - traefik.http.routers.prometheus.rule=Host(`prometheus.pariswomencinefest.art`)
   #     - traefik.http.middlewares.prometheus.basicauth.users=root:{SHA}3Hbp8MAAbo+RngxRXGbbujmC94U= # root:root
   #     - traefik.http.routers.prometheus.middlewares=prometheus
   #   restart: always
@@ -92,7 +92,7 @@ services:
 #    labels:
 #      - traefik.enable=true
 #      - traefik.http.services.grafana.loadbalancer.server.port=3000
-#      - traefik.http.routers.grafana.rule=Host(`dash.pariswomencinefest.world`)
+#      - traefik.http.routers.grafana.rule=Host(`dash.pariswomencinefest.art`)
 #    restart: always
 
   pariswomencinefest:
@@ -103,7 +103,7 @@ services:
       - ./site-content/pariswomencinefest/nginx:/etc/nginx/conf.d
       - ./site-content/pariswomencinefest/certs:/var/www/html/certs
     labels:
-      - "traefik.http.routers.pariswomencinefest.rule=Host(`pariswomencinefest.world`)"
+      - "traefik.http.routers.pariswomencinefest.rule=Host(`pariswomencinefest.art`)"
       - "traefik.http.routers.pariswomencinefest.entrypoints=websecure"
       - "traefik.http.services.pariswomencinefest.loadbalancer.server.port=80"
       - traefik.http.routers.pariswomencinefest.tls.certresolver=letsencrypt
@@ -143,7 +143,7 @@ services:
       - ./site-content/ottawafilm/nginx:/etc/nginx/conf.d
       - ./site-content/ottawafilm/certs:/var/www/html/certs
     labels:
-      - "traefik.http.routers.ottawa.rule=Host(`ottawafilm.site`)"
+      - "traefik.http.routers.ottawa.rule=Host(`ottawafilm.website`)"
       - "traefik.http.routers.ottawa.entrypoints=websecure"
       - "traefik.http.services.ottawa.loadbalancer.server.port=80"
       - "traefik.http.routers.ottawa.tls.certresolver=letsencrypt"
@@ -167,6 +167,7 @@ services:
     volumes:
       - ./site-content/californiawomen/web:/usr/share/nginx/html
       - ./site-content/californiawomen/nginx:/etc/nginx/conf.d
+      - ./site-content/californiawomen/certs:/var/www/html/certs
     labels:
       - "traefik.http.routers.californiawomen.rule=Host(`californiawomenff.info`)"
       - "traefik.http.routers.californiawomen.entrypoints=websecure"

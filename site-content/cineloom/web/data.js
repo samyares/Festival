@@ -19,14 +19,14 @@ window.festivalsData = [
           videoUrl: 'data/CaliforniaWomenFilmFestival/movies/laughing-again.mp4'
         }
       },
-      // {
-      //   id: 'best-short-director',
-      //   name: 'Best Short Director',
-      //   winner: {
-      //     title: 'Heavenly Bodies',
-      //     videoUrl: 'data/CaliforniaWomenFilmFestival/movies/heavenly-bodies.mp4'
-      //   }
-      // },
+      {
+        id: 'best-short-director',
+        name: 'Best Short Director',
+        winner: {
+          title: 'Heavenly Bodies',
+          videoUrl: 'data/CaliforniaWomenFilmFestival/movies/heavenly-bodies.mp4'
+        }
+      },
       {
         id: 'best-short-actress',
         name: 'Best Short Actress',
@@ -35,14 +35,14 @@ window.festivalsData = [
           videoUrl: 'data/CaliforniaWomenFilmFestival/movies/a-mors.mp4'
         }
       },
-      {
-        id: 'best-short-actor',
-        name: 'Best Short Actor',
-        winner: {
-          title: 'Place of Hawks / Nate Sapriken',
-          videoUrl: 'data/CaliforniaWomenFilmFestival/movies/place-of-hawks.mp4'
-        }
-      },
+      // {
+      //   id: 'best-short-actor',
+      //   name: 'Best Short Actor',
+      //   winner: {
+      //     title: 'Place of Hawks / Nate Sapriken',
+      //     videoUrl: 'data/CaliforniaWomenFilmFestival/movies/place-of-hawks.mp4'
+      //   }
+      // },
       // {
       //   id: 'best-short-script',
       //   name: 'Best Short Script',
@@ -147,14 +147,14 @@ window.festivalsData = [
           videoUrl: 'data/CaliforniaWomenFilmFestival/movies/ball-lightning.mp4'
         }
       },
-      {
-        id: 'best-cinematographer',
-        name: 'Best Cinematographer',
-        winner: {
-          title: 'Place of Hawks',
-          videoUrl: 'data/CaliforniaWomenFilmFestival/movies/place-of-hawks.mp4'
-        }
-      },
+      // {
+      //   id: 'best-cinematographer',
+      //   name: 'Best Cinematographer',
+      //   winner: {
+      //     title: 'Place of Hawks',
+      //     videoUrl: 'data/CaliforniaWomenFilmFestival/movies/place-of-hawks.mp4'
+      //   }
+      // },
       {
         id: 'best-producer',
         name: 'Best Producer',
@@ -163,14 +163,14 @@ window.festivalsData = [
           videoUrl: 'data/CaliforniaWomenFilmFestival/movies/aneyshia.mp4'
         }
       },
-      {
-        id: 'best-composer',
-        name: 'Best Composer',
-        winner: {
-          title: 'Achaiah 7-Love Into Patience',
-          videoUrl: 'data/CaliforniaWomenFilmFestival/movies/achaiah-7-love-into-patience.mp4'
-        }
-      },
+      // {
+      //   id: 'best-composer',
+      //   name: 'Best Composer',
+      //   winner: {
+      //     title: 'Achaiah 7-Love Into Patience',
+      //     videoUrl: 'data/CaliforniaWomenFilmFestival/movies/achaiah-7-love-into-patience.mp4'
+      //   }
+      // },
       {
         id: 'best-human-rights',
         name: 'Best Human Rights',
