@@ -361,6 +361,147 @@ window.festivalsData = [
         }
       }
     ]
+  },
+  {
+    id: 'ottawafilmaward-season5',
+    name: 'Ottawa Film Award - Season 5',
+    description: 'Cinema unites us through storytelling.',
+    location: 'Ottawa, Canada',
+    year: 2025,
+    status: 'active',
+    logo: 'data/OttawaFilmAward/logo.jpg',
+    dutyDate: 'Season 5: October 7-8, 2025',
+    validTickets: ['O-2025-S5', 'ottawa-s5'],
+    categories: [
+      {
+        id: 'best-short-film',
+        name: 'BEST SHORT FILM',
+        winner: {
+          title: 'Isfahani Green',
+          videoUrl: 'data/OttawaFilmAward/movies/isfahani-green.mp4'
+        }
+      },
+      {
+        id: 'best-feature-film',
+        name: 'BEST FEATURE FILM',
+        winner: {
+          title: 'Out of State-A Gothic Romance',
+          videoUrl: 'data/OttawaFilmAward/movies/out-of-state-a-gothic-romance.mp4'
+        }
+      },
+      {
+        id: 'best-short-short',
+        name: 'BEST SHORT SHORT',
+        winner: {
+          title: 'The Legend of William Boucher',
+          videoUrl: 'data/OttawaFilmAward/movies/the-legend-of-william-boucher.mp4'
+        }
+      },
+      {
+        id: 'best-short-director',
+        name: 'BEST SHORT DIRECTOR',
+        winner: {
+          title: 'Would Smith?',
+          videoUrl: 'data/OttawaFilmAward/movies/would-smith.mp4'
+        }
+      },
+      {
+        id: 'best-feature-director',
+        name: 'BEST FEATURE DIRECTOR',
+        winner: {
+          title: 'Out of State-A Gothic Romance',
+          videoUrl: 'data/OttawaFilmAward/movies/out-of-state-a-gothic-romance.mp4'
+        }
+      },
+      {
+        id: 'best-short-actress',
+        name: 'BEST SHORT ACTRESS',
+        winner: {
+          title: 'Five Consecutive Zeroes / Skye Spallone',
+          videoUrl: 'data/OttawaFilmAward/movies/five-consecutive-zeroes.mp4'
+        }
+      },
+      {
+        id: 'best-short-actor',
+        name: 'BEST SHORT ACTOR',
+        winner: {
+          title: 'Five Consecutive Zeroes / Roberto Ragone',
+          videoUrl: 'data/OttawaFilmAward/movies/five-consecutive-zeroes.mp4'
+        }
+      },
+      {
+        id: 'best-international-short-narrative',
+        name: 'BEST INTERNATIONAL SHORT NARRATIVE',
+        winner: {
+          title: 'Gamblers',
+          videoUrl: 'data/OttawaFilmAward/movies/gamblers.mp4'
+        }
+      },
+      {
+        id: 'best-short-editing',
+        name: 'BEST SHORT EDITING',
+        winner: {
+          title: 'MaiM',
+          videoUrl: 'data/OttawaFilmAward/movies/maim.mp4'
+        }
+      },
+      {
+        id: 'best-documentary',
+        name: 'BEST DOCUMENTARY',
+        winner: {
+          title: 'Design is One: Lella & Massimo Vignelli',
+          videoUrl: 'data/OttawaFilmAward/movies/design-is-one-review-screener.mp4'
+        }
+      },
+      {
+        id: 'best-experimental',
+        name: 'BEST EXPERIMENTAL',
+        winner: {
+          title: 'Indelible Winter',
+          videoUrl: 'data/OttawaFilmAward/movies/indelible-winter.mp4'
+        }
+      },
+      {
+        id: 'best-animation',
+        name: 'BEST ANIMATION',
+        winner: {
+          title: 'Out of Control',
+          videoUrl: 'data/OttawaFilmAward/movies/out-of-control.mp4'
+        }
+      },
+      {
+        id: 'best-student',
+        name: 'BEST STUDENT',
+        winner: {
+          title: 'One More Day',
+          videoUrl: 'data/OttawaFilmAward/movies/one-more-day.mp4'
+        }
+      },
+      {
+        id: 'best-first-time-director',
+        name: 'BEST FIRST-TIME DIRECTOR',
+        winner: {
+          title: 'Follow Me',
+          videoUrl: 'data/OttawaFilmAward/movies/follow-me.mp4'
+        }
+      },
+      {
+        id: 'best-music-video',
+        name: 'BEST MUSIC VIDEO',
+        winner: {
+          title: 'Arctic Polar Bear Mothers',
+          videoUrl: 'data/OttawaFilmAward/movies/arctic_polar_bear_mothers.mp4'
+        }
+      },
+      {
+        id: 'best-cinematography',
+        name: 'BEST CINEMATOGRAPHY',
+        winner: {
+          title: 'Would Smith?',
+          videoUrl: 'data/OttawaFilmAward/movies/would-smith.mp4'
+        }
+      }
+    ]
   }
 ]; 
 

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Indiana Screening</title>
+    <title>Indiana Screening - Season 4 Winners</title>
     <style>
         /* Base Styles */
         body {
@@ -30,12 +30,12 @@
             height: auto;
             padding-top: 50px;
             transition: opacity 0.5s ease-in-out;
-            opacity: 0;
+            opacity: 1;
         }
 
         /* Sidebar Styles */
         #sidebar {
-            width: 250px;
+            width: 300px;
             background-color: #313131;
             padding: 1em;
             padding-right: 5px;
@@ -48,14 +48,12 @@
             transition: transform 0.3s ease;
             z-index: 1000;
             overflow-y: auto;
-            /* Enable vertical scrolling */
         }
 
         /* Scrollbar Styles */
         #sidebar::-webkit-scrollbar {
             width: 10px;
         }
-
 
         /* Selected Project Name Styles */
         #project-name {
@@ -83,38 +81,34 @@
             margin-bottom: 1em;
             color: #8d9c3a;
             text-align: center;
-            /* text-transform: uppercase; */
         }
 
         #sidebar ul {
             list-style: none;
             padding: 0;
-            /* margin-right: 10px; */
         }
 
         #sidebar ul li {
-            margin-bottom: 1em;
+            margin-bottom: 0.8em;
+            background: #3a3a3a;
+            border-radius: 6px;
+            padding: 0.6em 0.8em;
         }
 
-        #sidebar ul li a {
+        #sidebar ul li span.category {
             color: #dcdcdc;
-            text-decoration: none;
-            font-size: 01em;
-            display: block;
-            padding: 0.5em;
-            border-radius: 5px;
-            transition: background 0.3s, color 0.3s;
+            font-size: 1em;
         }
 
-        #sidebar ul li a:hover {
-            background-color: #515151;
-            color: #ffffff;
+        #sidebar ul li span.winner {
+            color: #ffb700;
+            font-weight: 600;
         }
 
         /* Toggle Button Styles */
         #toggle-sidebar {
             position: fixed;
-            left: 250px;
+            left: 300px;
             top: 20px;
             background-color: #8f8b2b;
             color: #ffffff;
@@ -136,10 +130,10 @@
             flex: 1;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
             padding: 2em;
-            margin-left: 250px;
+            margin-left: 300px;
             transition: margin-left 0.3s ease;
         }
 
@@ -153,7 +147,6 @@
             margin-bottom: 0.5em;
             text-align: center;
             font-weight: 700;
-            /* text-transform: uppercase; */
             letter-spacing: 2px;
             color: #27565e;
             text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
@@ -162,7 +155,7 @@
 
         /* Description Styles */
         p {
-            font-size: 1.2em;
+            font-size: 1.1em;
             margin-bottom: 2em;
             text-align: center;
             max-width: 80%;
@@ -231,61 +224,43 @@
         /* Media Queries */
         @media (max-width: 768px) {
             #sidebar {
-                width: 200px;
+                width: 240px;
             }
 
             #toggle-sidebar {
-                left: 200px;
+                left: 240px;
                 font-size: 1em;
                 padding: 0.4em 0.8em;
             }
 
             #content {
-                margin-left: 200px;
+                margin-left: 240px;
                 padding: 1.5em;
             }
 
             h1 {
-                font-size: 1.5em;
-            }
-
-            p {
-                font-size: 1.1em;
-                max-width: 90%;
-            }
-
-            #video-container {
-                width: 90%;
+                font-size: 1.6em;
             }
         }
 
         @media (max-width: 480px) {
             #sidebar {
-                width: 180px;
+                width: 200px;
             }
 
             #toggle-sidebar {
-                left: 180px;
+                left: 200px;
                 font-size: 0.9em;
                 padding: 0.3em 0.7em;
             }
 
             #content {
-                margin-left: 180px;
+                margin-left: 200px;
                 padding: 1em;
             }
 
             h1 {
                 font-size: 1.2em;
-            }
-
-            p {
-                font-size: 1em;
-                max-width: 100%;
-            }
-
-            #video-container {
-                width: 100%;
             }
 
             #logo {
@@ -299,42 +274,32 @@
 <body>
     <!-- Sidebar -->
     <div id="sidebar">
-        <h2>May 2025</h2>
+        <h2>September 2025</h2>
         <ul>
-            <li><a href="#" onclick="changeVideo('https://screening.indianashort.com/videos/afriendinthenight.mp4', 'a Friend in the Night')">BEST
-                    SHORT FILM: <span style="color: #ffb700">a Friend in the Night</span></a></li>
-            <li><a href="#" onclick="changeVideo('https://screening.indianashort.com/videos/thevolcanoandthebaby.mp4', 'The Volcano and the Baby')">BEST
-                    EXPERIMENTAL: <span style="color: #ffb700">The Volcano and the Baby</span></a></li>
-            <li><a href="#" onclick="changeVideo('https://screening.indianashort.com/videos/themirrorparajanov.mp4', 'The Mirror Parajanov')">BEST
-                    DOCUMENTARY: <span style="color: #ffb700">The Mirror Parajanov</span></a></li>
-            <li><a href="#" onclick="changeVideo('https://screening.indianashort.com/videos/makingemmiesmile.mp4', 'Making Emmie Smile')">BEST
-                    ANIMATION: <span style="color: #ffb700">Making Emmie Smile</span></a></li>
-            <li><a href="#" onclick="changeVideo('https://screening.indianashort.com/videos/thegreatgoldencarrotcaper.mp4', 'The Great Golden Carrot Caper')">BEST
-                    STUDENT: <span style="color: #ffb700">The Great Golden Carrot Caper</span></a></li>
-            <li><a href="#" onclick="changeVideo('https://screening.indianashort.com/videos/thedaysofknight.mp4', 'The Days of Knight: Chapter 1')">BEST
-                    DIRECTOR & SCI-FI: <span style="color: #ffb700">The Days of Knight: Chapter 1</span></a></li>
-            <!-- <li><a href="#" onclick="changeVideo('https://screening.indianashort.com/videos/singleatchristmas.mp4', 'Single At Christmas')">BEST
-                    SCREENPLAY: <span style="color: #ffb700">Single At Christmas</span></a></li> -->
-            <li><a href="#" onclick="changeVideo('https://screening.indianashort.com/videos/treasureimagination.mp4', 'Treasure Imagination')">BEST
-                    SHORT SHORT: <span style="color: #ffb700">Treasure Imagination</span></a></li>
-            <li><a href="#" onclick="changeVideo('https://screening.indianashort.com/videos/kalebmskelsey.mp4', 'Kaleb & Ms.Kelsey')">BEST
-                    WEB SERIES & FIRST-TIME DIRECTOR: <span style="color: #ffb700">Kaleb & Ms.Kelsey</span></a></li>
-            <!-- <li><a href="#" onclick="changeVideo('https://screening.indianashort.com/videos/caferomeo.mp4', 'Cafe Romeo')">BEST
-                    TV PILOT: <span style="color: #ffb700">Cafe Romeo</span></a></li> -->
-            <li><a href="#" onclick="changeVideo('https://screening.indianashort.com/videos/carissatellsItall.mp4', 'Carissa Tells It All / Caitlin Burt')">BEST
-                    ACTRESS: <span style="color: #ffb700">Carissa Tells It All / Caitlin Burt</span></a></li>
-            <li><a href="#" onclick="changeVideo('https://screening.indianashort.com/videos/lawsworld.mp4', 'Law\'s World : Lipstick Bandit / Law Artis')">BEST
-                    ACTOR: <span style="color: #ffb700">Law's World : Lipstick Bandit / Law Artis</span></a></li>
-            <li><a href="#" onclick="changeVideo('https://screening.indianashort.com/videos/identity.mp4', 'Identity')">BEST
-                    LGBTQ: <span style="color: #ffb700">Identity</span></a></li>
+            <li><span class="category">BEST SHORT FILM:</span> <a href="#" onclick="changeVideo('https://screening.lumierefest.site/videos/july4theastnewyork.mp4', 'July 4th, East New York')"><span class="winner">July 4th, East New York</span></a></li>
+            <li><span class="category">BEST INTERNATIONAL NARRATIVE:</span> <a href="#" onclick="changeVideo('https://screening.lumierefest.site/videos/oldwell.mp4', 'Old Well')"><span class="winner">Old Well</span></a></li>
+            <li><span class="category">BEST EXPERIMENTAL:</span> <a href="#" onclick="changeVideo('https://screening.lumierefest.site/videos/dynamics.mp4', 'Dynamics')"><span class="winner">Dynamics</span></a></li>
+            <li><span class="category">BEST DOCUMENTARY:</span> <a href="#" onclick="changeVideo('https://screening.lumierefest.site/videos/inheritedshame.mp4', 'Inherited Shame')"><span class="winner">Inherited Shame</span></a></li>
+            <li><span class="category">BEST ANIMATION:</span> <a href="#" onclick="changeVideo('https://screening.lumierefest.site/videos/rosepetals.mp4', 'Rose Petals')"><span class="winner">Rose Petals</span></a></li>
+            <li><span class="category">BEST STUDENT:</span> <a href="#" onclick="changeVideo('https://screening.lumierefest.site/videos/thenewimmigrantshongkongers.mp4', 'The New Immigrants - Hong Kongers')"><span class="winner">The New Immigrants - Hong Kongers</span></a></li>
+            <li><span class="category">BEST DIRECTOR:</span> <a href="#" onclick="changeVideo('https://screening.lumierefest.site/videos/artoldbernicescheek.mp4', 'Artold Bernice\'s Cheek')"><span class="winner">Artold Bernice's Cheek</span></a></li>
+            <li><span class="category">BEST SCREENPLAY:</span> <a href="#" onclick="changeVideo('https://screening.lumierefest.site/videos/artoldbernicescheek.mp4', 'Artold Bernice\'s Cheek')"><span class="winner">Artold Bernice's Cheek</span></a></li>
+            <!-- <li><span class="category">BEST SCRIPT:</span> <a href="#" onclick="changeVideo('https://screening.lumierefest.site/videos/jump.mp4', 'Jump')"><span class="winner">Jump</span></a></li> -->
+            <!-- <li><span class="category">BEST UNPRODUCED SCRIPT:</span> <a href="#" onclick="changeVideo('https://screening.lumierefest.site/videos/crustaceus.mp4', 'Crustaceus')"><span class="winner">Crustaceus</span></a></li> -->
+            <li><span class="category">BEST SHORT SHORT:</span> <a href="#" onclick="changeVideo('https://screening.lumierefest.site/videos/themudhole.mp4', 'The Mud Hole')"><span class="winner">The Mud Hole</span></a></li>
+            <li><span class="category">BEST FIRST-TIME DIRECTOR:</span> <a href="#" onclick="changeVideo('https://screening.lumierefest.site/videos/themudhole.mp4', 'The Mud Hole')"><span class="winner">The Mud Hole</span></a></li>
+            <li><span class="category">BEST CINEMATOGRAPHY:</span> <a href="#" onclick="changeVideo('https://screening.lumierefest.site/videos/survivalinstinct.mp4', 'Survival Instinct')"><span class="winner">Survival Instinct</span></a></li>
+            <li><span class="category">BEST EDITING:</span> <a href="#" onclick="changeVideo('https://screening.lumierefest.site/videos/survivalinstinct.mp4', 'Survival Instinct')"><span class="winner">Survival Instinct</span></a></li>
+            <!-- <li><span class="category">BEST SCI-FI:</span> <a href="#" onclick="changeVideo('https://screening.lumierefest.site/videos/jump.mp4', 'Jump')"><span class="winner">Jump</span></a></li> -->
         </ul>
     </div>
 
     <!-- Toggle Button -->
-    <button id="toggle-sidebar">Hide Movies List</button>
+    <button id="toggle-sidebar">Hide Winners List</button>
+
     <!-- Content Area -->
     <div id="content">
-        <img id="logo" src="https://indianashort.com/certs/s1/logo.png" alt="Site Logo">
+        <img id="logo" src="https://lumierefest.site/certs/s1/logo.png" alt="Site Logo">
         <h1>Indiana Short Film Festival Screening</h1>
         <div id="project-name">Please Select a Project From Sidebar</div>
         <div id="video-container">
@@ -344,19 +309,37 @@
             </video>
             <button id="play-button">play</button>
         </div>
-
         <footer>&copy; 2025 Indiana Short Film Festival. All rights reserved.</footer>
     </div>
 
     <script>
-        const video = document.getElementById('screening-video');
-        const playButton = document.getElementById('play-button');
         const toggleSidebarBtn = document.getElementById('toggle-sidebar');
         const sidebar = document.getElementById('sidebar');
         const content = document.getElementById('content');
-        const logo = document.getElementById("logo");
+        const logo = document.getElementById('logo');
+        const video = document.getElementById('screening-video');
+        const playButton = document.getElementById('play-button');
         const projectName = document.getElementById('project-name');
         const videocontainer = document.getElementById('video-container');
+
+        function changeVideo(sourceUrl, name) {
+            video.pause();
+            video.querySelector('source').src = sourceUrl;
+            video.load();
+            playButton.style.display = 'block';
+            projectName.textContent = name;
+            sidebar.classList.toggle('closed');
+            content.classList.toggle('closed');
+            toggleSidebarBtn.classList.toggle('closed');
+            videocontainer.style.display = 'inline';
+            if (sidebar.classList.contains('closed')) {
+                toggleSidebarBtn.textContent = 'Show Winners List';
+                logo.style.opacity = 1;
+            } else {
+                toggleSidebarBtn.textContent = 'Hide Winners List';
+                logo.style.opacity = 0;
+            }
+        }
 
         playButton.addEventListener('click', function () {
             video.play();
@@ -371,82 +354,58 @@
             playButton.style.display = 'none';
         });
 
-        function changeVideo(sourceUrl, name) {
-            video.pause();
-            video.querySelector('source').src = sourceUrl;
-            video.load();
-            playButton.style.display = 'block';
-            projectName.textContent = name;
-            sidebar.classList.toggle('closed');
-            content.classList.toggle('closed');
-            toggleSidebarBtn.classList.toggle('closed');
-            videocontainer.style.display = 'inline';
-            if (sidebar.classList.contains('closed')) {
-                toggleSidebarBtn.textContent = 'Show Movies List';
-                logo.style.opacity = 1;
-            } else {
-                toggleSidebarBtn.textContent = 'Hide Movies List';
-                logo.style.opacity = 0;
-            }
-        }
-
         toggleSidebarBtn.addEventListener('click', function () {
             sidebar.classList.toggle('closed');
             content.classList.toggle('closed');
             toggleSidebarBtn.classList.toggle('closed');
             if (sidebar.classList.contains('closed')) {
-                toggleSidebarBtn.textContent = 'Show Movies List';
+                toggleSidebarBtn.textContent = 'Show Winners List';
                 logo.style.opacity = 1;
             } else {
-                toggleSidebarBtn.textContent = 'Hide Movies List';
+                toggleSidebarBtn.textContent = 'Hide Winners List';
                 logo.style.opacity = 0;
             }
         });
-        // Get the video element
+
+        // Disable right-click and handle fullscreen like in s3
         const videoitem = document.getElementById('screening-video');
+        if (videoitem) {
+            videoitem.addEventListener('contextmenu', function (e) {
+                e.preventDefault();
+            });
 
-        // Disable right-click on the video to prevent downloading
-        videoitem.addEventListener('contextmenu', function (e) {
-            e.preventDefault();
-        });
+            videoitem.addEventListener('dblclick', function (e) {
+                e.preventDefault();
+                toggleFullScreen(videoitem);
+            });
+        }
 
-        // Enable fullscreen functionality on a separate button
-        videoitem.addEventListener('dblclick', function (e) {
-            e.preventDefault();
-            toggleFullScreen(videoitem);
-        });
-
-        // Function to toggle fullscreen
         function toggleFullScreen(element) {
             if (!document.fullscreenElement) {
                 if (element.requestFullscreen) {
                     element.requestFullscreen();
-                } else if (element.mozRequestFullScreen) { // Firefox
+                } else if (element.mozRequestFullScreen) {
                     element.mozRequestFullScreen();
-                } else if (element.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                } else if (element.webkitRequestFullscreen) {
                     element.webkitRequestFullscreen();
-                } else if (element.msRequestFullscreen) { // IE/Edge
+                } else if (element.msRequestFullscreen) {
                     element.msRequestFullscreen();
                 }
             } else {
                 if (document.exitFullscreen) {
                     document.exitFullscreen();
-                } else if (document.mozCancelFullScreen) { // Firefox
+                } else if (document.mozCancelFullScreen) {
                     document.mozCancelFullScreen();
-                } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
+                } else if (document.webkitExitFullscreen) {
                     document.webkitExitFullscreen();
-                } else if (document.msExitFullscreen) { // IE/Edge
+                } else if (document.msExitFullscreen) {
                     document.msExitFullscreen();
                 }
             }
         }
-
-        // Prevent video from restarting on double-click
-        videoitem.addEventListener('click', function (e) {
-            e.stopPropagation();
-        });
     </script>
 
-</body>
+    </body>
 
-</html> 
+    </html>
+
