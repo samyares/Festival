@@ -4,6 +4,9 @@ volumes:
   certs:
   grafana_data:
   prometheus_data:
+  londonwomen_node_modules:
+  londonwomen_next:
+  n8n_data:
 
 services:
   traefik:
@@ -31,8 +34,8 @@ services:
       - --entrypoints.websecure.http.tls.domains[0].sans=*.pariswomencinefest.art
       - --entrypoints.websecure.http.tls.domains[1].main=ottawafilm.website
       - --entrypoints.websecure.http.tls.domains[1].sans=*.ottawafilm.website
-      - --entrypoints.websecure.http.tls.domains[2].main=lumierefest.site.
-      - --entrypoints.websecure.http.tls.domains[2].sans=*.lumierefest.site
+      - --entrypoints.websecure.http.tls.domains[2].main=indianafes.info
+      - --entrypoints.websecure.http.tls.domains[2].sans=*.indianafes.info
       - --entrypoints.websecure.http.tls.domains[3].main=frameofnewyork.info
       - --entrypoints.websecure.http.tls.domains[3].sans=*.frameofnewyork.info
       - --entrypoints.websecure.http.tls.domains[4].main=londonwomenfilmfestival.com
@@ -117,7 +120,7 @@ services:
       # - ./site-content/indianashort/movies:/var/www/html/videos
       - ./site-content/indianashort/certs/:/var/www/html/certs
     labels:
-      - "traefik.http.routers.indianashort.rule=Host(`lumierefest.site`)"
+      - "traefik.http.routers.indianashort.rule=Host(`indianafes.info`)"
       - "traefik.http.routers.indianashort.entrypoints=websecure"
       - "traefik.http.services.indianashort.loadbalancer.server.port=80"
       - traefik.http.routers.indianashort.tls.certresolver=letsencrypt
@@ -130,7 +133,7 @@ services:
       - ./site-content/screening/nginx:/etc/nginx/conf.d
       - ./site-content/screening/movies:/var/www/html/videos
     labels:
-      - "traefik.http.routers.screening.rule=Host(`screening.lumierefest.site`)"
+      - "traefik.http.routers.screening.rule=Host(`screening.indianafes.info`)"
       - "traefik.http.routers.screening.entrypoints=websecure"
       - "traefik.http.services.screening.loadbalancer.server.port=80"
       - "traefik.http.routers.screening.tls.certresolver=letsencrypt"
@@ -189,7 +192,7 @@ services:
   londonwomen:
     container_name: londonwomen
     build:
-        context: ./site-content/londonwomen/festival/ #if your Dockerfile is not at the same level change the path here (./frontend)
+        context: ./site-content/londonwomen/festival/
         target: dev
     restart: always
     command: yarn dev
@@ -197,12 +200,35 @@ services:
         - NODE_ENV=development
     volumes:
         - ./site-content/londonwomen/festival/:/app
-        - /app/node_modules
-        - /app/.next
- #   ports:
+        - londonwomen_node_modules:/app/node_modules
+        - londonwomen_next:/app/.next
+#   ports:
 #        - 3000:3000
     labels:
         - "traefik.http.routers.londonwomen.rule=Host(`londonwomenfilmfestival.com`)"
         - "traefik.http.routers.londonwomen.entrypoints=websecure"
         - "traefik.http.services.londonwomen.loadbalancer.server.port=3000"
         - "traefik.http.routers.londonwomen.tls.certresolver=letsencrypt"
+
+  n8n:
+    image: docker.io/n8nio/n8n:latest
+    container_name: n8n
+    restart: always
+    environment:
+      - GENERIC_TIMEZONE=Asia/Tehran
+      - TZ=Asia/Tehran
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=admin
+      - N8N_BASIC_AUTH_PASSWORD=Sin@2025
+      - WEBHOOK_TUNNEL_URL=https://n8n.indianafes.info/
+      - N8N_HOST=n8n.indianafes.info
+      - N8N_PROTOCOL=https
+      - N8N_PORT=443
+    volumes:
+      - n8n_data:/home/node/.n8n
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.n8n.rule=Host(`n8n.indianafes.info`)
+      - traefik.http.routers.n8n.entrypoints=websecure
+      - traefik.http.services.n8n.loadbalancer.server.port=443
+      - traefik.http.routers.n8n.tls.certresolver=letsencrypt

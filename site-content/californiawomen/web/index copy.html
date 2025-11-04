@@ -49,7 +49,12 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li>
-            <a href="#" class="nav-link-highlight" data-bs-toggle="modal" data-bs-target="#screeningModal">Screening</a>
+            <!-- <a href="https://cineloom.californiawomenff.info/"
+            class="btn btn-warning"
+            style=" font-size: 1.1rem;"> -->
+            <a href="#" class="btn btn-warning" style="font-size: 1.1rem;" data-bs-toggle="modal" data-bs-target="#screeningModal">
+              <i class="bi bi-film me-2"></i>Screening
+            </a>
           </li>
           <li><a href="#hero" class="active">Home</a></li>
           <!-- <li><a href="#about">Winners</a></li> -->
@@ -62,7 +67,6 @@
               <li class="dropdown"><a href="#"><span>2025</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                 <ul>
                   <li><a href="#" data-bs-toggle="modal" data-bs-target="#winnersSession1Modal">Session 1: April–June</a></li>
-                  <li><a href="#" data-bs-toggle="modal" data-bs-target="#winnersSession2Modal">Session 2: July–November</a></li>
                   <!-- <li><a href="#">Session 2: Apr 2025</a></li> -->
                   <!-- <li><a href="#">Deep Dropdown 3</a></li>
                   <li><a href="#">Deep Dropdown 4</a></li>
@@ -151,9 +155,6 @@
         <div class="d-flex justify-content-center">
           <button type="button" class="btn btn-warning btn-lg shadow-sm px-4 py-2" data-bs-toggle="modal" data-bs-target="#winnersSession1Modal">
             <i class="bi bi-trophy-fill me-2"></i>Show Session 1 Winners
-          </button>
-          <button type="button" class="btn btn-outline-warning btn-lg shadow-sm px-4 py-2 ms-3" data-bs-toggle="modal" data-bs-target="#winnersSession2Modal">
-            <i class="bi bi-trophy me-2"></i>Show Session 2 Winners
           </button>
         </div>
       </div><!-- End Section Title -->
@@ -454,19 +455,6 @@
     .info-item p {
       color: #6c757d;
     }
-
-    /* Highlight style for Screening nav link */
-    #header .navmenu > ul > li > a.nav-link-highlight {
-      background-color: #ffc107; /* Bootstrap warning yellow */
-      color: #212529 !important; /* dark text for contrast */
-      padding: 8px 16px;
-      border-radius: 0;
-    }
-
-    #header .navmenu > ul > li > a.nav-link-highlight:hover {
-      background-color: #e0a800; /* darker yellow on hover */
-      color: #212529 !important;
-    }
   </style>
 
   <!-- Winners Session 1 Modal -->
@@ -522,63 +510,6 @@
   </div>
   <!-- End Winners Session 1 Modal -->
 
-  <!-- Winners Session 2 Modal -->
-  <div class="modal fade" id="winnersSession2Modal" tabindex="-1" aria-labelledby="winnersSession2ModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="winnersSession2ModalLabel">Session 2: July–November 2025 Winners</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="table-responsive">
-            <table class="table table-bordered table-striped align-middle">
-              <thead class="table-dark">
-                <tr>
-                  <th>Category</th>
-                  <th>Winner</th>
-                  <th>Download Certificate</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>Best Short Film</td><td>Ponderation</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s2/best-short-film.pdf" download>Download</a></td></tr>
-                <tr><td>Best Short Director</td><td>Hen Mama and the Forest Wolves</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s2/best-short-director.pdf" download>Download</a></td></tr>
-                <tr><td>Best Short Actress</td><td>Health Matters: Pregnancy/Christina Chow</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s2/best-short-actress.pdf" download>Download</a></td></tr>
-                <tr><td>Best Short Actor</td><td>Not a Love Story/Andrea Valsoano</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s2/best-short-actor.pdf" download>Download</a></td></tr>
-                <tr><td>Best Short Script</td><td>Babyshower</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s2/best-short-script.pdf" download>Download</a></td></tr>
-                <tr><td>Best Short Documentary</td><td>Dreamweavers - Gidja Walker OAM</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s2/best-short-documentary.pdf" download>Download</a></td></tr>
-                <tr><td>Best Short Narrative</td><td>Empty Your Pockets</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s2/best-short-narrative.pdf" download>Download</a></td></tr>
-                <tr><td>Best Feature Film</td><td>Highly Explosive</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s2/best-feature-film.pdf" download>Download</a></td></tr>
-                <tr><td>Best Feature Director</td><td>From the Midnight Sun to Eternity</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s2/best-feature-director.pdf" download>Download</a></td></tr>
-                <tr><td>Best Feature Actress</td><td>Punch/Alina Nastase</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s2/best-feature-actress.pdf" download>Download</a></td></tr>
-                <tr><td>Best Feature Script</td><td>It's An Italian Thing! No, It's a Black Thing!</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s2/best-feature-script.pdf" download>Download</a></td></tr>
-                <tr><td>Best Feature Documentary</td><td>No Flowers</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s2/best-feature-documentary.pdf" download>Download</a></td></tr>
-                <tr><td>Best Feature Narrative</td><td>From the Midnight Sun to Eternity</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s2/best-feature-narrative.pdf" download>Download</a></td></tr>
-                <tr><td>Best Film About Women</td><td>Hollow</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s2/best-film-about-women.pdf" download>Download</a></td></tr>
-                <tr><td>Best Student</td><td>Iris</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s2/best-student.pdf" download>Download</a></td></tr>
-                <tr><td>Best Animation</td><td>Bippy the Little Robot</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s2/best-animation.pdf" download>Download</a></td></tr>
-                <tr><td>Best Cinematographer</td><td>Will You Find Me?</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s2/best-cinematographer.pdf" download>Download</a></td></tr>
-                <tr><td>Best Producer</td><td>Chance Encounter</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s2/best-producer.pdf" download>Download</a></td></tr>
-                <tr><td>Best LGBTQ</td><td>In Hell With Ivo</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s2/best-lgbtq.pdf" download>Download</a></td></tr>
-                <tr><td>Best Composer</td><td>Amazon Variations</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s2/best-composer.pdf" download>Download</a></td></tr>
-                <tr><td>Best Experimental</td><td>In Viadi</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s2/best-experimental.pdf" download>Download</a></td></tr>
-                <tr><td>Best Human Rights</td><td>Aeiou</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s2/best-human-rights.pdf" download>Download</a></td></tr>
-                <tr><td>Best Unproduced Script</td><td>Journey Through the Dark</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s2/best-unproduced-script.pdf" download>Download</a></td></tr>
-                <tr><td>Best Biographical Film</td><td>Don't Look Away</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s2/best-biographical-film.pdf" download>Download</a></td></tr>
-                <tr><td>Best Al</td><td>Spaceborn</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s2/best-al.pdf" download>Download</a></td></tr>
-                <tr><td>Best Thriller</td><td>Diamond Dust</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s2/best-thriller.pdf" download>Download</a></td></tr>
-                <tr><td>Best First Time Filmmaker</td><td>Love Of An Icon: The Legend of Crocodile Dundee</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s2/best-first-time-filmmaker.pdf" download>Download</a></td></tr>
-                <tr><td>Best Women's Rights</td><td>Her Name is Libertad</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s2/best-womens-rights.pdf" download>Download</a></td></tr>
-                <tr><td>Best Student Director</td><td>My Fighter</td><td><a class="btn btn-primary btn-sm" href="https://californiawomenff.info/certs/s2/best-student-director.pdf" download>Download</a></td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- End Winners Session 2 Modal -->
-
   <!-- Screening Modal -->
   <div class="modal fade" id="screeningModal" tabindex="-1" aria-labelledby="screeningModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
@@ -589,7 +520,7 @@
         </div>
         <div class="modal-body text-center">
           <!-- <p class="fs-5 mb-3">The screening day is on <strong>7 July 2025</strong> and is not open now.</p> -->
-          <p class="fs-5 mb-3">The screening is on 7 November 2025.</p>
+          <p class="fs-5 mb-3">The screening is end.</p>
           <i class="bi bi-calendar-event" style="font-size: 2rem; color: #ffc107;"></i>
         </div>
       </div>

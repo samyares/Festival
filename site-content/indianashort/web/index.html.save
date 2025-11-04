@@ -54,11 +54,11 @@
                         <img src="images/freedom.png" class="img-fluid" alt="creative freedom" data-aos="fade"
                             data-aos-delay="1800" />
                         <p class="lead my-4" data-aos="fade" data-aos-delay="2500">Indiana Independent Film Festival<br>We're
-                            excited to showcase the best films from talented filmmakers. Follow us for updates,
+                            excited to showcase the best short films from talented filmmakers. Follow us for updates,
                             behind-the-scenes content, and more!🎬✨ </p>
                         <!-- // end .lead -->
                         <span class="animation anim-light" data-aos="slide-effect-btn" data-aos-delay="3000">
-                            <a href="https://filmfreeway.com/IndianaIndependent" class="btn btn-lg btn-outline" >Submit Now</a>
+                            <!-- <a href="https://filmfreeway.com/IndianaShort" class="btn btn-lg btn-outline" >Submit Now</a> -->
                             <!-- <a href="https://screening.indianafes.info" class="btn btn-lg btn-outline">Screening</a> -->
                             <a href="/winners-sept2025.html" class="btn btn-lg btn-outline">Winners</a>
                         </span>
@@ -87,7 +87,7 @@
                 <!-- // end .hamburger-menu -->
                 <div class="social-links">
                     <!-- <a href="https://screening.indianafes.info" target="_blank"> screening </a> -->
-                    <a href="https://filmfreeway.com/IndianaIndependent" target="_blank"> FilmFreeWay </a>
+                    <a href="https://filmfreeway.com/IndianaShort" target="_blank"> FilmFreeWay </a>
                     <a href="https://www.instagram.com/indianafilmfestival" target="_blank"> Instagram </a>
                 </div>
             </div>
@@ -101,11 +101,11 @@
                         <!-- <a href="https://screening.indianafes.info" class="btn btn-lg btn-outline">Screening </a> -->
                         <br><br>
                         <a href="winners-sept2025.html" class="btn btn-lg btn-outline disable">Winners </a> <br><br>
-                        <a href="https://filmfreeway.com/IndianaIndependent" class="btn btn-lg btn-outline">Filmfreeway</a>
+                        <a href="https://filmfreeway.com/IndianaShort" class="btn btn-lg btn-outline">Filmfreeway</a>
                         <br><br>
                         <a href="https://www.instagram.com/indianafilmfestival"
                             class="btn btn-lg btn-outline">Instagram </a> <br><br>
-                        <!-- <a href="https://www.instagram.com/IndianaIndependentfilmfestival" class="btn btn-lg btn-outline" data-toggle="modal" data-target="#contactModal">Instagram </a> <br><br> -->
+                        <!-- <a href="https://www.instagram.com/indianashortfilmfestival" class="btn btn-lg btn-outline" data-toggle="modal" data-target="#contactModal">Instagram </a> <br><br> -->
                     </p>
                     <h1 class="text-center my-md mb-5" data-aos="fade-in" data-aos-duration="300">The Indiana Independent Film
                         Festival invites filmmakers from across the globe to join us in celebrating the art of 
