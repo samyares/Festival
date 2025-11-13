@@ -98,18 +98,18 @@ services:
 #      - traefik.http.routers.grafana.rule=Host(`dash.pariswomencinefest.art`)
 #    restart: always
 
-  pariswomencinefest:
-    image: nginx:alpine
-    container_name: pariswomencinefest
-    volumes:
-      - ./site-content/pariswomencinefest/web:/usr/share/nginx/html
-      - ./site-content/pariswomencinefest/nginx:/etc/nginx/conf.d
-      - ./site-content/pariswomencinefest/certs:/var/www/html/certs
-    labels:
-      - "traefik.http.routers.pariswomencinefest.rule=Host(`pariswomencinefest.art`)"
-      - "traefik.http.routers.pariswomencinefest.entrypoints=websecure"
-      - "traefik.http.services.pariswomencinefest.loadbalancer.server.port=80"
-      - traefik.http.routers.pariswomencinefest.tls.certresolver=letsencrypt
+  # pariswomencinefest:
+  #   image: nginx:alpine
+  #   container_name: pariswomencinefest
+  #   volumes:
+  #     - ./site-content/pariswomencinefest/web:/usr/share/nginx/html
+  #     - ./site-content/pariswomencinefest/nginx:/etc/nginx/conf.d
+  #     - ./site-content/pariswomencinefest/certs:/var/www/html/certs
+  #   labels:
+  #     - "traefik.http.routers.pariswomencinefest.rule=Host(`pariswomencinefest.art`)"
+  #     - "traefik.http.routers.pariswomencinefest.entrypoints=websecure"
+  #     - "traefik.http.services.pariswomencinefest.loadbalancer.server.port=80"
+  #     - traefik.http.routers.pariswomencinefest.tls.certresolver=letsencrypt
 
   indianashort:
     image: nginx:alpine
@@ -157,7 +157,7 @@ services:
     volumes:
       - ./site-content/frameofnewyork/web:/usr/share/nginx/html
       - ./site-content/frameofnewyork/nginx:/etc/nginx/conf.d
-      # - ./site-content/frameofnewyork/certs:/var/www/html/certs
+      - ./site-content/frameofnewyork/certs:/var/www/html/certs
     labels:
       - "traefik.http.routers.frameofnewyork.rule=Host(`frameofnewyork.info`)"
       - "traefik.http.routers.frameofnewyork.entrypoints=websecure"
@@ -184,7 +184,7 @@ services:
       - ./site-content/cineloom/web:/usr/share/nginx/html
       - ./site-content/cineloom/nginx:/etc/nginx/conf.d
     labels:
-      - "traefik.http.routers.cineloom.rule=Host(`cineloom.ottawafilm.website`)"
+      - "traefik.http.routers.cineloom.rule=Host(`cineloom.frameofnewyork.info`)"
       - "traefik.http.routers.cineloom.entrypoints=websecure"
       - "traefik.http.services.cineloom.loadbalancer.server.port=80"
       - "traefik.http.routers.cineloom.tls.certresolver=letsencrypt"

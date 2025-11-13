@@ -13,6 +13,12 @@
         <!-- Fonts CSS-->
         <link rel="stylesheet" href="css/heading.css">
         <link rel="stylesheet" href="css/body.css">
+        <style>
+            .masthead {
+                position: relative;
+                overflow: hidden;
+            }
+        </style>
     </head>
     <body id="page-top">
         <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
@@ -20,6 +26,8 @@
                 <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#screening">SCREENING</a>
+                        </li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">WINNERS</a>
                         </li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">ABOUT</a>
@@ -31,7 +39,13 @@
             </div>
         </nav>
         <header class="masthead bg-primary text-white text-center">
-            <div class="container d-flex align-items-center flex-column">
+            <!-- Video Background-->
+            <video autoplay muted loop playsinline id="bgVideo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+                <source src="assets/img/back.mp4" type="video/mp4">
+            </video>
+            <!-- Overlay for better text visibility-->
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
+            <div class="container d-flex align-items-center flex-column" style="position: relative; z-index: 2;">
                 <!-- Masthead Avatar Image--><img class="masthead-avatar mb-5" src="assets/img/0291c1bc-c173-4eea-b471-1311d99a17a7_removalai_preview.png" alt="">
                 <!-- Masthead Heading-->
                 <h1 class="masthead-heading mb-0">Welcome to Frames of Newyork Film Festival</h1>
@@ -45,6 +59,51 @@
                 <p class="pre-wrap masthead-subheading font-weight-light mb-0">Every Frame Tells a Story </p>
             </div>
         </header>
+        
+        <!-- Screening Event Section-->
+        <section class="page-section bg-primary text-white text-center" id="screening">
+            <div class="container">
+                <h2 class="page-section-heading text-white mb-4">SCREENING EVENT</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-film"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <p class="lead mb-5">Join us for our exclusive film screening event! Watch award-winning films from our festival.</p>
+                <a href="https://cineloom.frameofnewyork.info/" target="_blank" class="btn btn-xl btn-outline-light">
+                <!-- <button type="button" class="btn btn-xl btn-outline-light" data-toggle="modal" data-target="#screeningModal"> -->
+                    <i class="fas fa-play-circle mr-2"></i>
+                    Watch Screening
+                </a>
+                <!-- </button> -->
+            </div>
+        </section>
+        
+        <!-- Screening Modal-->
+        <div class="modal fade" id="screeningModal" tabindex="-1" role="dialog" aria-labelledby="screeningModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary text-white">
+                        <h5 class="modal-title" id="screeningModalLabel"><i class="fas fa-calendar-alt mr-2"></i>Screening Event Information</h5>
+                        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-center py-5">
+                        <i class="fas fa-film fa-3x text-primary mb-4"></i>
+                        <h4 class="mb-3">Screening Opens Soon!</h4>
+                        <p class="lead mb-4">Our exclusive film screening event will be available on:</p>
+                        <h3 class="text-primary mb-4"><strong>November 14, 2025</strong></h3>
+                        <p class="text-muted">The screening platform is not open yet. Please check back on the opening date to watch our award-winning films!</p>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Got it!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <section class="page-section portfolio" id="portfolio">
             <div class="container">
                 <!-- Portfolio Section Heading-->
@@ -77,6 +136,16 @@
                             </div>
                             <div class="btn btn-secondary btn-lg" style="width: 100%; height: 200px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; background-color: #495057; border-color: #495057;">
                                 Season Two
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <div class="btn btn-secondary btn-lg" style="width: 100%; height: 200px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; background-color: #495057; border-color: #495057;">
+                                Season Three
                             </div>
                         </div>
                     </div>
@@ -408,6 +477,195 @@
                                                 <tr>
                                                     <td>Best Soundtrack</td>
                                                     <td>Pop Monsters</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-labelledby="#portfolioModal2Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary mb-0">Season Three</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Text-->
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-hover">
+                                            <thead class="thead-dark">
+                                                <tr>
+                                                    <th>Award Category</th>
+                                                    <th>Winner</th>
+                                                    <th>Certificate</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Best Feature Film</td>
+                                                    <td>Parut</td>
+                                                    <td><a href="certs/s3/Best-Feature-Film.pdf" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Short Film</td>
+                                                    <td>Aspettando / Waiting</td>
+                                                    <td><a href="certs/s3/Best-Short-Film.pdf" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Documentary</td>
+                                                    <td>BlackFatherHood - The Other Hood</td>
+                                                    <td><a href="certs/s3/Best-Documentary.pdf" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Animation</td>
+                                                    <td>Robotany</td>
+                                                    <td><a href="certs/s3/Best-Animation.pdf" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Experimental</td>
+                                                    <td>IN VIADI</td>
+                                                    <td><a href="certs/s3/Best-Experimental.pdf" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Debut Film</td>
+                                                    <td>The Turned Anthology Part 1</td>
+                                                    <td><a href="certs/s3/Best-Debut-Film.pdf" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Student Film</td>
+                                                    <td>Joss</td>
+                                                    <td><a href="certs/s3/Best-Student-Film.pdf" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Student Directing</td>
+                                                    <td>Wannabe Grown</td>
+                                                    <td><a href="certs/s3/Best-Student-Directing.pdf" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Director</td>
+                                                    <td>Initium</td>
+                                                    <td><a href="certs/s3/Best-Director.pdf" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Man Director</td>
+                                                    <td>I WILL BE WAITING FOR YOU AT EVERY RECESS</td>
+                                                    <td><a href="certs/s3/Best-Man-Director.pdf" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best First Time Filmmaking</td>
+                                                    <td>Transformed Ireland: A Feminine History</td>
+                                                    <td><a href="certs/s3/Best-First-Time-Filmmaking.pdf" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Script</td>
+                                                    <td>Irish Moon</td>
+                                                    <td><a href="certs/s3/Best-Script.pdf" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Unproduced Script</td>
+                                                    <td>Journey Through the Dark</td>
+                                                    <td><a href="certs/s3/Best-Unproduced-Script.pdf" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Screenplay</td>
+                                                    <td>The Veil of Silence</td>
+                                                    <td><a href="certs/s3/Best-Screenplay.pdf" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Cinematography</td>
+                                                    <td>Moisture</td>
+                                                    <td><a href="certs/s3/Best-Cinematography.pdf" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best International Film</td>
+                                                    <td>Memory</td>
+                                                    <td><a href="certs/s3/Best-International-Film.pdf" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Actress</td>
+                                                    <td>The Last Call / Hannah Teresa</td>
+                                                    <td><a href="certs/s3/Best-Actress.pdf" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Ensemble Cast</td>
+                                                    <td>Sensus Mori</td>
+                                                    <td><a href="certs/s3/Best-Ensemble-Cast.pdf" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best LGBTQ</td>
+                                                    <td>SKIN SHOW / LIVE</td>
+                                                    <td><a href="certs/s3/Best-LGBTQ.pdf" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Horror</td>
+                                                    <td>The Collector</td>
+                                                    <td><a href="certs/s3/Best-Horror.pdf" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Thriller</td>
+                                                    <td>The Mystic</td>
+                                                    <td><a href="certs/s3/Best-Thriller.pdf" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Women Empowerment</td>
+                                                    <td>MORGAN WOOD "EVERYTHING ALWAYS HAPPENS SO MUCH"</td>
+                                                    <td><a href="certs/s3/Best-Women-Empowerment.pdf" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Music Video</td>
+                                                    <td>Single for Life</td>
+                                                    <td><a href="certs/s3/Best-Music-Video.pdf" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Trailer</td>
+                                                    <td>The Goblins of Sycamore Street</td>
+                                                    <td><a href="certs/s3/Best-Trailer.pdf" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Editing</td>
+                                                    <td>Initium</td>
+                                                    <td><a href="certs/s3/Best-Editing.pdf" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Original Score</td>
+                                                    <td>The Bridge Less Traveled</td>
+                                                    <td><a href="certs/s3/Best-Original-Score.pdf" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Soundtrack</td>
+                                                    <td>THE GENERATIONS OF MEDIA - Music is Dead ?</td>
+                                                    <td><a href="certs/s3/Best-Soundtrack.pdf" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Musical / Dance</td>
+                                                    <td>Frankenstein</td>
+                                                    <td><a href="certs/s3/Best-Musical-Dance.pdf" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Producer</td>
+                                                    <td>February Eternity</td>
+                                                    <td><a href="certs/s3/Best-Producer.pdf" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Poster</td>
+                                                    <td>The Veil of Silence</td>
+                                                    <td><a href="certs/s3/Best-Poster.pdf" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
                                                 </tr>
                                             </tbody>
                                         </table>

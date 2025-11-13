@@ -385,6 +385,227 @@ window.festivalsData = [
         }
       }
     ]
+  },
+  {
+    id: 'framesofnewyork-season3',
+    name: 'Frames of New York',
+    description: 'Celebrating the art of independent cinema in the heart of New York.',
+    location: 'New York, USA',
+    year: 2025,
+    status: 'active',
+    logo: 'data/FrameOfNewyork/logo.jpg',
+    dutyDate: 'Season 3: November 14, 2025',
+    validTickets: ['F-2025-S3', 'frames-s3', 'newyork-nov'],
+    categories: [
+      {
+        id: 'best-feature-film',
+        name: 'Best Feature Film',
+        winner: {
+          title: 'Parut',
+          videoUrl: 'data/FrameOfNewyork/movies/parut.mp4'
+        }
+      },
+      {
+        id: 'best-short-film',
+        name: 'Best Short Film',
+        winner: {
+          title: 'Aspettando / Waiting',
+          videoUrl: 'data/FrameOfNewyork/movies/aspettandowaiting.mp4'
+        }
+      },
+      {
+        id: 'best-documentary',
+        name: 'Best Documentary',
+        winner: {
+          title: 'BlackFatherHood - The Other Hood',
+          videoUrl: 'data/FrameOfNewyork/movies/blackfatherhood-the-other-hood.mp4'
+        }
+      },
+      {
+        id: 'best-animation',
+        name: 'Best Animation',
+        winner: {
+          title: 'Robotany',
+          videoUrl: 'data/FrameOfNewyork/movies/robotany.mp4'
+        }
+      },
+      {
+        id: 'best-experimental',
+        name: 'Best Experimental',
+        winner: {
+          title: 'IN VIADI',
+          videoUrl: 'data/FrameOfNewyork/movies/in-viadi.mp4'
+        }
+      },
+      {
+        id: 'best-debut-film',
+        name: 'Best Debut Film',
+        winner: {
+          title: 'The Turned Anthology Part 1',
+          videoUrl: 'data/FrameOfNewyork/movies/the-turned-anthology.mp4'
+        }
+      },
+      {
+        id: 'best-student-film',
+        name: 'Best Student Film',
+        winner: {
+          title: 'Joss',
+          videoUrl: 'data/FrameOfNewyork/movies/joss.mp4'
+        }
+      },
+      {
+        id: 'best-student-directing',
+        name: 'Best Student Directing',
+        winner: {
+          title: 'Wannabe Grown',
+          videoUrl: 'data/FrameOfNewyork/movies/wannabe-grown.mp4'
+        }
+      },
+      {
+        id: 'best-director',
+        name: 'Best Director',
+        winner: {
+          title: 'Initium',
+          videoUrl: 'data/FrameOfNewyork/movies/initium.mp4'
+        }
+      },
+      {
+        id: 'best-man-director',
+        name: 'Best Man Director',
+        winner: {
+          title: 'I WILL BE WAITING FOR YOU AT EVERY RECESS',
+          videoUrl: 'data/FrameOfNewyork/movies/i-will-be-waiting-for-you-at-every-recess.mp4'
+        }
+      },
+      {
+        id: 'best-first-time-filmmaking',
+        name: 'Best First Time Filmmaking',
+        winner: {
+          title: 'Transformed Ireland: A Feminine History',
+          videoUrl: 'data/FrameOfNewyork/movies/transformed-ireland-a-feminine-history.mp4'
+        }
+      },
+      {
+        id: 'best-cinematography',
+        name: 'Best Cinematography',
+        winner: {
+          title: 'Moisture',
+          videoUrl: 'data/FrameOfNewyork/movies/moisture.mp4'
+        }
+      },
+      {
+        id: 'best-international-film',
+        name: 'Best International Film',
+        winner: {
+          title: 'Memory',
+          videoUrl: 'data/FrameOfNewyork/movies/memory.mp4'
+        }
+      },
+      {
+        id: 'best-actress',
+        name: 'Best Actress',
+        winner: {
+          title: 'The Last Call / Hannah Teresa',
+          videoUrl: 'data/FrameOfNewyork/movies/the-last-call.mp4'
+        }
+      },
+      {
+        id: 'best-ensemble-cast',
+        name: 'Best Ensemble Cast',
+        winner: {
+          title: 'Sensus Mori',
+          videoUrl: 'data/FrameOfNewyork/movies/sensus-mori.mp4'
+        }
+      },
+      {
+        id: 'best-lgbtq',
+        name: 'Best LGBTQ',
+        winner: {
+          title: 'SKIN SHOW / LIVE',
+          videoUrl: 'data/FrameOfNewyork/movies/skin-show-live.mp4'
+        }
+      },
+      {
+        id: 'best-horror',
+        name: 'Best Horror',
+        winner: {
+          title: 'The Collector',
+          videoUrl: 'data/FrameOfNewyork/movies/the-collector.mp4'
+        }
+      },
+      {
+        id: 'best-thriller',
+        name: 'Best Thriller',
+        winner: {
+          title: 'The Mystic',
+          videoUrl: 'data/FrameOfNewyork/movies/the-mystic.mp4'
+        }
+      },
+      {
+        id: 'best-women-empowerment',
+        name: 'Best Women Empowerment',
+        winner: {
+          title: 'MORGAN WOOD "EVERYTHING ALWAYS HAPPENS SO MUCH"',
+          videoUrl: 'data/FrameOfNewyork/movies/morgan-wood-in-everything-always-happens-so-much.mp4'
+        }
+      },
+      {
+        id: 'best-music-video',
+        name: 'Best Music Video',
+        winner: {
+          title: 'Single for Life',
+          videoUrl: 'data/FrameOfNewyork/movies/single-for-life.mp4'
+        }
+      },
+      {
+        id: 'best-trailer',
+        name: 'Best Trailer',
+        winner: {
+          title: 'The Goblins of Sycamore Street',
+          videoUrl: 'data/FrameOfNewyork/movies/the-goblins-of-sycamore-street.mp4'
+        }
+      },
+      {
+        id: 'best-editing',
+        name: 'Best Editing',
+        winner: {
+          title: 'Initium',
+          videoUrl: 'data/FrameOfNewyork/movies/initium.mp4'
+        }
+      },
+      {
+        id: 'best-original-score',
+        name: 'Best Original Score',
+        winner: {
+          title: 'The Bridge Less Traveled',
+          videoUrl: 'data/FrameOfNewyork/movies/the-bridge-less-traveled.mp4'
+        }
+      },
+      {
+        id: 'best-soundtrack',
+        name: 'Best Soundtrack',
+        winner: {
+          title: 'THE GENERATIONS OF MEDIA - Music is Dead ?',
+          videoUrl: 'data/FrameOfNewyork/movies/the-generations-of-media.mp4'
+        }
+      },
+      {
+        id: 'best-musical-dance',
+        name: 'Best Musical / Dance',
+        winner: {
+          title: 'Frankenstein',
+          videoUrl: 'data/FrameOfNewyork/movies/frankenstein.mp4'
+        }
+      },
+      {
+        id: 'best-producer',
+        name: 'Best Producer',
+        winner: {
+          title: 'February Eternity',
+          videoUrl: 'data/FrameOfNewyork/movies/february-eternity.mp4'
+        }
+      }
+    ]
   }
 ]; 
 
