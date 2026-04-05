@@ -36,10 +36,10 @@ services:
       - --entrypoints.websecure.http.tls.domains[1].sans=*.ottawafilm.website
       - --entrypoints.websecure.http.tls.domains[2].main=indianafes.info
       - --entrypoints.websecure.http.tls.domains[2].sans=*.indianafes.info
-      - --entrypoints.websecure.http.tls.domains[3].main=frameofnewyork.info
-      - --entrypoints.websecure.http.tls.domains[3].sans=*.frameofnewyork.info
-      - --entrypoints.websecure.http.tls.domains[4].main=londonwomenfilmfestival.com
-      - --entrypoints.websecure.http.tls.domains[4].sans=*.londonwomenfilmfestival.com
+      - --entrypoints.websecure.http.tls.domains[3].main=framesofnewyork.online
+      - --entrypoints.websecure.http.tls.domains[3].sans=*.framesofnewyork.online
+      - --entrypoints.websecure.http.tls.domains[4].main=londonwomenfilmfestival.info
+      - --entrypoints.websecure.http.tls.domains[4].sans=*.londonwomenfilmfestival.info
       - --entrypoints.websecure.http.tls.domains[5].main=californiawomenff.info
       - --entrypoints.websecure.http.tls.domains[5].sans=*.californiawomenff.info
 
@@ -126,19 +126,6 @@ services:
       - "traefik.http.services.indianashort.loadbalancer.server.port=80"
       - traefik.http.routers.indianashort.tls.certresolver=letsencrypt
 
-  screening:
-    image: nginx:alpine
-    container_name: screening
-    volumes:
-      - ./site-content/screening/web:/usr/share/nginx/html
-      - ./site-content/screening/nginx:/etc/nginx/conf.d
-      - ./site-content/screening/movies:/var/www/html/videos
-    labels:
-      - "traefik.http.routers.screening.rule=Host(`screening.indianafes.info`)"
-      - "traefik.http.routers.screening.entrypoints=websecure"
-      - "traefik.http.services.screening.loadbalancer.server.port=80"
-      - "traefik.http.routers.screening.tls.certresolver=letsencrypt"
-
   ottawa:
     image: nginx:alpine
     container_name: ottawa
@@ -160,7 +147,7 @@ services:
       - ./site-content/frameofnewyork/nginx:/etc/nginx/conf.d
       - ./site-content/frameofnewyork/certs:/var/www/html/certs
     labels:
-      - "traefik.http.routers.frameofnewyork.rule=Host(`frameofnewyork.info`)"
+      - "traefik.http.routers.frameofnewyork.rule=Host(`framesofnewyork.online`)"
       - "traefik.http.routers.frameofnewyork.entrypoints=websecure"
       - "traefik.http.services.frameofnewyork.loadbalancer.server.port=80"
       - "traefik.http.routers.frameofnewyork.tls.certresolver=letsencrypt"
@@ -185,42 +172,55 @@ services:
       - ./site-content/cineloom/web:/usr/share/nginx/html
       - ./site-content/cineloom/nginx:/etc/nginx/conf.d
     labels:
-      - "traefik.http.routers.cineloom.rule=Host(`cineloom.frameofnewyork.info`)"
+      - "traefik.http.routers.cineloom.rule=Host(`cineloom.framesofnewyork.online`)"
       - "traefik.http.routers.cineloom.entrypoints=websecure"
       - "traefik.http.services.cineloom.loadbalancer.server.port=80"
       - "traefik.http.routers.cineloom.tls.certresolver=letsencrypt"
 
-  parisscreen:
-    image: nginx:alpine
-    container_name: parisscreen
-    volumes:
-      - ./site-content/parisscreen/web:/usr/share/nginx/html
-      - ./site-content/parisscreen/nginx:/etc/nginx/conf.d
-      - ./site-content/parisscreen/movies:/var/www/html/videos
-    labels:
-      - "traefik.http.routers.parisscreen.rule=Host(`screen.pariswomencinefest.art`)"
-      - "traefik.http.routers.parisscreen.entrypoints=websecure"
-      - "traefik.http.services.parisscreen.loadbalancer.server.port=80"
-      - "traefik.http.routers.parisscreen.tls.certresolver=letsencrypt"
 
-  # londonwomen:
-  #   container_name: londonwomen
-  #   build:
-  #       context: ./site-content/londonwomen/festival/
-  #       target: dev
-  #   restart: always
-  #   command: yarn dev
-  #   environment:
-  #       - NODE_ENV=development
+  londonwomen:
+    container_name: londonwomen
+    build:
+        context: ./site-content/londonwomen/festival/
+        target: dev
+    restart: always
+    command: yarn dev
+    environment:
+        - NODE_ENV=development
+    volumes:
+        - ./site-content/londonwomen/festival/:/app
+        - londonwomen_node_modules:/app/node_modules
+        - londonwomen_next:/app/.next
+    labels:
+        - "traefik.http.routers.londonwomen.rule=Host(`londonwomenfilmfestival.info`)"
+        - "traefik.http.routers.londonwomen.entrypoints=websecure"
+        - "traefik.http.services.londonwomen.loadbalancer.server.port=3000"
+        - "traefik.http.routers.londonwomen.tls.certresolver=letsencrypt"
+  # parisscreen:
+  #   image: nginx:alpine
+  #   container_name: parisscreen
   #   volumes:
-  #       - ./site-content/londonwomen/festival/:/app
-  #       - londonwomen_node_modules:/app/node_modules
-  #       - londonwomen_next:/app/.next
+  #     - ./site-content/parisscreen/web:/usr/share/nginx/html
+  #     - ./site-content/parisscreen/nginx:/etc/nginx/conf.d
+  #     - ./site-content/parisscreen/movies:/var/www/html/videos
   #   labels:
-  #       - "traefik.http.routers.londonwomen.rule=Host(`londonwomenfilmfestival.com`)"
-  #       - "traefik.http.routers.londonwomen.entrypoints=websecure"
-  #       - "traefik.http.services.londonwomen.loadbalancer.server.port=3000"
-  #       - "traefik.http.routers.londonwomen.tls.certresolver=letsencrypt"
+  #     - "traefik.http.routers.parisscreen.rule=Host(`screen.pariswomencinefest.art`)"
+  #     - "traefik.http.routers.parisscreen.entrypoints=websecure"
+  #     - "traefik.http.services.parisscreen.loadbalancer.server.port=80"
+  #     - "traefik.http.routers.parisscreen.tls.certresolver=letsencrypt"
+
+  # screening:
+  #   image: nginx:alpine
+  #   container_name: screening
+  #   volumes:
+  #     - ./site-content/screening/web:/usr/share/nginx/html
+  #     - ./site-content/screening/nginx:/etc/nginx/conf.d
+  #     - ./site-content/screening/movies:/var/www/html/videos
+  #   labels:
+  #     - "traefik.http.routers.screening.rule=Host(`screening.indianafes.info`)"
+  #     - "traefik.http.routers.screening.entrypoints=websecure"
+  #     - "traefik.http.services.screening.loadbalancer.server.port=80"
+  #     - "traefik.http.routers.screening.tls.certresolver=letsencrypt"
 
   # n8n:
   #   image: docker.io/n8nio/n8n:latest

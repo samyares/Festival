@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indiana Screening - Season 5 Winners</title>
+    <style>
+        /* Base Styles */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #303030, #000000);
+            color: #ffffff;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #selected {
+            color: #acd224;
+            font-size: 1em;
+        }
+
+        /* Logo Styles */
+        #logo {
+            display: block;
+            margin: 1em auto;
+            max-width: 350px;
+            height: auto;
+            padding-top: 50px;
+            transition: opacity 0.5s ease-in-out;
+            opacity: 1;
+        }
+
+        /* Sidebar Styles */
+        #sidebar {
+            width: 300px;
+            background-color: #313131;
+            padding: 1em;
+            padding-right: 5px;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            transform: translateX(0);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        /* Scrollbar Styles */
+        #sidebar::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Selected Project Name Styles */
+        #project-name {
+            font-size: 1em;
+            color: #828920;
+            margin-bottom: 1em;
+            text-align: center;
+        }
+
+        #sidebar::-webkit-scrollbar-thumb {
+            background-color: #4a5d73;
+            border-radius: 5px;
+        }
+
+        #sidebar::-webkit-scrollbar-track {
+            background-color: #1c2a38;
+        }
+
+        #sidebar.closed {
+            transform: translateX(-100%);
+        }
+
+        #sidebar h2 {
+            font-size: 1.5em;
+            margin-bottom: 1em;
+            color: #8d9c3a;
+            text-align: center;
+        }
+
+        #sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #sidebar ul li {
+            margin-bottom: 0.8em;
+            background: #3a3a3a;
+            border-radius: 6px;
+            padding: 0.6em 0.8em;
+        }
+
+        #sidebar ul li span.category {
+            color: #dcdcdc;
+            font-size: 1em;
+        }
+
+        #sidebar ul li span.winner {
+            color: #ffb700;
+            font-weight: 600;
+        }
+
+        #sidebar ul li a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        #sidebar ul li a:hover .winner {
+            text-decoration: underline;
+        }
+
+        /* Toggle Button Styles */
+        #toggle-sidebar {
+            position: fixed;
+            left: 300px;
+            top: 20px;
+            background-color: #8f8b2b;
+            color: #ffffff;
+            border: none;
+            padding: 0.5em 1em;
+            cursor: pointer;
+            font-size: 1.1em;
+            border-radius: 5px;
+            z-index: 1001;
+            transition: left 0.5s ease;
+        }
+
+        #toggle-sidebar.closed {
+            left: 20px;
+        }
+
+        /* Content Area */
+        #content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 2em;
+            margin-left: 300px;
+            transition: margin-left 0.3s ease;
+        }
+
+        #content.closed {
+            margin-left: 0;
+        }
+
+        /* Title Styles */
+        h1 {
+            font-size: 2em;
+            margin-bottom: 0.5em;
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #27565e;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+            font-family: cursive;
+        }
+
+        /* Description Styles */
+        p {
+            font-size: 1.1em;
+            margin-bottom: 2em;
+            text-align: center;
+            max-width: 80%;
+            color: #dcdcdc;
+            line-height: 1.6;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Video Container Styles */
+        #video-container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            background-color: #000;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s ease-in-out;
+            display: none;
+        }
+
+        /* Video Styles */
+        video {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+        }
+
+        /* Play Button Styles */
+        #play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2.2em;
+            color: #b2b2b2;
+            background: rgba(28, 28, 28, 0.8);
+            border: none;
+            border-radius: 50%;
+            padding: 0.6em 0.9em;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        /* Play Button Hover Styles */
+        #play-button:hover {
+            background: rgba(0, 0, 0, 0.9);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        /* Video Container Hover Animation */
+        #video-container:hover {
+            transform: scale(1.02);
+        }
+
+        /* Footer Styles */
+        footer {
+            margin-top: 2em;
+            font-size: 0.9em;
+            color: #999;
+            text-align: center;
+            font-style: italic;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            #sidebar {
+                width: 240px;
+            }
+
+            #toggle-sidebar {
+                left: 240px;
+                font-size: 1em;
+                padding: 0.4em 0.8em;
+            }
+
+            #content {
+                margin-left: 240px;
+                padding: 1.5em;
+            }
+
+            h1 {
+                font-size: 1.6em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #sidebar {
+                width: 200px;
+            }
+
+            #toggle-sidebar {
+                left: 200px;
+                font-size: 0.9em;
+                padding: 0.3em 0.7em;
+            }
+
+            #content {
+                margin-left: 200px;
+                padding: 1em;
+            }
+
+            h1 {
+                font-size: 1.2em;
+            }
+
+            #logo {
+                max-width: 250px;
+                padding-top: 0px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <div id="sidebar">
+        <h2>January 2026</h2>
+        <ul>
+            <li><span class="category">BEST FILM - SHORT:</span> <a href="#" onclick="changeVideo('https://screening.indianafes.info/videos/different-than-yesterday.mp4', 'Different Than Yesterday'); return false;"><span class="winner">Different Than Yesterday</span></a></li>
+            <li><span class="category">BEST DIRECTOR - SHORT:</span> <a href="#" onclick="changeVideo('https://screening.indianafes.info/videos/the-ghost-of-summers-past-final.mp4', 'The Ghost Of Summers Past'); return false;"><span class="winner">The Ghost Of Summers Past</span></a></li>
+            <li><span class="category">BEST ACTOR - SHORT:</span> <span class="winner">Real Mother / Case Walker</span></li>
+            <li><span class="category">BEST ACTRESS - SHORT:</span> <a href="#" onclick="changeVideo('https://screening.indianafes.info/videos/cool-headed-girl-short-film.mp4', 'Cool Headed Girl / Rose Jones'); return false;"><span class="winner">Cool Headed Girl / Rose Jones</span></a></li>
+            <li><span class="category">BEST SCRIPT - SHORT:</span> <span class="winner">The Veil Of Silence</span></li>
+            <li><span class="category">BEST SCRIPT (UNPRODUCED) - SHORT:</span> <span class="winner">The Rockette</span></li>
+            <li><span class="category">BEST DOCUMENTARY - SHORT:</span> <a href="#" onclick="changeVideo('https://screening.indianafes.info/videos/between-the-great-plains.mp4', 'Between The Great Plains'); return false;"><span class="winner">Between The Great Plains</span></a></li>
+            <li><span class="category">BEST EXPERIMENTAL - SHORT:</span> <span class="winner">Moisture</span></li>
+            <li><span class="category">BEST ANIMATED - SHORT:</span> <a href="#" onclick="changeVideo('https://screening.indianafes.info/videos/out-in-the-west.mp4', 'Out In The West'); return false;"><span class="winner">Out In The West</span></a></li>
+            <li><span class="category">BEST SCI-FI OR FANTASY - SHORT:</span> <a href="#" onclick="changeVideo('https://screening.indianafes.info/videos/memoria-obscura.mp4', 'Memoria Obscura'); return false;"><span class="winner">Memoria Obscura</span></a></li>
+            <li><span class="category">BEST THRILLER - SHORT:</span> <a href="#" onclick="changeVideo('https://screening.indianafes.info/videos/perturbed.mp4', 'Perturbed'); return false;"><span class="winner">Perturbed</span></a></li>
+            <li><span class="category">BEST COMEDY - SHORT:</span> <a href="#" onclick="changeVideo('https://screening.indianafes.info/videos/shut-up-and-suffer.mp4', 'Shut Up And Suffer'); return false;"><span class="winner">Shut Up And Suffer</span></a></li>
+            <li><span class="category">BEST DRAMA - SHORT:</span> <span class="winner">The Cow</span></li>
+            <li><span class="category">BEST HORROR - SHORT:</span> <a href="#" onclick="changeVideo('https://screening.indianafes.info/videos/bugaboo.mp4', 'Bugaboo'); return false;"><span class="winner">Bugaboo</span></a></li>
+            <li><span class="category">BEST ULTRA-SHORT (UNDER 3 MINUTES):</span> <a href="#" onclick="changeVideo('https://screening.indianafes.info/videos/the-recreation.mp4', 'The Recreation'); return false;"><span class="winner">The Recreation</span></a></li>
+            <li><span class="category">BEST SCREENPLAY - SHORT:</span> <span class="winner">The Veil Of Silence</span></li>
+            <li><span class="category">BEST CINEMATOGRAPHY – SHORT:</span> <span class="winner">Alone Together</span></li>
+            <!-- <li><span class="category">BEST SCRIPT (UNPRODUCED) - FEATURE:</span> <span class="winner">Sweet Child's Nemesis</span></li> -->
+            <li><span class="category">BEST DOCUMENTARY - FEATURE:</span> <span class="winner">Morgan Wood "Everything Always Happens So Much"</span></li>
+            <li><span class="category">BEST SCI-FI OR FANTASY - FEATURE:</span> <a href="#" onclick="changeVideo('https://screening.indianafes.info/videos/journey.mp4', 'Journey'); return false;"><span class="winner">Journey</span></a></li>
+            <li><span class="category">BEST FIRST-TIME FILMMAKER:</span> <a href="#" onclick="changeVideo('https://screening.indianafes.info/videos/fangs.mp4', 'Fangs'); return false;"><span class="winner">Fangs</span></a></li>
+            <li><span class="category">BEST LGBTQ+ FILM:</span> <a href="#" onclick="changeVideo('https://screening.indianafes.info/videos/period.mp4', 'Period'); return false;"><span class="winner">Period</span></a></li>
+            <li><span class="category">BEST AI-GENERATED OR AI-THEMED FILM:</span> <a href="#" onclick="changeVideo('https://screening.indianafes.info/videos/the-old-bench-in-new-york.mp4', 'The Old Bench In New York'); return false;"><span class="winner">The Old Bench In New York</span></a></li>
+            <li><span class="category">BEST MUSIC VIDEO:</span> <a href="#" onclick="changeVideo('https://screening.indianafes.info/videos/granny-arrested-getting-off-on-birthday.mp4', 'Grandpa\'s Got A Brand New Pill'); return false;"><span class="winner">Grandpa's Got A Brand New Pill</span></a></li>
+            <li><span class="category">BEST WEB SERIES / PILOT EPISODE:</span> <span class="winner">Dark Corners</span></li>
+            <li><span class="category">BEST STUDENT FILM:</span> <span class="winner">The Waywarede</span></li>
+            <li><span class="category">BEST MICRO-BUDGET FILM:</span> <span class="winner">A Lady's Love</span></li>
+        </ul>
+    </div>
+
+    <!-- Toggle Button -->
+    <button id="toggle-sidebar">Hide Winners List</button>
+
+    <!-- Content Area -->
+    <div id="content">
+        <img id="logo" src="https://indianafes.info/certs/s1/logo.png" alt="Site Logo">
+        <h1>Indiana Short Film Festival Screening</h1>
+        <div id="project-name">Please Select a Project From Sidebar</div>
+        <div id="video-container">
+            <video id="screening-video" controls disablePictureInPicture controlsList="nodownload noplaybackrate">
+                <source src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <button id="play-button">play</button>
+        </div>
+        <footer>&copy; 2026 Indiana Short Film Festival. All rights reserved.</footer>
+    </div>
+
+    <script>
+        const toggleSidebarBtn = document.getElementById('toggle-sidebar');
+        const sidebar = document.getElementById('sidebar');
+        const content = document.getElementById('content');
+        const logo = document.getElementById('logo');
+        const video = document.getElementById('screening-video');
+        const playButton = document.getElementById('play-button');
+        const projectName = document.getElementById('project-name');
+        const videocontainer = document.getElementById('video-container');
+
+        function changeVideo(sourceUrl, name) {
+            video.pause();
+            video.querySelector('source').src = sourceUrl;
+            video.load();
+            playButton.style.display = 'block';
+            projectName.textContent = name;
+            sidebar.classList.toggle('closed');
+            content.classList.toggle('closed');
+            toggleSidebarBtn.classList.toggle('closed');
+            videocontainer.style.display = 'inline';
+            if (sidebar.classList.contains('closed')) {
+                toggleSidebarBtn.textContent = 'Show Winners List';
+                logo.style.opacity = 1;
+            } else {
+                toggleSidebarBtn.textContent = 'Hide Winners List';
+                logo.style.opacity = 0;
+            }
+        }
+
+        playButton.addEventListener('click', function () {
+            video.play();
+            playButton.style.display = 'none';
+        });
+
+        video.addEventListener('pause', function () {
+            playButton.style.display = 'block';
+        });
+
+        video.addEventListener('play', function () {
+            playButton.style.display = 'none';
+        });
+
+        toggleSidebarBtn.addEventListener('click', function () {
+            sidebar.classList.toggle('closed');
+            content.classList.toggle('closed');
+            toggleSidebarBtn.classList.toggle('closed');
+            if (sidebar.classList.contains('closed')) {
+                toggleSidebarBtn.textContent = 'Show Winners List';
+                logo.style.opacity = 1;
+            } else {
+                toggleSidebarBtn.textContent = 'Hide Winners List';
+                logo.style.opacity = 0;
+            }
+        });
+
+        // Disable right-click and handle fullscreen like in s3
+        const videoitem = document.getElementById('screening-video');
+        if (videoitem) {
+            videoitem.addEventListener('contextmenu', function (e) {
+                e.preventDefault();
+            });
+
+            videoitem.addEventListener('dblclick', function (e) {
+                e.preventDefault();
+                toggleFullScreen(videoitem);
+            });
+        }
+
+        function toggleFullScreen(element) {
+            if (!document.fullscreenElement) {
+                if (element.requestFullscreen) {
+                    element.requestFullscreen();
+                } else if (element.mozRequestFullScreen) {
+                    element.mozRequestFullScreen();
+                } else if (element.webkitRequestFullscreen) {
+                    element.webkitRequestFullscreen();
+                } else if (element.msRequestFullscreen) {
+                    element.msRequestFullscreen();
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.mozCancelFullScreen) {
+                    document.mozCancelFullScreen();
+                } else if (document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) {
+                    document.msExitFullscreen();
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
