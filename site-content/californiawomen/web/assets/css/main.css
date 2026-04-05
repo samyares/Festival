@@ -975,6 +975,125 @@ section,
 }
 
 /*--------------------------------------------------------------
+# Winners Section
+--------------------------------------------------------------*/
+.winners-section .winners-panel {
+  max-width: 880px;
+  background-color: var(--surface-color);
+  border-radius: 16px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  box-shadow: 0 10px 40px color-mix(in srgb, var(--heading-color), transparent 92%);
+  overflow: hidden;
+}
+
+.winners-section .winners-panel-main.section-title {
+  padding: 2.5rem 1.75rem 1.75rem;
+  padding-bottom: 1.75rem;
+}
+
+@media (min-width: 576px) {
+  .winners-section .winners-panel-main.section-title {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+.winners-section .winners-panel-lead {
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.75rem;
+  color: color-mix(in srgb, var(--default-color), transparent 18%);
+}
+
+.winners-section .winners-panel-actions {
+  margin-bottom: 0;
+  max-width: 52rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.winners-section .winners-session-btn {
+  font-weight: 600;
+  white-space: normal;
+  line-height: 1.35;
+  min-height: 3.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.winners-section .winners-panel-footer {
+  padding: 1.35rem 1.5rem 1.6rem;
+  text-align: center;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--accent-color), transparent 94%) 0%,
+    color-mix(in srgb, var(--accent-color), transparent 88%) 100%
+  );
+  border-top: 1px solid color-mix(in srgb, var(--accent-color), transparent 78%);
+}
+
+.winners-section .winners-panel-footer-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--heading-color), transparent 25%);
+  margin-bottom: 0.85rem;
+}
+
+.winners-section .winners-session-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 0.65rem;
+}
+
+.winners-section .winners-session-list li {
+  display: inline-flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem 0.5rem;
+  padding: 0.45rem 0.95rem;
+  background-color: var(--surface-color);
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 65%);
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--heading-color), transparent 94%);
+}
+
+.winners-section .winners-session-chip {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.winners-section .winners-session-dates {
+  font-size: 0.8125rem;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+}
+
+.winners-section .winners-panel-note {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: color-mix(in srgb, var(--default-color), transparent 28%);
+  max-width: 26rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.winners-section .winners-panel-note .bi {
+  vertical-align: -0.1em;
+  opacity: 0.85;
+}
+
+/*--------------------------------------------------------------
 # Stats Section
 --------------------------------------------------------------*/
 .stats .stats-item {

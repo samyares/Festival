@@ -40,8 +40,8 @@ services:
       - --entrypoints.websecure.http.tls.domains[3].sans=*.framesofnewyork.online
       - --entrypoints.websecure.http.tls.domains[4].main=londonwomenfilmfestival.info
       - --entrypoints.websecure.http.tls.domains[4].sans=*.londonwomenfilmfestival.info
-      - --entrypoints.websecure.http.tls.domains[5].main=californiawomenff.info
-      - --entrypoints.websecure.http.tls.domains[5].sans=*.californiawomenff.info
+      - --entrypoints.websecure.http.tls.domains[5].main=cawff.online
+      - --entrypoints.websecure.http.tls.domains[5].sans=*.cawff.online
 
       - --metrics.prometheus=true
       - --metrics.prometheus.addEntryPointsLabels=true
@@ -160,7 +160,7 @@ services:
       - ./site-content/californiawomen/nginx:/etc/nginx/conf.d
       - ./site-content/californiawomen/certs:/var/www/html/certs
     labels:
-      - "traefik.http.routers.californiawomen.rule=Host(`californiawomenff.info`)"
+      - "traefik.http.routers.californiawomen.rule=Host(`cawff.online`)"
       - "traefik.http.routers.californiawomen.entrypoints=websecure"
       - "traefik.http.services.californiawomen.loadbalancer.server.port=80"
       - "traefik.http.routers.californiawomen.tls.certresolver=letsencrypt"
