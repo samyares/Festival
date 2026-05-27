@@ -214,6 +214,235 @@ window.festivalsData = [
     ]
   },
   {
+    id: 'californiawomenff-s3',
+    name: 'California Women Film Festival',
+    description: 'A bold and independent platform dedicated to showcasing the creative power, depth, and diversity of women in film.',
+    location: 'California, USA',
+    year: 2026,
+    status: 'active',
+    logo: 'data/CaliforniaWomenFilmFestival/logo.jpg',
+    dutyDate: 'Screening: April 11–12, 2026 · Season 3: November 2025–April 2026',
+    validTickets: ['C-2026-A3', 'CS3'],
+    categories: [
+      {
+        id: 'best-short-film',
+        name: 'Best Short Film',
+        winner: {
+          title: 'The Isle',
+          videoUrl: 'data/CaliforniaWomenFilmFestival/movies/the-isle.mp4'
+        }
+      },
+      {
+        id: 'best-short-actress',
+        name: 'Best Short Actress',
+        winner: {
+          title: 'The Session — Idalina Leandro',
+          videoUrl: 'data/CaliforniaWomenFilmFestival/movies/the-session.mp4'
+        }
+      },
+      {
+        id: 'best-short-documentary',
+        name: 'Best Short Documentary',
+        winner: {
+          title: 'Fragments Of Memory',
+          videoUrl: 'data/CaliforniaWomenFilmFestival/movies/fragments-of-memory.mp4'
+        }
+      },
+      {
+        id: 'best-short-dance',
+        name: 'Best Short Dance',
+        winner: {
+          title: 'The Dust Of This Place',
+          videoUrl: 'data/CaliforniaWomenFilmFestival/movies/the-dust-of-this-place.mp4'
+        }
+      },
+      {
+        id: 'best-short-narrative',
+        name: 'Best Short Narrative',
+        winner: {
+          title: 'Behind A Smile',
+          videoUrl: 'data/CaliforniaWomenFilmFestival/movies/behind-a-smile.mp4'
+        }
+      },
+      {
+        id: 'best-feature-director',
+        name: 'Best Feature Director',
+        winner: {
+          title: 'Norseman — Human Endurance',
+          videoUrl: 'data/CaliforniaWomenFilmFestival/movies/norseman.mp4'
+        }
+      },
+      {
+        id: 'best-feature-actress',
+        name: 'Best Feature Actress',
+        winner: {
+          title: 'A Year In London — Melanie Liburd',
+          videoUrl: 'data/CaliforniaWomenFilmFestival/movies/a-year-in-london.mp4'
+        }
+      },
+      {
+        id: 'best-feature-actor',
+        name: 'Best Feature Actor',
+        winner: {
+          title: 'The Last Goodbye — Enric Molina Soler',
+          videoUrl: 'data/CaliforniaWomenFilmFestival/movies/the-last-goodbye.mp4'
+        }
+      },
+      {
+        id: 'best-feature-script',
+        name: 'Best Feature Script',
+        winner: {
+          title: 'The Blue Above And The Gold Within',
+          videoUrl: 'data/CaliforniaWomenFilmFestival/movies/the-blue-above-and-the-gold-within.mp4'
+        }
+      },
+      {
+        id: 'best-feature-documentary',
+        name: 'Best Feature Documentary',
+        winner: {
+          title: 'Morgan Wood "Everything Always Happens So Much"',
+          videoUrl: 'data/CaliforniaWomenFilmFestival/movies/morgan-wood-everything-always-happens-so-much.mp4'
+        }
+      },
+      {
+        id: 'best-feature-narrative',
+        name: 'Best Feature Narrative',
+        winner: {
+          title: 'The Last Goodbye',
+          videoUrl: 'data/CaliforniaWomenFilmFestival/movies/the-last-goodbye.mp4'
+        }
+      },
+      {
+        id: 'best-film-about-women',
+        name: 'Best Film About Women',
+        winner: {
+          title: 'A Brave Old World',
+          videoUrl: 'data/CaliforniaWomenFilmFestival/movies/a-brave-old-world.mp4'
+        }
+      },
+      {
+        id: 'best-student',
+        name: 'Best Student',
+        winner: {
+          title: 'The Country Gentlewoman: Christmas Edition',
+          videoUrl: 'data/CaliforniaWomenFilmFestival/movies/the-country-gentlewoman-christmas-edition.mp4'
+        }
+      },
+      {
+        id: 'best-animation',
+        name: 'Best Animation',
+        winner: {
+          title: 'Lifted',
+          videoUrl: 'data/CaliforniaWomenFilmFestival/movies/lifted.mp4'
+        }
+      },
+      {
+        id: 'best-cinematographer',
+        name: 'Best Cinematographer',
+        winner: {
+          title: 'The Pause',
+          videoUrl: 'data/CaliforniaWomenFilmFestival/movies/the-pause.mp4'
+        }
+      },
+      {
+        id: 'best-producer',
+        name: 'Best Producer',
+        winner: {
+          title: 'Anhedonia',
+          videoUrl: 'data/CaliforniaWomenFilmFestival/movies/anhedonia.mp4'
+        }
+      },
+      {
+        id: 'best-lgbtq',
+        name: 'Best LGBTQ',
+        winner: {
+          title: 'Silent Crosses',
+          videoUrl: 'data/CaliforniaWomenFilmFestival/movies/silent-crosses.mp4'
+        }
+      },
+      {
+        id: 'best-composer',
+        name: 'Best Composer',
+        winner: {
+          title: 'Malevolent',
+          videoUrl: 'data/CaliforniaWomenFilmFestival/movies/malevolent.mp4'
+        }
+      },
+      {
+        id: 'best-experimental',
+        name: 'Best Experimental',
+        winner: {
+          title: 'Akin',
+          videoUrl: 'data/CaliforniaWomenFilmFestival/movies/akin.mp4'
+        }
+      },
+      {
+        id: 'best-human-rights',
+        name: 'Best Human Rights',
+        winner: {
+          title: 'I Will Never Forget You',
+          videoUrl: 'data/CaliforniaWomenFilmFestival/movies/i-will-never-forget-you.mp4'
+        }
+      },
+      {
+        id: 'best-al',
+        name: 'Best Al',
+        winner: {
+          title: 'A Nest In My Heart',
+          videoUrl: 'data/CaliforniaWomenFilmFestival/movies/a-nest-in-my-heart.mp4'
+        }
+      },
+      {
+        id: 'best-music-video',
+        name: 'Best Music Video',
+        winner: {
+          title: 'Out Of The Blue',
+          videoUrl: 'data/CaliforniaWomenFilmFestival/movies/out-of-the-blue.mp4'
+        }
+      },
+      {
+        id: 'best-first-time-filmmaker',
+        name: 'Best First Time Filmmaker',
+        winner: {
+          title: 'The Overlook',
+          videoUrl: 'data/CaliforniaWomenFilmFestival/movies/the-overlook.mp4'
+        }
+      },
+      {
+        id: 'best-womens-rights',
+        name: "Best Women's Rights",
+        winner: {
+          title: 'Captive Women',
+          videoUrl: 'data/CaliforniaWomenFilmFestival/movies/captive-women.mp4'
+        }
+      },
+      {
+        id: 'best-trailer',
+        name: 'Best Trailer',
+        winner: {
+          title: 'The Support Sake Tour',
+          videoUrl: 'data/CaliforniaWomenFilmFestival/movies/the-support-sake-tour.mp4'
+        }
+      },
+      {
+        id: 'best-inspiration-film',
+        name: 'Best Inspiration Film',
+        winner: {
+          title: 'Help',
+          videoUrl: 'data/CaliforniaWomenFilmFestival/movies/help.mp4'
+        }
+      },
+      {
+        id: 'best-ensemble-acting',
+        name: 'Best Ensemble Acting',
+        winner: {
+          title: "A Ghost's Journey",
+          videoUrl: 'data/CaliforniaWomenFilmFestival/movies/a-ghosts-journey.mp4'
+        }
+      }
+    ]
+  },
+  {
     id: 'ottawafilmaward',
     name: 'Ottawa Film Award',
     description: 'Cinema unites us through storytelling.',
