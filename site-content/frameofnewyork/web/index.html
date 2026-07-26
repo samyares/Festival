@@ -13,6 +13,11 @@
         <!-- Fonts CSS-->
         <link rel="stylesheet" href="css/heading.css">
         <link rel="stylesheet" href="css/body.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+        <!-- Cinematic theme overrides-->
+        <link rel="stylesheet" href="css/cinematic.css">
         <style>
             .masthead {
                 position: relative;
@@ -44,7 +49,7 @@
                 <source src="assets/img/back.mp4" type="video/mp4">
             </video>
             <!-- Overlay for better text visibility-->
-            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
+            <div class="masthead-overlay"></div>
             <div class="container d-flex align-items-center flex-column" style="position: relative; z-index: 2;">
                 <!-- Masthead Avatar Image--><img class="masthead-avatar mb-5" src="assets/img/0291c1bc-c173-4eea-b471-1311d99a17a7_removalai_preview.png" alt="">
                 <!-- Masthead Heading-->
@@ -92,11 +97,10 @@
                     </div>
                     <div class="modal-body text-center py-5">
                         <i class="fas fa-film fa-3x text-primary mb-4"></i>
-                        <h4 class="mb-3">Screening Opens Later!</h4>
-                        <p class="lead mb-4">Our exclusive film screening event will be available on:</p>
-                        <!-- <h3 class="text-primary mb-4"><strong>February 28, 2026</strong></h3> -->
-                        <h3 class="text-primary mb-4"><strong>Not Set Yet!</strong></h3>
-                        <p class="text-muted">The screening platform is not open yet. Please check back on the opening date to watch our award-winning films!</p>
+                        <h4 class="mb-3">The Screening Has Ended</h4>
+                        <p class="lead mb-4">Our exclusive film screening event took place on:</p>
+                        <h3 class="text-primary mb-4"><strong>4 &amp; 5 July</strong></h3>
+                        <p class="text-muted">Thank you to everyone who joined us. The screening is now closed &mdash; stay tuned for our next event!</p>
                     </div>
                     <div class="modal-footer justify-content-center">
                         <button type="button" class="btn btn-primary" data-dismiss="modal">Got it!</button>
@@ -125,7 +129,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <div class="btn btn-secondary btn-lg" style="width: 100%; height: 200px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; background-color: #495057; border-color: #495057;">
+                            <div class="season-tile">
                                 Season One
                             </div>
                         </div>
@@ -135,7 +139,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <div class="btn btn-secondary btn-lg" style="width: 100%; height: 200px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; background-color: #495057; border-color: #495057;">
+                            <div class="season-tile">
                                 Season Two
                             </div>
                         </div>
@@ -145,7 +149,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <div class="btn btn-secondary btn-lg" style="width: 100%; height: 200px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; background-color: #495057; border-color: #495057;">
+                            <div class="season-tile">
                                 Season Three
                             </div>
                         </div>
@@ -155,8 +159,18 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <div class="btn btn-secondary btn-lg" style="width: 100%; height: 200px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; background-color: #495057; border-color: #495057;">
+                            <div class="season-tile">
                                 Season Four
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal4">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <div class="season-tile">
+                                Season Five
                             </div>
                         </div>
                     </div>
@@ -174,7 +188,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-lg-8">
                                     <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary mb-0">Seasion One</h2>
+                                    <h2 class="portfolio-modal-title text-secondary mb-0">Season One</h2>
                                     <!-- Icon Divider-->
                                     <div class="divider-custom">
                                         <div class="divider-custom-line"></div>
@@ -944,6 +958,220 @@
             </div>
         </div>
         
+        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-labelledby="#portfolioModal4Label" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fas fa-times"></i></span></button>
+                    <div class="modal-body text-center">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary mb-0">Season Five</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Text-->
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-hover">
+                                            <thead class="thead-dark">
+                                                <tr>
+                                                    <th>Award Category</th>
+                                                    <th>Winner</th>
+                                                    <th>Certificate</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Best Feature Film</td>
+                                                    <td>On Life - Children&rsquo;s University</td>
+                                                    <td><a href="certs/s5/best%20feature%20film.jpeg" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Short Film</td>
+                                                    <td>One Last Show In Taghmon</td>
+                                                    <td><a href="certs/s5/Best%20Short%20Film.jpeg" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Documentary</td>
+                                                    <td>Crushed Time</td>
+                                                    <td><a href="certs/s5/Best%20Documentary.jpeg" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Animation</td>
+                                                    <td>The Lighthouse Keeper</td>
+                                                    <td><a href="certs/s5/Best%20Animation.jpeg" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Experimental</td>
+                                                    <td>Not Uniquely Incompetent</td>
+                                                    <td><a href="certs/s5/Best%20Experimental.jpeg" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Debut Film</td>
+                                                    <td>Nothing To See Here: Watts</td>
+                                                    <td><a href="certs/s5/Best%20Debut%20Film.jpeg" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Student Film</td>
+                                                    <td>A Slice Of Gaza Jannah</td>
+                                                    <td><a href="certs/s5/Best%20Student%20Film.jpeg" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Student Directing</td>
+                                                    <td>Visage</td>
+                                                    <td><a href="certs/s5/Best%20Student%20Directing.jpeg" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Director</td>
+                                                    <td>Hide</td>
+                                                    <td><a href="certs/s5/Best%20Director.jpeg" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Woman Director</td>
+                                                    <td>Allowed To Birth: The Journey Of A Global Midwife</td>
+                                                    <td><a href="certs/s5/Best%20Woman%20Director.jpeg" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Man Director</td>
+                                                    <td>Pandemonium</td>
+                                                    <td><a href="certs/s5/Best%20man%20Director.jpeg" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best First Time Filmmaking</td>
+                                                    <td>Unremarkable</td>
+                                                    <td><a href="certs/s5/Best%20First%20Time%20Filmmaking.jpeg" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Script</td>
+                                                    <td>To Women Breaking Shackles</td>
+                                                    <td><a href="certs/s5/Best%20Script.jpeg" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Unproduced Script</td>
+                                                    <td>A Life Unravelled</td>
+                                                    <td><a href="certs/s5/Best%20unproduced%20Script.jpeg" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Screenplay</td>
+                                                    <td>Child Of Dawn</td>
+                                                    <td><a href="certs/s5/Best%20Screenplay.jpeg" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Cinematography</td>
+                                                    <td>Date Night</td>
+                                                    <td><a href="certs/s5/Best%20Cinematography.jpeg" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Narrative</td>
+                                                    <td>Like A Willow Tree</td>
+                                                    <td><a href="certs/s5/Best%20Narrative.jpeg" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best International Film</td>
+                                                    <td>Echoes From The Key Bridge: A Baltimore Longshoreman</td>
+                                                    <td><a href="certs/s5/Best%20International%20Film.jpeg" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best American Film</td>
+                                                    <td>Nothing To See Here: Watts</td>
+                                                    <td><a href="certs/s5/Best%20American%20Film.jpeg" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Actor</td>
+                                                    <td>Love Lives On/Nino Spillacci</td>
+                                                    <td><a href="certs/s5/Best%20Actor.jpeg" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Actress</td>
+                                                    <td>Dinner For Two/Asli Kobanbay</td>
+                                                    <td><a href="certs/s5/Best%20Actress.jpeg" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Ensemble Cast</td>
+                                                    <td>One Moment</td>
+                                                    <td><a href="certs/s5/Best%20Ensemble%20Cast.jpeg" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Comedy</td>
+                                                    <td>The Heiress</td>
+                                                    <td><a href="certs/s5/Best%20Comedy.jpeg" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Horror</td>
+                                                    <td>She Who Remembers</td>
+                                                    <td><a href="certs/s5/Best%20Horror.jpeg" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Science Fiction</td>
+                                                    <td>Bad Love Strikes</td>
+                                                    <td><a href="certs/s5/Best%20Science%20Fiction.jpeg" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Thriller</td>
+                                                    <td>Shelf Life</td>
+                                                    <td><a href="certs/s5/Best%20Thriller.jpeg" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Women Empowerment</td>
+                                                    <td>Pathway To Hope</td>
+                                                    <td><a href="certs/s5/Best%20Women%20Empowerment.jpeg" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Micro</td>
+                                                    <td>Kev</td>
+                                                    <td><a href="certs/s5/Best%20Micro.jpeg" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Drama</td>
+                                                    <td>The Eulogy</td>
+                                                    <td><a href="certs/s5/Best%20Drama.jpeg" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Trailer</td>
+                                                    <td>Bad Influence</td>
+                                                    <td><a href="certs/s5/Best%20Trailer.jpeg" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Low Budget</td>
+                                                    <td>The Blind Man&rsquo;s Confessions</td>
+                                                    <td><a href="certs/s5/Best%20Low%20Budgetjpeg.jpeg" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Original Score</td>
+                                                    <td>Bajo La Sombra Del Enemigo</td>
+                                                    <td><a href="certs/s5/Best%20Original%20Score.jpeg" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Soundtrack</td>
+                                                    <td>After Party</td>
+                                                    <td><a href="certs/s5/Best%20Soundtrack.jpeg" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Producer</td>
+                                                    <td>Hope: Introducing Dick Dyman</td>
+                                                    <td><a href="certs/s5/Best%20Producer.jpeg" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Best Poster</td>
+                                                    <td>One Moment</td>
+                                                    <td><a href="certs/s5/Best%20Poster.jpeg" download class="btn btn-sm btn-primary"><i class="fas fa-download"></i> Download</a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <button class="btn btn-primary" href="#" data-dismiss="modal"><i class="fas fa-times fa-fw"></i>Close Window</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <section class="page-section bg-primary text-white mb-0" id="about">
             <div class="container">
                 <!-- About Section Heading-->
@@ -1002,7 +1230,7 @@ Selection Process: Films will be evaluated by a jury panel. The festival reserve
                     <div class="col-lg-4">
                         <div class="d-flex flex-column align-items-center">
                             <div class="icon-contact mb-3"><i class="far fa-envelope"></i></div>
-                            <div class="text-muted">Email</div><a class="lead font-weight-bold" href="mailto:support@frameofnewyork.info">support@frameofnewyork.info</a>
+                            <div class="text-muted">Email</div><a class="lead font-weight-bold" href="mailto:support@framesofnewyork.online">support@framesofnewyork.online</a>
                         </div>
                     </div>
 
@@ -1038,7 +1266,7 @@ Selection Process: Films will be evaluated by a jury panel. The festival reserve
         </footer>
         <!-- Copyright Section-->
         <section class="copyright py-4 text-center text-white">
-            <div class="container"><small class="pre-wrap">Copyright © Frames of Newyork Film Festival 2025  </small></div>
+            <div class="container"><small class="pre-wrap">Copyright © Frames of Newyork Film Festival 2026  </small></div>
         </section>
         <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
         <div class="scroll-to-top d-lg-none position-fixed"><a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
