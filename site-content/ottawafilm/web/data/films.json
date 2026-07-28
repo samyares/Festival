@@ -1,0 +1,173 @@
+{
+  "screening": {
+    "open": true,
+    "opensText": "1–3 August 2026"
+  },
+  "season": "July 2026",
+  "videoBase": "https://ottawafilm.site/movies/",
+  "ticketCode": "OFA-2026-AUG",
+  "films": [
+    {
+      "category": "Best Short Film",
+      "title": "Great Games",
+      "file": "great-games.mp4",
+      "cleared": false
+    },
+    {
+      "category": "Best Feature Film",
+      "title": "Sleepwalk",
+      "file": "sleepwalk.mp4",
+      "cleared": false
+    },
+    {
+      "category": "Best Short Short",
+      "title": "Sandsailors",
+      "file": "sandsailors.mp4",
+      "cleared": false
+    },
+    {
+      "category": "Best Short Director",
+      "title": "Amazônia Xamã Br",
+      "file": "amaznia-xam-br.mp4",
+      "cleared": false
+    },
+    {
+      "category": "Best Feature Director",
+      "title": "Brother In Law",
+      "file": "brother-in-law.mp4",
+      "cleared": false
+    },
+    {
+      "category": "Best Short Actress",
+      "title": "Elizabeth In The Park/Marie Grillo",
+      "file": "marie-grillo.mp4",
+      "cleared": false
+    },
+    {
+      "category": "Best Feature Actress",
+      "title": "Maya/Mukta Barve",
+      "file": "maya.mp4",
+      "cleared": false
+    },
+    {
+      "category": "Best Short Actor",
+      "title": "Soupe Aux Tomates/Andrew Iddon",
+      "file": "soupe-aux-tomates.mp4",
+      "cleared": false
+    },
+    {
+      "category": "Best Short Script",
+      "title": "The Sea And She",
+      "file": "the-sea-and-she.mp4",
+      "cleared": false
+    },
+    {
+      "category": "Best International Short Narrative",
+      "title": "The Pulse Of The Phoenix",
+      "file": "the-pulse-of-the-phoenix.mp4",
+      "cleared": false
+    },
+    {
+      "category": "Best International Feature Narrative",
+      "title": "Unremarkable",
+      "file": "unremarkable.mp4",
+      "cleared": false
+    },
+    {
+      "category": "Best Short Editing",
+      "title": "Heart Felt",
+      "file": "heart-felt.mp4",
+      "cleared": false
+    },
+    {
+      "category": "Best Documentary",
+      "title": "Respect My Crown: The Rise Of African American Women In California Politics",
+      "file": "respect-my-crown-the-rise-of-african-american-women-in-california-politics.mp4",
+      "cleared": false
+    },
+    {
+      "category": "Best Experimental",
+      "title": "The Light We Follow",
+      "file": "the-light-we-follow.mp4",
+      "cleared": false
+    },
+    {
+      "category": "Best Animation",
+      "title": "Urayuli",
+      "file": "urayuli.mp4",
+      "cleared": false
+    },
+    {
+      "category": "Best Student",
+      "title": "Donna Davis",
+      "file": "donna-davis.mp4",
+      "cleared": false
+    },
+    {
+      "category": "Best Screenplay",
+      "title": "Nkoa",
+      "file": "nkoa.mp4",
+      "cleared": false
+    },
+    {
+      "category": "Best Composer",
+      "title": "Magic Maia",
+      "file": "magic-maia.mp4",
+      "cleared": false
+    },
+    {
+      "category": "Best Cinematography",
+      "title": "Gladice",
+      "file": "gladice.mp4",
+      "cleared": false
+    },
+    {
+      "category": "Best LGBTQ",
+      "title": "Phantas Homoria",
+      "file": "phantas-homoria.mp4",
+      "cleared": false
+    },
+    {
+      "category": "Best Thriller",
+      "title": "Vaelena",
+      "file": "vaelena.mp4",
+      "cleared": false
+    },
+    {
+      "category": "Best Sci-Fi",
+      "title": "The Planet That Doesn't Exist",
+      "file": "the-planet-that-doesnt-exist.mp4",
+      "cleared": false
+    },
+    {
+      "category": "Best Drama",
+      "title": "To Women Breaking Shackles",
+      "file": "to-women-breaking-shackles.mp4",
+      "cleared": false
+    },
+    {
+      "category": "Best Producer",
+      "title": "Dreams Beyond Tomorrow",
+      "file": "dreams-beyond-tomorrow.mp4",
+      "cleared": false
+    },
+    {
+      "category": "Best Woman Empowerment",
+      "title": "Coach Kim",
+      "file": "coach-kim.mp4",
+      "cleared": false
+    },
+    {
+      "category": "Best AI",
+      "title": "The House Of The Magic Dolls",
+      "file": "the-house-of-the-magic-dolls.mp4",
+      "cleared": false
+    },
+    {
+      "category": "Best Adventure",
+      "title": "The Perfect Cocktail",
+      "file": "the-perfect-cocktail.mp4",
+      "cleared": false
+    }
+  ]
+}

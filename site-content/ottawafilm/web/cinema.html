@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <meta name="description" content="The Ottawa Film Award auditorium — screening this season's winning films." />
+    <title>Ottawa Film Award — The Auditorium</title>
+    <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg" />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Bebas+Neue&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+    <link href="css/styles.css?v=20260728i" rel="stylesheet" />
+</head>
+
+<body class="cinema-body">
+    <header class="cinema-header">
+        <a class="brand" href="/">
+            <img src="assets/img/logo.svg" alt="Ottawa Film Award logo" />
+            <span class="brand-text">Ottawa Film Award</span>
+        </a>
+        <div class="cinema-header-meta">
+            <span class="cinema-season" id="cinema-season"></span>
+            <a class="cinema-exit" href="/">Exit ✕</a>
+        </div>
+    </header>
+
+    <main class="house">
+        <div class="house-screen-wrap">
+            <div class="house-glow" aria-hidden="true"></div>
+            <div class="house-screen">
+
+                <!-- Programme -->
+                <div class="programme" id="programme">
+                    <div class="programme-head">
+                        <span class="programme-eyebrow" id="programme-eyebrow">Tonight’s programme</span>
+                        <h1 class="programme-title" id="programme-title">Now Showing</h1>
+                    </div>
+                    <div class="programme-list" id="programme-list"></div>
+                    <p class="programme-empty" id="programme-empty" hidden></p>
+                </div>
+
+                <!-- Playback -->
+                <div class="player" id="player" hidden></div>
+
+                <!-- Between states -->
+                <div class="house-status" id="house-status" hidden></div>
+            </div>
+
+            <button class="house-back" id="house-back" type="button" hidden>← Programme</button>
+        </div>
+
+        <div class="stage" aria-hidden="true"></div>
+
+        <div class="house-seats" aria-hidden="true">
+            <span class="house-row" style="--i:0"></span>
+            <span class="house-row" style="--i:1"></span>
+            <span class="house-row" style="--i:2"></span>
+            <span class="house-row" style="--i:3"></span>
+            <span class="house-row" style="--i:4"></span>
+        </div>
+
+        <div class="house-caption" id="house-caption"></div>
+    </main>
+
+    <script src="js/screening-gate.js?v=20260728i"></script>
+    <script src="js/cinema.js?v=20260728i"></script>
+</body>
+
+</html>

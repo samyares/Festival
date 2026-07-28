@@ -1,0 +1,841 @@
+{
+  "defaultSeason": "jul26",
+  "seasons": [
+    {
+      "id": "aug24",
+      "title": "August 2024",
+      "label": "Aug 2024",
+      "certFolder": "s1",
+      "winners": [
+        {
+          "category": "BEST FEATURE FILM",
+          "project": "IL Morso Del Ramarro",
+          "pdf": "https://ottawafilm.site/certs/s1/best-feature-film.pdf"
+        },
+        {
+          "category": "BEST SHORT FILM",
+          "project": "1:11",
+          "pdf": "https://ottawafilm.site/certs/s1/best-short-film.pdf"
+        },
+        {
+          "category": "BEST SHORT SHORT",
+          "project": "A Summer's Life",
+          "pdf": "https://ottawafilm.site/certs/s1/best-short-short.pdf"
+        },
+        {
+          "category": "BEST DIRECTOR SHORT",
+          "project": "Serve No Purpose",
+          "pdf": "https://ottawafilm.site/certs/s1/best-director-short.pdf"
+        },
+        {
+          "category": "BEST ACTRESS IN SHORT",
+          "project": "Sic Itur ad Astra - Alyssa Salomon",
+          "pdf": "https://ottawafilm.site/certs/s1/best-actress-in-short.pdf"
+        },
+        {
+          "category": "BEST ACTOR IN SHORT",
+          "project": "Bergamot - Marcio Rosario",
+          "pdf": "https://ottawafilm.site/certs/s1/best-actor-in-short.pdf"
+        },
+        {
+          "category": "BEST SCRIPT",
+          "project": "Vanités",
+          "pdf": "https://ottawafilm.site/certs/s1/best-script.pdf"
+        },
+        {
+          "category": "BEST INTERNATIONAL NARRATIVE SHORT",
+          "project": "Dojo",
+          "pdf": "https://ottawafilm.site/certs/s1/best-international-narrative-short.pdf"
+        },
+        {
+          "category": "BEST DOCUMENTARY",
+          "project": "Free Speech to Cancel Culture; Profiles in Canadian Comedy",
+          "pdf": "https://ottawafilm.site/certs/s1/best-documentary.pdf"
+        },
+        {
+          "category": "BEST EXPERIMENTAL",
+          "project": "Dreaming Vincent",
+          "pdf": "https://ottawafilm.site/certs/s1/best-experimental.pdf"
+        },
+        {
+          "category": "BEST ANIMATION",
+          "project": "The Forest Of The Honey Bees",
+          "pdf": "https://ottawafilm.site/certs/s1/best-animation.pdf"
+        },
+        {
+          "category": "BEST STUDENT",
+          "project": "Meat the One",
+          "pdf": "https://ottawafilm.site/certs/s1/best-student.pdf"
+        },
+        {
+          "category": "BEST SCREENPLAY",
+          "project": "Sic Itur ad Astra",
+          "pdf": "https://ottawafilm.site/certs/s1/best-screenplay.pdf"
+        },
+        {
+          "category": "BEST UNPRODUCED SCRIPT",
+          "project": "Golden Rules",
+          "pdf": "https://ottawafilm.site/certs/s1/best-unproduced-script.pdf"
+        },
+        {
+          "category": "BEST FIRST-TIME DIRECTOR",
+          "project": "Whispers: Waves of the Diary",
+          "pdf": "https://ottawafilm.site/certs/s1/best-first-time-director.pdf"
+        },
+        {
+          "category": "BEST COMPOSER",
+          "project": "Go West",
+          "pdf": "https://ottawafilm.site/certs/s1/best-composer.pdf"
+        },
+        {
+          "category": "BEST MUSIC VIDEO",
+          "project": "The Royals",
+          "pdf": "https://ottawafilm.site/certs/s1/best-music-video.pdf"
+        },
+        {
+          "category": "BEST CINEMATOGRAPHY",
+          "project": "Invisible Nation",
+          "pdf": "https://ottawafilm.site/certs/s1/best-cinematography.pdf"
+        },
+        {
+          "category": "BEST EDITING",
+          "project": "Take Your Space",
+          "pdf": "https://ottawafilm.site/certs/s1/best-editing.pdf"
+        }
+      ]
+    },
+    {
+      "id": "oct24",
+      "title": "October 2024",
+      "label": "Oct 2024",
+      "certFolder": "s2",
+      "winners": [
+        {
+          "category": "BEST SHORT FILM",
+          "project": "Lockjaw",
+          "pdf": "https://ottawafilm.site/certs/s2/BEST-SHORT-FILM.pdf"
+        },
+        {
+          "category": "BEST FEATURE FILM",
+          "project": "IRISO",
+          "pdf": "https://ottawafilm.site/certs/s2/BEST-FEATURE-FILM.pdf"
+        },
+        {
+          "category": "BEST SHORT SHORT",
+          "project": "Snow White and the Seven Dwarfs",
+          "pdf": "https://ottawafilm.site/certs/s2/BEST-SHORT-SHORT.pdf"
+        },
+        {
+          "category": "BEST SHORT DIRECTOR",
+          "project": "Operation Talus",
+          "pdf": "https://ottawafilm.site/certs/s2/BEST-SHORT-DIRECTOR.pdf"
+        },
+        {
+          "category": "BEST FEATURE DIRECTOR",
+          "project": "Ndazkoh",
+          "pdf": "https://ottawafilm.site/certs/s2/BEST-FEATURE-DIRECTOR.pdf"
+        },
+        {
+          "category": "BEST SHORT ACTRESS",
+          "project": "Kristin Streu - Family Traditions",
+          "pdf": "https://ottawafilm.site/certs/s2/BEST-SHORT-ACTRESS.pdf"
+        },
+        {
+          "category": "BEST FEATURE ACTRESS",
+          "project": "Bai Ling - The Key",
+          "pdf": "https://ottawafilm.site/certs/s2/BEST-FEATURE-ACTRESS.pdf"
+        },
+        {
+          "category": "BEST SHORT ACTOR",
+          "project": "Clay Gibson - Family Traditions",
+          "pdf": "https://ottawafilm.site/certs/s2/BEST-SHORT-ACTOR.pdf"
+        },
+        {
+          "category": "BEST SHORT SCRIPT",
+          "project": "Gorging on Revenge",
+          "pdf": "https://ottawafilm.site/certs/s2/BEST-SHORT-SCRIPT.pdf"
+        },
+        {
+          "category": "BEST FEATURE SCRIPT",
+          "project": "Me",
+          "pdf": "https://ottawafilm.site/certs/s2/BEST-FEATURE-SCRIPT.pdf"
+        },
+        {
+          "category": "BEST UNPRODUCED SCRIPT",
+          "project": "A Hollywood Mom",
+          "pdf": "https://ottawafilm.site/certs/s2/BEST-UNPRODUCED-SCRIPT.pdf"
+        },
+        {
+          "category": "BEST INTERNATIONAL SHORT NARRATIVE",
+          "project": "47",
+          "pdf": "https://ottawafilm.site/certs/s2/BEST-INTERNATIONAL-SHORT-NARRATIVE.pdf"
+        },
+        {
+          "category": "BEST SHORT EDITING",
+          "project": "Kaldur",
+          "pdf": "https://ottawafilm.site/certs/s2/BEST-SHORT-EDITING.pdf"
+        },
+        {
+          "category": "BEST FEATURE EDITING",
+          "project": "The Key",
+          "pdf": "https://ottawafilm.site/certs/s2/BEST-FEATURE-EDITING.pdf"
+        },
+        {
+          "category": "BEST DOCUMENTARY",
+          "project": "Terra Draconis: posterity and prosperity of fossils in the modern age",
+          "pdf": "https://ottawafilm.site/certs/s2/BEST-DOCUMENTARY.pdf"
+        },
+        {
+          "category": "BEST EXPERIMENTAL",
+          "project": "Tape 15",
+          "pdf": "https://ottawafilm.site/certs/s2/BEST-EXPERIMENTAL.pdf"
+        },
+        {
+          "category": "BEST ANIMATION",
+          "project": "The Gourdons - Leaving The Nest Red",
+          "pdf": "https://ottawafilm.site/certs/s2/BEST-ANIMATION.pdf"
+        },
+        {
+          "category": "BEST STUDENT",
+          "project": "Shoebox",
+          "pdf": "https://ottawafilm.site/certs/s2/BEST-STUDENT.pdf"
+        },
+        {
+          "category": "BEST SCREENPLAY",
+          "project": "Pocketful of Mondays",
+          "pdf": "https://ottawafilm.site/certs/s2/BEST-SCREENPLAY.pdf"
+        },
+        {
+          "category": "BEST FIRST-TIME DIRECTOR",
+          "project": "The Red Market",
+          "pdf": "https://ottawafilm.site/certs/s2/BEST-FIRST-TIME-DIRECTOR.pdf"
+        },
+        {
+          "category": "BEST WEB SERIES",
+          "project": "My Brother Lenny",
+          "pdf": "https://ottawafilm.site/certs/s2/BEST-WEB-SERIES.pdf"
+        },
+        {
+          "category": "BEST TV PILOT",
+          "project": "My Brother Lenny",
+          "pdf": "https://ottawafilm.site/certs/s2/BEST-TV-PILOT.pdf"
+        },
+        {
+          "category": "BEST CINEMATOGRAPHY",
+          "project": "Them",
+          "pdf": "https://ottawafilm.site/certs/s2/BEST-CINEMATOGRAPHY.pdf"
+        }
+      ]
+    },
+    {
+      "id": "mar25",
+      "title": "March 2025",
+      "label": "Mar 2025",
+      "certFolder": "s3",
+      "winners": [
+        {
+          "category": "BEST SHORT FILM",
+          "project": "Vasomotor Rhinitis",
+          "pdf": "https://ottawafilm.site/certs/s3/BEST-SHORT-FILM.pdf"
+        },
+        {
+          "category": "BEST FEATURE FILM",
+          "project": "Pégame",
+          "pdf": "https://ottawafilm.site/certs/s3/BEST-FEATURE-FILM.pdf"
+        },
+        {
+          "category": "BEST SHORT SHORT",
+          "project": "First & Last",
+          "pdf": "https://ottawafilm.site/certs/s3/BEST-SHORT-SHORT.pdf"
+        },
+        {
+          "category": "BEST SHORT DIRECTOR",
+          "project": "Sacrificed; Trading Art for War!",
+          "pdf": "https://ottawafilm.site/certs/s3/BEST-SHORT-DIRECTOR.pdf"
+        },
+        {
+          "category": "BEST FEATURE DIRECTOR",
+          "project": "Bastion",
+          "pdf": "https://ottawafilm.site/certs/s3/BEST-FEATURE-DIRECTOR.pdf"
+        },
+        {
+          "category": "BEST SHORT ACTRESS",
+          "project": "Linda Frieser - The Duchess",
+          "pdf": "https://ottawafilm.site/certs/s3/BEST-SHORT-ACTRESS.pdf"
+        },
+        {
+          "category": "BEST SHORT ACTOR",
+          "project": "Ariya Ghahramani - a September to Remember",
+          "pdf": "https://ottawafilm.site/certs/s3/BEST-SHORT-ACTOR.pdf"
+        },
+        {
+          "category": "BEST FEATURE ACTOR",
+          "project": "Bastion - Favio Carlo De La Brena",
+          "pdf": "https://ottawafilm.site/certs/s3/BEST-FEATURE-ACTOR.pdf"
+        },
+        {
+          "category": "BEST SHORT SCRIPT",
+          "project": "An Acetylene Light",
+          "pdf": "https://ottawafilm.site/certs/s3/BEST-SHORT-SCRIPT.pdf"
+        },
+        {
+          "category": "BEST FEATURE SCRIPT",
+          "project": "The Lady with the Lamp",
+          "pdf": "https://ottawafilm.site/certs/s3/BEST-FEATURE-SCRIPT.pdf"
+        },
+        {
+          "category": "BEST UNPRODUCED SCRIPT",
+          "project": "Social Karma",
+          "pdf": "https://ottawafilm.site/certs/s3/BEST-UNPRODUCED-SCRIPT.pdf"
+        },
+        {
+          "category": "BEST INTERNATIONAL SHORT NARRATIVE",
+          "project": "Place of Hawks",
+          "pdf": "https://ottawafilm.site/certs/s3/BEST-INTERNATIONAL-SHORT-NARRATIVE.pdf"
+        },
+        {
+          "category": "BEST INTERNATIONAL FEATURE NARRATIVE",
+          "project": "Suitcase Children-Scenes of a Migration",
+          "pdf": "https://ottawafilm.site/certs/s3/BEST-INTERNATIONAL-FEATURE-NARRATIVE.pdf"
+        },
+        {
+          "category": "BEST SHORT EDITING",
+          "project": "Toby",
+          "pdf": "https://ottawafilm.site/certs/s3/BEST-SHORT-EDITING.pdf"
+        },
+        {
+          "category": "BEST FEATURE EDITING",
+          "project": "Toby",
+          "pdf": "https://ottawafilm.site/certs/s3/BEST-FEATURE-EDITING.pdf"
+        },
+        {
+          "category": "BEST DOCUMENTARY",
+          "project": "The Last Game",
+          "pdf": "https://ottawafilm.site/certs/s3/BEST-DOCUMENTARY.pdf"
+        },
+        {
+          "category": "BEST EXPERIMENTAL",
+          "project": "Zinnia the Devil",
+          "pdf": "https://ottawafilm.site/certs/s3/BEST-EXPERIMENTAL.pdf"
+        },
+        {
+          "category": "BEST ANIMATION",
+          "project": "Lifted",
+          "pdf": "https://ottawafilm.site/certs/s3/BEST-ANIMATION.pdf"
+        },
+        {
+          "category": "BEST STUDENT",
+          "project": "Influencers",
+          "pdf": "https://ottawafilm.site/certs/s3/BEST-STUDENT.pdf"
+        },
+        {
+          "category": "BEST SCREENPLAY",
+          "project": "a Friend in the Night",
+          "pdf": "https://ottawafilm.site/certs/s3/BEST-SCREENPLAY.pdf"
+        },
+        {
+          "category": "BEST FIRST-TIME DIRECTOR",
+          "project": "My Friend is a Giant",
+          "pdf": "https://ottawafilm.site/certs/s3/BEST-FIRST-TIME-DIRECTOR.pdf"
+        },
+        {
+          "category": "BEST WEB SERIES",
+          "project": "High Strung (the Dookie Incident)",
+          "pdf": "https://ottawafilm.site/certs/s3/BEST-WEB-SERIES.pdf"
+        },
+        {
+          "category": "BEST MUSIC VIDEO",
+          "project": "Chasing the Sub Lime",
+          "pdf": "https://ottawafilm.site/certs/s3/BEST-MUSIC-VIDEO.pdf"
+        },
+        {
+          "category": "BEST CINEMATOGRAPHY",
+          "project": "Facade",
+          "pdf": "https://ottawafilm.site/certs/s3/BEST-CINEMATOGRAPHY.pdf"
+        }
+      ]
+    },
+    {
+      "id": "jun25",
+      "title": "June 2025",
+      "label": "Jun 2025",
+      "certFolder": "s4",
+      "winners": [
+        {
+          "category": "BEST SHORT FILM",
+          "project": "To Womb It May Concern",
+          "pdf": "https://ottawafilm.site/certs/s4/BEST-SHORT-FILM.pdf"
+        },
+        {
+          "category": "BEST SHORT SHORT",
+          "project": "Gonzo: Art on the Margins",
+          "pdf": "https://ottawafilm.site/certs/s4/BEST-SHORT-SHORT.pdf"
+        },
+        {
+          "category": "BEST SHORT DIRECTOR",
+          "project": "Tobie Milford's \"Death!\"",
+          "pdf": "https://ottawafilm.site/certs/s4/BEST-SHORT-DIRECTOR.pdf"
+        },
+        {
+          "category": "BEST SHORT ACTRESS",
+          "project": "Maya/Violet Grace",
+          "pdf": "https://ottawafilm.site/certs/s4/BEST-SHORT-ACTRESS.pdf"
+        },
+        {
+          "category": "BEST SHORT SCRIPT",
+          "project": "Galatea's Dream",
+          "pdf": "https://ottawafilm.site/certs/s4/BEST-SHORT-SCRIPT.pdf"
+        },
+        {
+          "category": "BEST UNPRODUCED SCRIPT",
+          "project": "Crustaceus",
+          "pdf": "https://ottawafilm.site/certs/s4/BEST-UNPRODUCED-SCRIPT.pdf"
+        },
+        {
+          "category": "BEST INTERNATIONAL SHORT NARRATIVE",
+          "project": "Tobie Milford's \"Death!\"",
+          "pdf": "https://ottawafilm.site/certs/s4/BEST-INTERNATIONAL-SHORT-NARRATIVE.pdf"
+        },
+        {
+          "category": "BEST SHORT EDITING",
+          "project": "Pharmacy Museum Tour, New Orleans",
+          "pdf": "https://ottawafilm.site/certs/s4/BEST-SHORT-EDITING.pdf"
+        },
+        {
+          "category": "BEST DOCUMENTARY",
+          "project": "Resisterhood",
+          "pdf": "https://ottawafilm.site/certs/s4/BEST-DOCUMENTARY.pdf"
+        },
+        {
+          "category": "BEST EXPERIMENTAL",
+          "project": "Achaiah 7-Love Into Patience",
+          "pdf": "https://ottawafilm.site/certs/s4/BEST-EXPERIMENTAL.pdf"
+        },
+        {
+          "category": "BEST ANIMATION",
+          "project": "Collateral Damage",
+          "pdf": "https://ottawafilm.site/certs/s4/BEST-ANIMATION.pdf"
+        },
+        {
+          "category": "BEST STUDENT",
+          "project": "The Leek Pie",
+          "pdf": "https://ottawafilm.site/certs/s4/BEST-STUDENT.pdf"
+        },
+        {
+          "category": "BEST SCREENPLAY",
+          "project": "The Visit",
+          "pdf": "https://ottawafilm.site/certs/s4/BEST-SCREENPLAY.pdf"
+        },
+        {
+          "category": "BEST FIRST-TIME DIRECTOR",
+          "project": "White Rabbit",
+          "pdf": "https://ottawafilm.site/certs/s4/BEST-FIRST-TIME-DIRECTOR.pdf"
+        },
+        {
+          "category": "BEST COMPOSER",
+          "project": "Pharmacy Museum Tour, New Orleans",
+          "pdf": "https://ottawafilm.site/certs/s4/BEST-COMPOSER.pdf"
+        },
+        {
+          "category": "BEST MUSIC VIDEO",
+          "project": "T H E R I N G Garmambosia",
+          "pdf": "https://ottawafilm.site/certs/s4/BEST-MUSIC-VIDEO.pdf"
+        },
+        {
+          "category": "BEST CINEMATOGRAPHY",
+          "project": "Achaiah 7-Love Into Patience",
+          "pdf": "https://ottawafilm.site/certs/s4/BEST-CINEMATOGRAPHY.pdf"
+        }
+      ]
+    },
+    {
+      "id": "sep25",
+      "title": "September 2025",
+      "label": "Sep 2025",
+      "certFolder": "s5",
+      "winners": [
+        {
+          "category": "BEST SHORT FILM",
+          "project": "Isfahani Green",
+          "pdf": "https://ottawafilm.site/certs/s5/BEST-SHORT-FILM.pdf"
+        },
+        {
+          "category": "BEST FEATURE FILM",
+          "project": "Out of State-A Gothic Romance",
+          "pdf": "https://ottawafilm.site/certs/s5/BEST-FEATURE-FILM.pdf"
+        },
+        {
+          "category": "BEST SHORT SHORT",
+          "project": "The Legend of William Boucher",
+          "pdf": "https://ottawafilm.site/certs/s5/BEST-SHORT-SHORT.pdf"
+        },
+        {
+          "category": "BEST SHORT DIRECTOR",
+          "project": "Would Smith?",
+          "pdf": "https://ottawafilm.site/certs/s5/BEST-SHORT-DIRECTOR.pdf"
+        },
+        {
+          "category": "BEST FEATURE DIRECTOR",
+          "project": "Out of State-A Gothic Romance",
+          "pdf": "https://ottawafilm.site/certs/s5/BEST-FEATURE-DIRECTOR.pdf"
+        },
+        {
+          "category": "BEST SHORT ACTRESS",
+          "project": "Five Consecutive Zeroes / Skye Spallone",
+          "pdf": "https://ottawafilm.site/certs/s5/BEST-SHORT-ACTRESS.pdf"
+        },
+        {
+          "category": "BEST SHORT ACTOR",
+          "project": "Five Consecutive Zeroes / Roberto Ragone",
+          "pdf": "https://ottawafilm.site/certs/s5/BEST-SHORT-ACTOR.pdf"
+        },
+        {
+          "category": "BEST SHORT SCRIPT",
+          "project": "Sharp for Life",
+          "pdf": "https://ottawafilm.site/certs/s5/BEST-SHORT-SCRIPT.pdf"
+        },
+        {
+          "category": "BEST FEATURE SCRIPT",
+          "project": "Red Hands, a Mary MacIntosh novel",
+          "pdf": "https://ottawafilm.site/certs/s5/BEST-FEATURE-SCRIPT.pdf"
+        },
+        {
+          "category": "BEST UNPRODUCED SCRIPT",
+          "project": "Finding the Words",
+          "pdf": "https://ottawafilm.site/certs/s5/BEST-UNPRODUCED-SCRIPT.pdf"
+        },
+        {
+          "category": "BEST INTERNATIONAL SHORT NARRATIVE",
+          "project": "Gamblers",
+          "pdf": "https://ottawafilm.site/certs/s5/BEST-INTERNATIONAL-SHORT-NARRATIVE.pdf"
+        },
+        {
+          "category": "BEST SHORT EDITING",
+          "project": "MaiM",
+          "pdf": "https://ottawafilm.site/certs/s5/BEST-SHORT-EDITING.pdf"
+        },
+        {
+          "category": "BEST DOCUMENTARY",
+          "project": "Design is One: Lella & Massimo Vignelli",
+          "pdf": "https://ottawafilm.site/certs/s5/BEST-DOCUMENTARY.pdf"
+        },
+        {
+          "category": "BEST EXPERIMENTAL",
+          "project": "Indelible Winter",
+          "pdf": "https://ottawafilm.site/certs/s5/BEST-EXPERIMENTAL.pdf"
+        },
+        {
+          "category": "BEST ANIMATION",
+          "project": "Out of Control",
+          "pdf": "https://ottawafilm.site/certs/s5/BEST-ANIMATION.pdf"
+        },
+        {
+          "category": "BEST STUDENT",
+          "project": "One More Day",
+          "pdf": "https://ottawafilm.site/certs/s5/BEST-STUDENT.pdf"
+        },
+        {
+          "category": "BEST SCREENPLAY",
+          "project": "Saddled With",
+          "pdf": "https://ottawafilm.site/certs/s5/BEST-SCREENPLAY.pdf"
+        },
+        {
+          "category": "BEST FIRST-TIME DIRECTOR",
+          "project": "Follow Me",
+          "pdf": "https://ottawafilm.site/certs/s5/BEST-FIRST-TIME-DIRECTOR.pdf"
+        },
+        {
+          "category": "BEST MUSIC VIDEO",
+          "project": "Arctic Polar Bear Mothers",
+          "pdf": "https://ottawafilm.site/certs/s5/BEST-MUSIC-VIDEO.pdf"
+        },
+        {
+          "category": "BEST CINEMATOGRAPHY",
+          "project": "Would Smith?",
+          "pdf": "https://ottawafilm.site/certs/s5/BEST-CINEMATOGRAPHY.pdf"
+        }
+      ]
+    },
+    {
+      "id": "feb26",
+      "title": "February 2026",
+      "label": "Feb 2026",
+      "certFolder": "s6",
+      "winners": [
+        {
+          "category": "BEST SHORT FILM",
+          "project": "Iris",
+          "pdf": "https://ottawafilm.site/certs/s6/BEST-SHORT-FILM.pdf"
+        },
+        {
+          "category": "BEST FEATURE FILM",
+          "project": "One Last Chance",
+          "pdf": "https://ottawafilm.site/certs/s6/BEST-FEATURE-FILM.pdf"
+        },
+        {
+          "category": "BEST SHORT SHORT",
+          "project": "Grapevine",
+          "pdf": "https://ottawafilm.site/certs/s6/BEST-SHORT-SHORT.pdf"
+        },
+        {
+          "category": "BEST SHORT DIRECTOR",
+          "project": "Maya'S Three Star Sphere —Faith, Courage, And Love",
+          "pdf": "https://ottawafilm.site/certs/s6/BEST-SHORT-DIRECTOR.pdf"
+        },
+        {
+          "category": "BEST FEATURE DIRECTOR",
+          "project": "One Last Chance",
+          "pdf": "https://ottawafilm.site/certs/s6/BEST-FEATURE-DIRECTOR.pdf"
+        },
+        {
+          "category": "BEST SHORT ACTRESS",
+          "project": "Trixie/Suzenne Seradwyn",
+          "pdf": "https://ottawafilm.site/certs/s6/BEST-SHORT-ACTRESS.pdf"
+        },
+        {
+          "category": "BEST SHORT SCRIPT",
+          "project": "Daughter",
+          "pdf": "https://ottawafilm.site/certs/s6/BEST-SHORT-SCRIPT.pdf"
+        },
+        {
+          "category": "BEST FEATURE SCRIPT",
+          "project": "The Veil Of Silence",
+          "pdf": "https://ottawafilm.site/certs/s6/BEST-FEATURE-SCRIPT.pdf"
+        },
+        {
+          "category": "BEST UNPRODUCED SCRIPT",
+          "project": "The Final Fight",
+          "pdf": "https://ottawafilm.site/certs/s6/BEST-UNPRODUCED-SCRIPT.pdf"
+        },
+        {
+          "category": "BEST INTERNATIONAL SHORT NARRATIVE",
+          "project": "Dinner In Lockdown",
+          "pdf": "https://ottawafilm.site/certs/s6/BEST-INTERNATIONAL-SHORT-NARRATIVE.pdf"
+        },
+        {
+          "category": "BEST SHORT EDITING",
+          "project": "The Tooth Fairy",
+          "pdf": "https://ottawafilm.site/certs/s6/BEST-SHORT-EDITING.pdf"
+        },
+        {
+          "category": "BEST DOCUMENTARY",
+          "project": "Between The Great Plains",
+          "pdf": "https://ottawafilm.site/certs/s6/BEST-DOCUMENTARY.pdf"
+        },
+        {
+          "category": "BEST EXPERIMENTAL",
+          "project": "Moisture",
+          "pdf": "https://ottawafilm.site/certs/s6/BEST-EXPERIMENTAL.pdf"
+        },
+        {
+          "category": "BEST ANIMATION",
+          "project": "Выход (Vyhod / Exit)",
+          "pdf": "https://ottawafilm.site/certs/s6/BEST-ANIMATION.pdf"
+        },
+        {
+          "category": "BEST SCREENPLAY",
+          "project": "The Veil Of Silence",
+          "pdf": "https://ottawafilm.site/certs/s6/BEST-SCREENPLAY.pdf"
+        },
+        {
+          "category": "BEST FIRST-TIME DIRECTOR",
+          "project": "Braids",
+          "pdf": "https://ottawafilm.site/certs/s6/BEST-FIRST-TIME-DIRECTOR.pdf"
+        },
+        {
+          "category": "BEST COMPOSER",
+          "project": "Tugs: A Bigg Retrospective",
+          "pdf": "https://ottawafilm.site/certs/s6/BEST-COMPOSER.pdf"
+        },
+        {
+          "category": "BEST MUSIC VIDEO",
+          "project": "Strolling Down Brighton Pier",
+          "pdf": "https://ottawafilm.site/certs/s6/BEST-MUSIC-VIDEO.pdf"
+        },
+        {
+          "category": "BEST CINEMATOGRAPHY",
+          "project": "One Last Show In Taghmon",
+          "pdf": "https://ottawafilm.site/certs/s6/BEST-CINEMATOGRAPHY.pdf"
+        },
+        {
+          "category": "BEST LGBTQ",
+          "project": "Be My Ally",
+          "pdf": "https://ottawafilm.site/certs/s6/BEST-LGBTQ.pdf"
+        },
+        {
+          "category": "BEST THRILLER",
+          "project": "The List",
+          "pdf": "https://ottawafilm.site/certs/s6/BEST-THRILLER.pdf"
+        },
+        {
+          "category": "BEST SCI-FI",
+          "project": "Afterlight",
+          "pdf": "https://ottawafilm.site/certs/s6/BEST-SCI-FI.pdf"
+        },
+        {
+          "category": "BEST DRAMA",
+          "project": "I Will Never Forget You",
+          "pdf": "https://ottawafilm.site/certs/s6/BEST-DRAMA.pdf"
+        }
+      ]
+    },
+    {
+      "id": "jul26",
+      "title": "July 2026",
+      "label": "Jul 2026",
+      "certFolder": "s7",
+      "winners": [
+        {
+          "category": "BEST SHORT FILM",
+          "project": "Great Games",
+          "pdf": "https://ottawafilm.site/certs/s7/best-short-film.pdf"
+        },
+        {
+          "category": "BEST FEATURE FILM",
+          "project": "Sleepwalk",
+          "pdf": "https://ottawafilm.site/certs/s7/best-feature-film.pdf"
+        },
+        {
+          "category": "BEST SHORT SHORT",
+          "project": "Sandsailors",
+          "pdf": "https://ottawafilm.site/certs/s7/best-short-short.pdf"
+        },
+        {
+          "category": "BEST SHORT DIRECTOR",
+          "project": "Amazônia Xamã Br",
+          "pdf": "https://ottawafilm.site/certs/s7/best-short-director.pdf"
+        },
+        {
+          "category": "BEST FEATURE DIRECTOR",
+          "project": "Brother In Law",
+          "pdf": "https://ottawafilm.site/certs/s7/best-feature-director.pdf"
+        },
+        {
+          "category": "BEST SHORT ACTRESS",
+          "project": "Elizabeth In The Park/Marie Grillo",
+          "pdf": "https://ottawafilm.site/certs/s7/best-short-actress.pdf"
+        },
+        {
+          "category": "BEST FEATURE ACTRESS",
+          "project": "Maya/Mukta Barve",
+          "pdf": "https://ottawafilm.site/certs/s7/best-feature-actress.pdf"
+        },
+        {
+          "category": "BEST SHORT ACTOR",
+          "project": "Soupe Aux Tomates/Andrew Iddon",
+          "pdf": "https://ottawafilm.site/certs/s7/best-short-actor.pdf"
+        },
+        {
+          "category": "BEST SHORT SCRIPT",
+          "project": "The Sea And She",
+          "pdf": "https://ottawafilm.site/certs/s7/best-short-script.pdf"
+        },
+        {
+          "category": "BEST FEATURE SCRIPT",
+          "project": "Ricardo Fuentes Of Chavez Ravine",
+          "pdf": "https://ottawafilm.site/certs/s7/best-feature-script.pdf"
+        },
+        {
+          "category": "BEST UNPRODUCED SCRIPT",
+          "project": "A Reasonable Person",
+          "pdf": "https://ottawafilm.site/certs/s7/best-unproduced-script.pdf"
+        },
+        {
+          "category": "BEST INTERNATIONAL SHORT NARRATIVE",
+          "project": "The Pulse Of The Phoenix",
+          "pdf": "https://ottawafilm.site/certs/s7/best-international-short-narrative.pdf"
+        },
+        {
+          "category": "BEST INTERNATIONAL FEATURE NARRATIVE",
+          "project": "Unremarkable",
+          "pdf": "https://ottawafilm.site/certs/s7/best-international-feature-narrative.pdf"
+        },
+        {
+          "category": "BEST SHORT EDITING",
+          "project": "Heart Felt",
+          "pdf": "https://ottawafilm.site/certs/s7/best-short-editing.pdf"
+        },
+        {
+          "category": "BEST DOCUMENTARY",
+          "project": "Respect My Crown: The Rise Of African American Women In California Politics",
+          "pdf": "https://ottawafilm.site/certs/s7/best-documentary.pdf"
+        },
+        {
+          "category": "BEST EXPERIMENTAL",
+          "project": "The Light We Follow",
+          "pdf": "https://ottawafilm.site/certs/s7/best-experimental.pdf"
+        },
+        {
+          "category": "BEST ANIMATION",
+          "project": "Urayuli",
+          "pdf": "https://ottawafilm.site/certs/s7/best-animation.pdf"
+        },
+        {
+          "category": "BEST STUDENT",
+          "project": "Donna Davis",
+          "pdf": "https://ottawafilm.site/certs/s7/best-student.pdf"
+        },
+        {
+          "category": "BEST SCREENPLAY",
+          "project": "Nkoa",
+          "pdf": "https://ottawafilm.site/certs/s7/best-screenplay.pdf"
+        },
+        {
+          "category": "BEST FIRST-TIME DIRECTOR",
+          "project": "Big Day",
+          "pdf": "https://ottawafilm.site/certs/s7/best-firsttime-director.pdf"
+        },
+        {
+          "category": "BEST COMPOSER",
+          "project": "Magic Maia",
+          "pdf": "https://ottawafilm.site/certs/s7/best-composer.pdf"
+        },
+        {
+          "category": "BEST CINEMATOGRAPHY",
+          "project": "Gladice",
+          "pdf": "https://ottawafilm.site/certs/s7/best-cinematography.pdf"
+        },
+        {
+          "category": "BEST LGBTQ",
+          "project": "Phantas Homoria",
+          "pdf": "https://ottawafilm.site/certs/s7/best-lgbtq.pdf"
+        },
+        {
+          "category": "BEST THRILLER",
+          "project": "Vaelena",
+          "pdf": "https://ottawafilm.site/certs/s7/best-thriller.pdf"
+        },
+        {
+          "category": "BEST SCI-FI",
+          "project": "The Planet That Doesn't Exist",
+          "pdf": "https://ottawafilm.site/certs/s7/best-scifi.pdf"
+        },
+        {
+          "category": "BEST DRAMA",
+          "project": "To Women Breaking Shackles",
+          "pdf": "https://ottawafilm.site/certs/s7/best-drama.pdf"
+        },
+        {
+          "category": "BEST PRODUCER",
+          "project": "Dreams Beyond Tomorrow",
+          "pdf": "https://ottawafilm.site/certs/s7/best-producer.pdf"
+        },
+        {
+          "category": "BEST WOMAN EMPOWERMENT",
+          "project": "Coach Kim",
+          "pdf": "https://ottawafilm.site/certs/s7/best-woman-empowerment.pdf"
+        },
+        {
+          "category": "BEST AI",
+          "project": "The House Of The Magic Dolls",
+          "pdf": "https://ottawafilm.site/certs/s7/best-ai.pdf"
+        },
+        {
+          "category": "BEST ADVENTURE",
+          "project": "The Perfect Cocktail",
+          "pdf": "https://ottawafilm.site/certs/s7/best-adventure.pdf"
+        }
+      ]
+    }
+  ]
+}
