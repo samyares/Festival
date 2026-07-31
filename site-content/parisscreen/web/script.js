@@ -41,7 +41,7 @@ const festivalData = {
 
     // Winner films for this season
     // Base URL for videos
-    videoBaseUrl: "https://screen.pariswomencinefest.art/videos/",
+    videoBaseUrl: "https://screen.pwcf.info/videos/",
 
     winners: [
         {
