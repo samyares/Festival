@@ -113,11 +113,20 @@
       gap: 0.7rem;
     }
 
-    .side-head-info { min-width: 0; }
+    .side-head-info { min-width: 0; flex: 1; overflow: hidden; }
 
-    .brand { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; color: var(--ink); margin-bottom: 0.75rem; }
-    .brand img { height: 24px; width: auto; display: block; }
-    .brand span { font-weight: 700; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap; }
+    .brand { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; color: var(--ink); margin-bottom: 0.75rem; min-width: 0; }
+    .brand img { height: 24px; width: auto; display: block; flex-shrink: 0; }
+    .brand span {
+      font-weight: 700;
+      font-size: 0.6rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      min-width: 0;
+    }
 
     .side-title { margin: 0; font-family: var(--sc); font-weight: 900; font-size: 1.55rem; line-height: 1.05; }
     .side-title .accent { color: var(--orange); }
