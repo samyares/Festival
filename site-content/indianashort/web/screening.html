@@ -8,27 +8,21 @@
   <meta name="robots" content="noindex">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Oswald:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@700;900&family=Playfair+Display:wght@600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="images/freedom.png">
   <style>
     :root {
-      --bg: #0f1014;
-      --bg-side: #131419;
-      --border: rgba(255, 255, 255, 0.08);
-      --border-strong: rgba(255, 255, 255, 0.16);
-      --ink: #f2f1ee;
-      --muted: #9c9aa3;
-      --muted-2: #6d6b75;
-      --brand-1: #e63c64;
-      --brand-2: #14b3a6;
-      --brand-3: #9678c8;
-      --brand-4: #7fb6dc;
-      --brand-5: #f0842e;
+      --cream: #faf3e7;
+      --cream-card: #fffaf2;
+      --ink: #2c1810;
+      --ink-soft: #6b5a4e;
+      --orange: #ff6b35;
+      --orange-soft: #ffe3d6;
+      --sc: 'Playfair Display SC', Georgia, serif;
       --serif: 'Playfair Display', Georgia, serif;
-      --sans: 'Inter', 'Helvetica Neue', Arial, sans-serif;
-      --label: 'Oswald', var(--sans);
+      --sans: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
       --ease: cubic-bezier(0.22, 1, 0.36, 1);
-      --sidebar-w: 360px;
+      --sidebar-w: 370px;
     }
 
     * { box-sizing: border-box; }
@@ -37,13 +31,12 @@
 
     body {
       margin: 0;
-      background: var(--bg);
+      background: var(--cream);
       color: var(--ink);
       font-family: var(--sans);
       line-height: 1.5;
       display: flex;
       overflow: hidden;
-      -webkit-font-smoothing: antialiased;
     }
 
     /* ── Sidebar ── */
@@ -54,63 +47,58 @@
       height: 100%;
       display: flex;
       flex-direction: column;
-      background: var(--bg-side);
-      border-right: 1px solid var(--border);
+      background: var(--cream);
+      border-right: 2px solid var(--ink);
       z-index: 30;
-    }
-
-    .side-rainbow {
-      height: 4px;
-      flex-shrink: 0;
-      background: linear-gradient(90deg,
-        var(--brand-1) 0 20%, var(--brand-2) 0 40%, var(--brand-3) 0 60%,
-        var(--brand-4) 0 80%, var(--brand-5) 0 100%);
     }
 
     .side-head {
       flex-shrink: 0;
       padding: 1.1rem 1.2rem 1rem;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 2px solid var(--ink);
     }
 
-    .brand { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; margin-bottom: 1.1rem; }
-    .brand img { height: 24px; width: auto; display: block; }
+    .brand { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; color: var(--ink); margin-bottom: 1rem; }
+    .brand img { height: 26px; width: auto; display: block; }
     .brand span {
-      font-family: var(--label);
+      font-weight: 700;
       font-size: 0.72rem;
-      font-weight: 400;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.13em;
       text-transform: uppercase;
-      color: var(--muted);
       white-space: nowrap;
     }
 
-    .side-eyebrow {
-      margin: 0 0 0.25rem;
-      font-family: var(--label);
-      font-weight: 300;
-      font-size: 0.68rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--brand-5);
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.32rem 0.8rem;
+      font-weight: 700;
+      font-size: 0.72rem;
+      background: var(--cream-card);
+      border: 2px solid var(--ink);
+      border-radius: 9px;
+      box-shadow: 2px 2px 0 0 var(--ink);
+      margin-bottom: 0.7rem;
     }
+
+    .badge .star { color: var(--orange); }
 
     .side-title {
       margin: 0;
-      font-family: var(--serif);
-      font-weight: 800;
-      font-size: 1.7rem;
+      font-family: var(--sc);
+      font-weight: 900;
+      font-size: 1.75rem;
       line-height: 1.05;
     }
 
+    .side-title .accent { color: var(--orange); }
+
     .side-meta {
-      margin: 0.35rem 0 0;
-      font-family: var(--label);
-      font-weight: 300;
-      font-size: 0.7rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--muted-2);
+      margin: 0.3rem 0 0;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--ink-soft);
     }
 
     /* ── Film list ── */
@@ -120,90 +108,98 @@
       overflow-y: auto;
       overscroll-behavior: contain;
       scrollbar-width: thin;
-      scrollbar-color: rgba(255,255,255,0.15) transparent;
+      scrollbar-color: rgba(44, 24, 16, 0.35) transparent;
+      padding: 0.7rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
     }
-
-    .films::-webkit-scrollbar { width: 8px; }
-    .films::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 4px; }
 
     .film-row {
       display: flex;
       align-items: flex-start;
-      gap: 0.8rem;
+      gap: 0.7rem;
       width: 100%;
-      padding: 0.7rem 1rem 0.7rem 1.2rem;
-      background: none;
-      border: 0;
-      border-left: 3px solid transparent;
-      border-bottom: 1px solid var(--border);
+      padding: 0.6rem 0.75rem;
+      background: var(--cream-card);
+      border: 2px solid var(--ink);
+      border-radius: 12px;
+      box-shadow: 3px 3px 0 0 var(--ink);
       color: inherit;
       font: inherit;
       text-align: left;
       cursor: pointer;
-      transition: background 0.2s, border-color 0.2s;
+      transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
     }
 
-    .film-row:hover { background: rgba(255, 255, 255, 0.04); }
+    .film-row:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 0 var(--ink); }
 
     .film-row.active {
-      background: rgba(255, 255, 255, 0.06);
-      border-left-color: var(--a, var(--brand-1));
+      background: var(--orange);
+      color: #fff;
     }
+
+    .film-row.active .film-cat { color: #fff; opacity: 0.9; }
+    .film-row.active .film-no { color: #fff; background: rgba(255,255,255,0.2); border-color: #fff; }
 
     .film-no {
-      font-family: var(--label);
-      font-weight: 300;
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 1.9rem;
+      height: 1.9rem;
+      font-weight: 700;
       font-size: 0.72rem;
-      letter-spacing: 0.08em;
-      color: var(--muted-2);
-      min-width: 1.5rem;
-      padding-top: 0.2rem;
+      color: var(--ink);
+      background: var(--orange-soft);
+      border: 2px solid var(--ink);
+      border-radius: 8px;
     }
-
-    .film-row.active .film-no { color: var(--a, var(--brand-1)); }
 
     .film-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 0.05rem; }
 
     .film-cat {
-      font-family: var(--label);
-      font-weight: 400;
+      font-weight: 700;
       font-size: 0.62rem;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--a, var(--brand-1));
-      opacity: 0.9;
+      color: var(--orange);
     }
 
     .film-title {
       font-family: var(--serif);
-      font-weight: 600;
-      font-size: 0.98rem;
-      line-height: 1.3;
+      font-weight: 700;
+      font-size: 0.96rem;
+      line-height: 1.28;
     }
 
     .side-foot {
       flex-shrink: 0;
       display: flex;
-      gap: 0.5rem;
-      padding: 0.9rem 1.2rem;
-      border-top: 1px solid var(--border);
+      gap: 0.55rem;
+      padding: 0.85rem 0.9rem;
+      border-top: 2px solid var(--ink);
     }
 
-    .chip {
+    .btn {
       flex: 1;
       text-align: center;
-      padding: 0.5rem 0.6rem;
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--muted);
+      padding: 0.5rem 0.8rem;
+      font-weight: 700;
+      font-size: 0.82rem;
+      color: var(--ink);
+      background: var(--cream-card);
+      border: 2px solid var(--ink);
+      border-radius: 12px;
+      box-shadow: 3px 3px 0 0 var(--ink);
       text-decoration: none;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      transition: color 0.2s, border-color 0.2s, background 0.2s;
+      transition: transform 0.15s, box-shadow 0.15s, background 0.15s, color 0.15s;
       white-space: nowrap;
     }
 
-    .chip:hover { color: var(--ink); border-color: var(--border-strong); background: rgba(255,255,255,0.04); }
+    .btn:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 0 var(--ink); }
+    .btn.solid { background: var(--orange); color: #fff; }
 
     /* ── Stage ── */
 
@@ -213,16 +209,14 @@
       height: 100%;
       display: flex;
       flex-direction: column;
-      background:
-        radial-gradient(ellipse 70% 50% at 50% 0%, rgba(150, 120, 200, 0.10), transparent 65%),
-        var(--bg);
+      background: var(--cream);
     }
 
     .stage-top {
       flex-shrink: 0;
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.9rem;
       padding: 0.9rem clamp(1rem, 3vw, 2rem);
     }
 
@@ -230,41 +224,44 @@
       display: none;
       align-items: center;
       justify-content: center;
-      width: 42px;
-      height: 42px;
-      background: var(--bg-side);
+      width: 44px;
+      height: 44px;
+      background: var(--cream-card);
       color: var(--ink);
-      border: 1px solid var(--border-strong);
-      border-radius: 10px;
+      border: 2px solid var(--ink);
+      border-radius: 12px;
+      box-shadow: 3px 3px 0 0 var(--ink);
       cursor: pointer;
       flex-shrink: 0;
     }
 
     .now {
       min-width: 0;
-      display: flex;
-      align-items: baseline;
+      display: none;
+      align-items: center;
       gap: 0.7rem;
-      opacity: 0;
-      transition: opacity 0.3s;
+      padding: 0.45rem 1rem;
+      background: var(--cream-card);
+      border: 2px solid var(--ink);
+      border-radius: 12px;
+      box-shadow: 3px 3px 0 0 var(--ink);
     }
 
-    .now.show { opacity: 1; }
+    .now.show { display: flex; }
 
     .now .cat {
-      font-family: var(--label);
-      font-weight: 400;
-      font-size: 0.7rem;
-      letter-spacing: 0.2em;
+      font-weight: 700;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--np, var(--brand-1));
+      color: var(--orange);
       white-space: nowrap;
     }
 
     .now .title {
       font-family: var(--serif);
       font-weight: 700;
-      font-size: 1.05rem;
+      font-size: 1rem;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -276,22 +273,22 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 0 clamp(1rem, 3vw, 2rem) clamp(1rem, 3vh, 1.6rem);
+      padding: 0 clamp(1rem, 3vw, 2rem) clamp(1.2rem, 3vh, 1.8rem);
     }
 
     .player {
       position: relative;
       width: 100%;
-      max-width: min(100%, calc((100vh - 160px) * 16 / 9));
+      max-width: min(100%, calc((100vh - 170px) * 16 / 9));
       aspect-ratio: 16 / 9;
-      background: #000;
-      border: 1px solid var(--border-strong);
-      border-radius: 14px;
+      background: #171310;
+      border: 2px solid var(--ink);
+      border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 40px 90px -35px rgba(0, 0, 0, 0.95);
+      box-shadow: 8px 8px 0 0 var(--ink);
     }
 
-    .player video { width: 100%; height: 100%; display: block; background: #000; }
+    .player video { width: 100%; height: 100%; display: block; background: #171310; }
 
     .player-idle {
       position: absolute;
@@ -302,9 +299,7 @@
       justify-content: center;
       gap: 0.9rem;
       text-align: center;
-      background:
-        radial-gradient(ellipse 70% 60% at 50% 40%, rgba(150, 120, 200, 0.14), transparent 70%),
-        #101116;
+      background: var(--cream-card);
       transition: opacity 0.3s, visibility 0.3s;
       padding: 1rem;
     }
@@ -312,27 +307,17 @@
     .player-idle.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
 
     .player-idle .big {
-      font-family: var(--serif);
+      font-family: var(--sc);
       font-weight: 700;
-      font-size: clamp(1.1rem, 2.6vw, 1.7rem);
+      font-size: clamp(1.2rem, 2.8vw, 1.9rem);
     }
+
+    .player-idle .big .accent { color: var(--orange); }
 
     .player-idle .small {
-      font-family: var(--label);
-      font-weight: 300;
-      font-size: 0.72rem;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .player-idle .rule {
-      width: 60px;
-      height: 3px;
-      border-radius: 2px;
-      background: linear-gradient(90deg,
-        var(--brand-1) 0 20%, var(--brand-2) 0 40%, var(--brand-3) 0 60%,
-        var(--brand-4) 0 80%, var(--brand-5) 0 100%);
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: var(--ink-soft);
     }
 
     .backdrop {
@@ -340,22 +325,23 @@
       position: fixed;
       inset: 0;
       z-index: 25;
-      background: rgba(10, 10, 12, 0.6);
+      background: rgba(44, 24, 16, 0.45);
     }
 
     .toast {
       position: fixed;
       left: 50%;
       bottom: 1.4rem;
-      transform: translate(-50%, 200%);
+      transform: translate(-50%, 250%);
       z-index: 40;
-      padding: 0.8rem 1.3rem;
+      padding: 0.75rem 1.2rem;
+      font-weight: 500;
       font-size: 0.88rem;
       color: var(--ink);
-      background: #1d1f28;
-      border: 1px solid var(--border-strong);
+      background: var(--cream-card);
+      border: 2px solid var(--ink);
       border-radius: 12px;
-      box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.8);
+      box-shadow: 5px 5px 0 0 var(--ink);
       transition: transform 0.35s var(--ease);
       max-width: min(92vw, 480px);
       text-align: center;
@@ -363,9 +349,7 @@
 
     .toast.show { transform: translate(-50%, 0); }
 
-    :focus-visible { outline: 2px solid var(--brand-4); outline-offset: 2px; }
-
-    /* ── Mobile: off-canvas sidebar ── */
+    :focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
 
     @media (max-width: 899px) {
       .sidebar {
@@ -373,10 +357,10 @@
         left: 0;
         top: 0;
         bottom: 0;
-        width: min(84vw, 340px);
-        transform: translateX(-102%);
+        width: min(86vw, 350px);
+        transform: translateX(-104%);
         transition: transform 0.35s var(--ease);
-        box-shadow: 30px 0 80px -30px rgba(0, 0, 0, 0.9);
+        box-shadow: 6px 0 0 0 var(--ink);
       }
 
       .sidebar.open { transform: translateX(0); }
@@ -390,193 +374,192 @@
 <body>
 
   <aside class="sidebar" id="sidebar">
-    <div class="side-rainbow" aria-hidden="true"></div>
     <div class="side-head">
       <a class="brand" href="/">
         <img src="images/freedom.png" alt="Indiana">
-        <span>Independent&nbsp;Film&nbsp;Festival</span>
+        <span>Independent Film Festival</span>
       </a>
-      <p class="side-eyebrow">( Screening room )</p>
-      <h1 class="side-title">Season Six</h1>
-      <p class="side-meta">May 2026 &mdash; 26 films &middot; plays continuously</p>
+      <span class="badge"><span class="star">&#9733;</span> Screening Room</span>
+      <h1 class="side-title">Season <span class="accent">Six</span></h1>
+      <p class="side-meta">May 2026 &middot; 26 films &middot; plays continuously</p>
     </div>
     <nav class="films" id="films" aria-label="Winning films">
-        <button class="film-row" type="button" data-i="0" style="--a:var(--brand-1)">
+        <button class="film-row" type="button" data-i="0">
           <span class="film-no">01</span>
           <span class="film-text">
             <span class="film-cat">Best Film — Short</span>
             <span class="film-title">Memento Mori</span>
           </span>
         </button>
-        <button class="film-row" type="button" data-i="1" style="--a:var(--brand-2)">
+        <button class="film-row" type="button" data-i="1">
           <span class="film-no">02</span>
           <span class="film-text">
             <span class="film-cat">Best Director — Short</span>
             <span class="film-title">Our Monsters</span>
           </span>
         </button>
-        <button class="film-row" type="button" data-i="2" style="--a:var(--brand-3)">
+        <button class="film-row" type="button" data-i="2">
           <span class="film-no">03</span>
           <span class="film-text">
             <span class="film-cat">Best Actress — Short</span>
             <span class="film-title">Moments From Motherhood / Krystyn Sayre</span>
           </span>
         </button>
-        <button class="film-row" type="button" data-i="3" style="--a:var(--brand-4)">
+        <button class="film-row" type="button" data-i="3">
           <span class="film-no">04</span>
           <span class="film-text">
             <span class="film-cat">Best Script — Short</span>
             <span class="film-title">Shelf Life</span>
           </span>
         </button>
-        <button class="film-row" type="button" data-i="4" style="--a:var(--brand-5)">
+        <button class="film-row" type="button" data-i="4">
           <span class="film-no">05</span>
           <span class="film-text">
             <span class="film-cat">Best Narrative — Short</span>
             <span class="film-title">Bus No. 9</span>
           </span>
         </button>
-        <button class="film-row" type="button" data-i="5" style="--a:var(--brand-1)">
+        <button class="film-row" type="button" data-i="5">
           <span class="film-no">06</span>
           <span class="film-text">
             <span class="film-cat">Best Documentary — Short</span>
             <span class="film-title">Dionysos Avignon In Flesh And Shadow</span>
           </span>
         </button>
-        <button class="film-row" type="button" data-i="6" style="--a:var(--brand-2)">
+        <button class="film-row" type="button" data-i="6">
           <span class="film-no">07</span>
           <span class="film-text">
             <span class="film-cat">Best Experimental — Short</span>
             <span class="film-title">Michel Steiner 64 Agendas</span>
           </span>
         </button>
-        <button class="film-row" type="button" data-i="7" style="--a:var(--brand-3)">
+        <button class="film-row" type="button" data-i="7">
           <span class="film-no">08</span>
           <span class="film-text">
             <span class="film-cat">Best Sci-Fi Or Fantasy — Short</span>
             <span class="film-title">Limited Slip</span>
           </span>
         </button>
-        <button class="film-row" type="button" data-i="8" style="--a:var(--brand-4)">
+        <button class="film-row" type="button" data-i="8">
           <span class="film-no">09</span>
           <span class="film-text">
             <span class="film-cat">Best Thriller — Short</span>
             <span class="film-title">Wolf At The Crossroads</span>
           </span>
         </button>
-        <button class="film-row" type="button" data-i="9" style="--a:var(--brand-5)">
+        <button class="film-row" type="button" data-i="9">
           <span class="film-no">10</span>
           <span class="film-text">
             <span class="film-cat">Best Comedy — Short</span>
             <span class="film-title">The Master Puppeteer</span>
           </span>
         </button>
-        <button class="film-row" type="button" data-i="10" style="--a:var(--brand-1)">
+        <button class="film-row" type="button" data-i="10">
           <span class="film-no">11</span>
           <span class="film-text">
             <span class="film-cat">Best Drama — Short</span>
             <span class="film-title">Faithless</span>
           </span>
         </button>
-        <button class="film-row" type="button" data-i="11" style="--a:var(--brand-2)">
+        <button class="film-row" type="button" data-i="11">
           <span class="film-no">12</span>
           <span class="film-text">
             <span class="film-cat">Best Horror — Short</span>
             <span class="film-title">The Collector</span>
           </span>
         </button>
-        <button class="film-row" type="button" data-i="12" style="--a:var(--brand-3)">
+        <button class="film-row" type="button" data-i="12">
           <span class="film-no">13</span>
           <span class="film-text">
             <span class="film-cat">Best Ultra-Short (Under 3 Minutes)</span>
             <span class="film-title">Words From The Midnight Monster</span>
           </span>
         </button>
-        <button class="film-row" type="button" data-i="13" style="--a:var(--brand-4)">
+        <button class="film-row" type="button" data-i="13">
           <span class="film-no">14</span>
           <span class="film-text">
             <span class="film-cat">Best Producer — Short</span>
             <span class="film-title">Music In The Air</span>
           </span>
         </button>
-        <button class="film-row" type="button" data-i="14" style="--a:var(--brand-5)">
+        <button class="film-row" type="button" data-i="14">
           <span class="film-no">15</span>
           <span class="film-text">
             <span class="film-cat">Best Cinematography — Short</span>
             <span class="film-title">The Harpies</span>
           </span>
         </button>
-        <button class="film-row" type="button" data-i="15" style="--a:var(--brand-1)">
+        <button class="film-row" type="button" data-i="15">
           <span class="film-no">16</span>
           <span class="film-text">
             <span class="film-cat">Best Film — Feature · Best Drama — Feature</span>
             <span class="film-title">First String 2: The Greenwood 20: Quest For The Great Dante</span>
           </span>
         </button>
-        <button class="film-row" type="button" data-i="16" style="--a:var(--brand-2)">
+        <button class="film-row" type="button" data-i="16">
           <span class="film-no">17</span>
           <span class="film-text">
             <span class="film-cat">Best Documentary — Feature</span>
             <span class="film-title">Together For Water</span>
           </span>
         </button>
-        <button class="film-row" type="button" data-i="17" style="--a:var(--brand-3)">
+        <button class="film-row" type="button" data-i="17">
           <span class="film-no">18</span>
           <span class="film-text">
             <span class="film-cat">Best Experimental — Feature</span>
             <span class="film-title">Our Brilliant Destruction</span>
           </span>
         </button>
-        <button class="film-row" type="button" data-i="18" style="--a:var(--brand-4)">
+        <button class="film-row" type="button" data-i="18">
           <span class="film-no">19</span>
           <span class="film-text">
             <span class="film-cat">Best Comedy — Feature</span>
             <span class="film-title">60 Days</span>
           </span>
         </button>
-        <button class="film-row" type="button" data-i="19" style="--a:var(--brand-5)">
+        <button class="film-row" type="button" data-i="19">
           <span class="film-no">20</span>
           <span class="film-text">
             <span class="film-cat">Best Film — Feature · Best Drama — Feature</span>
             <span class="film-title">First String 2: The Greenwood 20: Quest For The Great Dante</span>
           </span>
         </button>
-        <button class="film-row" type="button" data-i="20" style="--a:var(--brand-1)">
+        <button class="film-row" type="button" data-i="20">
           <span class="film-no">21</span>
           <span class="film-text">
             <span class="film-cat">Best Cinematography — Feature</span>
             <span class="film-title">Colombano &amp; La 21Esima Fetta</span>
           </span>
         </button>
-        <button class="film-row" type="button" data-i="21" style="--a:var(--brand-2)">
+        <button class="film-row" type="button" data-i="21">
           <span class="film-no">22</span>
           <span class="film-text">
             <span class="film-cat">Best First-Time Filmmaker</span>
             <span class="film-title">The Dandelion Girl</span>
           </span>
         </button>
-        <button class="film-row" type="button" data-i="22" style="--a:var(--brand-3)">
+        <button class="film-row" type="button" data-i="22">
           <span class="film-no">23</span>
           <span class="film-text">
             <span class="film-cat">Best Music Video</span>
             <span class="film-title">Sexy City Lights</span>
           </span>
         </button>
-        <button class="film-row" type="button" data-i="23" style="--a:var(--brand-4)">
+        <button class="film-row" type="button" data-i="23">
           <span class="film-no">24</span>
           <span class="film-text">
             <span class="film-cat">Best Web Series / Pilot Episode</span>
             <span class="film-title">The Killers Journalist</span>
           </span>
         </button>
-        <button class="film-row" type="button" data-i="24" style="--a:var(--brand-5)">
+        <button class="film-row" type="button" data-i="24">
           <span class="film-no">25</span>
           <span class="film-text">
             <span class="film-cat">Best Student Film</span>
             <span class="film-title">The Cowgirl</span>
           </span>
         </button>
-        <button class="film-row" type="button" data-i="25" style="--a:var(--brand-1)">
+        <button class="film-row" type="button" data-i="25">
           <span class="film-no">26</span>
           <span class="film-text">
             <span class="film-cat">Best Dance Film</span>
@@ -585,8 +568,8 @@
         </button>
     </nav>
     <div class="side-foot">
-      <a class="chip" href="/">&larr; Home</a>
-      <a class="chip" href="/winners.html">All winners</a>
+      <a class="btn" href="/">&larr; Home</a>
+      <a class="btn solid" href="/winners.html">All winners</a>
     </div>
   </aside>
 
@@ -606,9 +589,8 @@
       <div class="player">
         <video id="video" controls controlsList="nodownload" playsinline preload="metadata"></video>
         <div class="player-idle" id="idle">
-          <div class="big">Choose a film from the list</div>
-          <div class="rule" aria-hidden="true"></div>
-          <div class="small">The winners of Season Six</div>
+          <div class="big">Choose a film <span class="accent">from the list</span></div>
+          <div class="small">The winners of Season Six &mdash; plays continuously</div>
         </div>
       </div>
     </div>
@@ -653,7 +635,6 @@
       current = i;
       var f = FILMS[i];
       rows.forEach(function (r, j) { r.classList.toggle('active', j === i); });
-      now.style.setProperty('--np', 'var(--brand-' + ((i % 5) + 1) + ')');
       nowCat.textContent = f.c;
       nowTitle.textContent = f.t;
       now.classList.add('show');

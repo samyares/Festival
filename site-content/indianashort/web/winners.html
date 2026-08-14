@@ -1,1382 +1,991 @@
 <!doctype html>
-<html lang="en" id="top">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Winners — All Seasons · Indiana Independent Film Festival</title>
-  <meta name="description" content="Every award winner of the Indiana Independent Film Festival — six seasons, 122 awards, 2024–2026.">
-  <meta property="og:title" content="Indiana Independent Film Festival — Winners Archive">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="images/freedom.png">
+  <meta name="description" content="Every award winner of the Indiana Independent Film Festival — six seasons, 2024–2026.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400;1,600&family=Oswald:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
-/* ═══════════════════════════════════════════════════════════
-   Indiana Independent Film Festival — winners archive
-   Cream editorial: paper field, charcoal ink, coral accent,
-   brand rainbow drawn from the INDIANA wordmark
-   ═══════════════════════════════════════════════════════════ */
-
-:root {
-  --cream: #efeee7;
-  --ink: #34342f;
-  --ink-soft: #56564d;
-  --ink-faint: rgba(52, 52, 47, 0.55);
-  --line: rgba(52, 52, 47, 0.16);
-  --coral: #e0455f;
-  --brand-1: #e63c64;
-  --brand-2: #14b3a6;
-  --brand-3: #9678c8;
-  --brand-4: #7fb6dc;
-  --brand-5: #f0842e;
-  --rainbow: linear-gradient(90deg,
-    var(--brand-1) 0 20%, var(--brand-2) 0 40%, var(--brand-3) 0 60%,
-    var(--brand-4) 0 80%, var(--brand-5) 0 100%);
-  --serif: 'Playfair Display', Georgia, serif;
-  --sans: 'Inter', 'Helvetica Neue', Arial, sans-serif;
-  --label: 'Oswald', var(--sans);
-  --ease: cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-* { box-sizing: border-box; }
-
-html { scroll-behavior: smooth; }
-
-body {
-  margin: 0;
-  background-color: var(--cream);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
-  color: var(--ink);
-  font-family: var(--sans);
-  font-size: 16px;
-  line-height: 1.55;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  -webkit-font-smoothing: antialiased;
-}
-
-.rainbow {
-  height: 4px;
-  background: var(--rainbow);
-}
-
-/* ── Top bar ────────────────────────────────────────────── */
-
-.topbar {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0.8rem clamp(1.1rem, 4vw, 2.4rem);
-  background: rgba(239, 238, 231, 0.88);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--line);
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  text-decoration: none;
-  min-width: 0;
-}
-
-.brand-logo {
-  height: 26px;
-  width: auto;
-  display: block;
-}
-
-.brand-text {
-  font-family: var(--label);
-  font-weight: 400;
-  font-size: 0.82rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-  white-space: nowrap;
-}
-
-.submit-link {
-  flex-shrink: 0;
-  padding: 0.5rem 1rem;
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  color: var(--ink);
-  text-decoration: none;
-  border: 1px solid var(--ink);
-  border-radius: 999px;
-  transition: background 0.2s, color 0.2s, border-color 0.2s;
-}
-
-.submit-link:hover {
-  background: var(--coral);
-  border-color: var(--coral);
-  color: #fff;
-}
-
-/* ── Layout ─────────────────────────────────────────────── */
-
-.page {
-  flex: 1;
-  width: 100%;
-  max-width: 1060px;
-  margin: 0 auto;
-  padding: 0 clamp(1.1rem, 4vw, 2.4rem);
-}
-
-/* ── Hero ───────────────────────────────────────────────── */
-
-.agg-hero {
-  padding: clamp(2.6rem, 7vh, 4.5rem) 0 2.2rem;
-  animation: rise 0.6s var(--ease) both;
-}
-
-.agg-label {
-  font-family: var(--label);
-  font-weight: 300;
-  font-size: 0.82rem;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  margin: 0 0 1.4rem;
-}
-
-.agg-title {
-  margin: 0;
-  font-family: var(--serif);
-  font-weight: 800;
-  font-size: clamp(3.4rem, 10vw, 7rem);
-  line-height: 0.95;
-  color: var(--ink);
-}
-
-.agg-underline {
-  display: block;
-  width: 5.2em;
-  max-width: 100%;
-  height: 0.09em;
-  margin-top: 0.1em;
-  background: var(--coral);
-}
-
-.agg-hero-meta {
-  margin: 1.6rem 0 0;
-  font-family: var(--label);
-  font-weight: 300;
-  font-size: 0.95rem;
-  letter-spacing: 0.26em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-
-/* ── Season jump nav ────────────────────────────────────── */
-
-.agg-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  padding: 0.6rem 0 2.8rem;
-  animation: rise 0.6s var(--ease) 0.08s both;
-}
-
-.agg-chip {
-  padding: 0.48rem 1.05rem;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--ink-soft);
-  text-decoration: none;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  transition: color 0.2s, border-color 0.2s, background 0.2s;
-  white-space: nowrap;
-}
-
-.agg-chip:hover {
-  color: #fff;
-  background: var(--coral);
-  border-color: var(--coral);
-}
-
-.agg-chip-home { color: var(--ink-faint); }
-
-/* ── Season sections ────────────────────────────────────── */
-
-.agg-season {
-  padding-top: 1.2rem;
-  margin-bottom: 3.8rem;
-  scroll-margin-top: 5rem;
-}
-
-.agg-season-head {
-  display: flex;
-  align-items: baseline;
-  gap: 1.4rem;
-  margin-bottom: 1.5rem;
-}
-
-.agg-season-no {
-  font-family: var(--serif);
-  font-style: italic;
-  font-weight: 400;
-  font-size: clamp(2.6rem, 6vw, 4rem);
-  line-height: 1;
-  color: transparent;
-  -webkit-text-stroke: 1px var(--ink-faint);
-}
-
-.agg-season-titles { min-width: 0; }
-
-.agg-season-title {
-  margin: 0;
-  font-family: var(--serif);
-  font-weight: 700;
-  font-size: clamp(1.7rem, 4.4vw, 2.5rem);
-  line-height: 1.1;
-  color: var(--ink);
-}
-
-.agg-season-meta {
-  margin: 0.45rem 0 0;
-  font-family: var(--label);
-  font-weight: 300;
-  font-size: 0.8rem;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
-
-.agg-top {
-  margin-left: auto;
-  align-self: center;
-  font-family: var(--label);
-  font-weight: 300;
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  text-decoration: none;
-  white-space: nowrap;
-  transition: color 0.2s;
-}
-
-.agg-top:hover { color: var(--coral); }
-
-/* ── Winner rows ────────────────────────────────────────── */
-
-.agg-rows {
-  border-bottom: 1px solid var(--line);
-}
-
-.agg-row {
-  display: grid;
-  grid-template-columns: minmax(190px, 0.85fr) 1.6fr auto;
-  align-items: baseline;
-  gap: 0.6rem 1.6rem;
-  padding: 0.95rem 0.2rem;
-  border-top: 1px solid var(--line);
-  transition: padding-left 0.25s var(--ease);
-}
-
-.agg-row:hover { padding-left: 0.8rem; }
-
-.agg-cat {
-  font-family: var(--label);
-  font-weight: 400;
-  font-size: 0.76rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-}
-
-.agg-film {
-  font-family: var(--serif);
-  font-weight: 600;
-  font-size: 1.22rem;
-  line-height: 1.35;
-  color: var(--ink);
-  transition: color 0.2s;
-}
-
-.agg-row:hover .agg-film { color: var(--coral); }
-
-.agg-certs {
-  display: inline-flex;
-  gap: 0.45rem;
-  justify-self: end;
-  align-self: center;
-}
-
-.agg-cert {
-  padding: 0.32rem 0.75rem;
-  font-size: 0.74rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  color: var(--ink-soft);
-  text-decoration: none;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  transition: color 0.2s, border-color 0.2s, background 0.2s;
-}
-
-.agg-cert:hover {
-  color: #fff;
-  background: var(--coral);
-  border-color: var(--coral);
-}
-
-/* ── Footer ─────────────────────────────────────────────── */
-
-.footer {
-  border-top: 1px solid var(--line);
-  padding: 1.4rem clamp(1.1rem, 4vw, 2.4rem);
-}
-
-.footer-inner {
-  max-width: 1060px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.6rem 1.5rem;
-  font-size: 0.82rem;
-  color: var(--ink-faint);
-}
-
-.footer-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.2rem;
-}
-
-.footer-links a {
-  color: var(--ink-soft);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.footer-links a:hover { color: var(--coral); }
-
-/* ── Motion & focus ─────────────────────────────────────── */
-
-:focus-visible {
-  outline: 2px solid var(--coral);
-  outline-offset: 2px;
-}
-
-@keyframes rise {
-  from { opacity: 0; transform: translateY(14px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* ── Small screens ──────────────────────────────────────── */
-
-@media (max-width: 680px) {
-  .brand-text { display: none; }
-
-  .agg-row {
-    grid-template-columns: 1fr auto;
-    grid-template-areas:
-      "cat  certs"
-      "film certs";
-  }
-
-  .agg-cat { grid-area: cat; }
-  .agg-film { grid-area: film; }
-  .agg-certs { grid-area: certs; }
-
-  .agg-season-no { display: none; }
-
-  .agg-top { display: none; }
-}
-
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@700;900&family=Playfair+Display:wght@600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="images/freedom.png">
+  <style>
+    :root {
+      --cream: #faf3e7;
+      --cream-card: #fffaf2;
+      --ink: #2c1810;
+      --ink-soft: #6b5a4e;
+      --orange: #ff6b35;
+      --orange-soft: #ffe3d6;
+      --sc: 'Playfair Display SC', Georgia, serif;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.55;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.85rem clamp(1.1rem, 4vw, 2.6rem);
+      background: var(--cream);
+      border-bottom: 2px solid var(--ink);
+    }
+
+    .brand { display: flex; align-items: center; gap: 0.8rem; text-decoration: none; color: var(--ink); }
+    .brand img { height: 30px; width: auto; display: block; }
+    .brand span {
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .top-links { display: flex; gap: 0.7rem; }
+
+    .btn {
+      display: inline-block;
+      padding: 0.5rem 1.1rem;
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--ink);
+      background: var(--cream-card);
+      border: 2px solid var(--ink);
+      border-radius: 12px;
+      box-shadow: 3px 3px 0 0 var(--ink);
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s, background 0.15s, color 0.15s;
+      white-space: nowrap;
+    }
+
+    .btn:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 0 var(--ink); }
+    .btn:active { transform: translate(1px, 1px); box-shadow: 2px 2px 0 0 var(--ink); }
+    .btn.solid { background: var(--orange); color: #fff; }
+
+    .page {
+      flex: 1;
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 clamp(1.1rem, 4vw, 2.6rem);
+    }
+
+    .hero { text-align: center; padding: clamp(2.2rem, 6vh, 4rem) 0 1.6rem; }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.45rem 1rem;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      background: var(--cream-card);
+      border: 2px solid var(--ink);
+      border-radius: 10px;
+      box-shadow: 3px 3px 0 0 var(--ink);
+      margin-bottom: 1.6rem;
+    }
+
+    .badge .star { color: var(--orange); }
+
+    h1 {
+      margin: 0;
+      font-family: var(--sc);
+      font-weight: 900;
+      font-size: clamp(2.6rem, 7vw, 4.6rem);
+      line-height: 1.05;
+      letter-spacing: 0.01em;
+    }
+
+    h1 .accent { color: var(--orange); }
+
+    .hero-sub {
+      margin: 1rem auto 0;
+      max-width: 34rem;
+      color: var(--ink-soft);
+      font-size: 1.02rem;
+    }
+
+    .jump {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      padding: 0.8rem 0 2.4rem;
+    }
+
+    .chip {
+      padding: 0.45rem 1rem;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--ink);
+      background: var(--cream-card);
+      border: 2px solid var(--ink);
+      border-radius: 999px;
+      box-shadow: 3px 3px 0 0 var(--ink);
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s, background 0.15s, color 0.15s;
+    }
+
+    .chip:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 0 var(--ink); background: var(--orange); color: #fff; }
+
+    .season { padding-top: 1rem; margin-bottom: 3rem; scroll-margin-top: 5.5rem; }
+
+    .season-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 1rem;
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 0.7rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .season-head h2 {
+      margin: 0;
+      font-family: var(--sc);
+      font-weight: 700;
+      font-size: clamp(1.7rem, 4.4vw, 2.5rem);
+      line-height: 1.05;
+    }
+
+    .season-meta {
+      margin: 0.2rem 0 0;
+      color: var(--ink-soft);
+      font-size: 0.92rem;
+      font-weight: 500;
+    }
+
+    .count-badge {
+      flex-shrink: 0;
+      padding: 0.4rem 0.9rem;
+      font-weight: 700;
+      font-size: 0.8rem;
+      color: #fff;
+      background: var(--orange);
+      border: 2px solid var(--ink);
+      border-radius: 10px;
+      box-shadow: 3px 3px 0 0 var(--ink);
+    }
+
+    .wgrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 1.1rem;
+    }
+
+    .wcard {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      padding: 1.1rem 1.2rem 1.15rem;
+      background: var(--cream-card);
+      border: 2px solid var(--ink);
+      border-radius: 14px;
+      box-shadow: 5px 5px 0 0 var(--ink);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .wcard:hover { transform: translate(-3px, -3px); box-shadow: 8px 8px 0 0 var(--ink); }
+
+    .wcat {
+      margin: 0;
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--orange);
+    }
+
+    .wfilm {
+      margin: 0;
+      flex: 1;
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 1.18rem;
+      line-height: 1.3;
+    }
+
+    .mini-btn {
+      align-self: flex-start;
+      margin-top: 0.55rem;
+      padding: 0.32rem 0.85rem;
+      font-weight: 700;
+      font-size: 0.76rem;
+      color: var(--ink);
+      background: var(--orange-soft);
+      border: 2px solid var(--ink);
+      border-radius: 9px;
+      box-shadow: 2px 2px 0 0 var(--ink);
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s, background 0.15s, color 0.15s;
+    }
+
+    .mini-btn:hover { transform: translate(-1px, -1px); box-shadow: 3px 3px 0 0 var(--ink); background: var(--orange); color: #fff; }
+
+    .to-top {
+      display: block;
+      width: fit-content;
+      margin: 0 auto 3rem;
+    }
+
+    .footer {
+      border-top: 2px solid var(--ink);
+      padding: 1.4rem clamp(1.1rem, 4vw, 2.6rem);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.6rem 1.5rem;
+      font-size: 0.85rem;
+      color: var(--ink-soft);
+      font-weight: 500;
+    }
+
+    .footer a { color: var(--ink); font-weight: 700; text-decoration: none; }
+    .footer a:hover { color: var(--orange); }
+
+    :focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
+
+    @media (max-width: 620px) {
+      .brand span { display: none; }
+      .wgrid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
-<body>
-  <div class="rainbow" aria-hidden="true"></div>
+<body id="top">
 
   <header class="topbar">
     <a class="brand" href="/">
-      <img src="images/freedom.png" alt="Indiana" class="brand-logo">
-      <span class="brand-text">Independent&nbsp;Film&nbsp;Festival</span>
+      <img src="images/freedom.png" alt="Indiana">
+      <span>Independent Film Festival</span>
     </a>
-    <a class="submit-link" href="https://filmfreeway.com/IndianaIndependent" target="_blank" rel="noopener">Submit on FilmFreeway</a>
+    <nav class="top-links">
+      <a class="btn" href="/">Home</a>
+      <a class="btn solid" href="/screening.html">Screening</a>
+    </nav>
   </header>
 
   <main class="page">
-    <section class="agg-hero">
-      <p class="agg-label">( Archive )</p>
-      <h1 class="agg-title">Winners<span class="agg-underline" aria-hidden="true"></span></h1>
-      <p class="agg-hero-meta">Six seasons &mdash; 122 awards &mdash; 2024 &ndash; 2026</p>
+    <section class="hero">
+      <span class="badge"><span class="star">&#9733;</span> Six Seasons &middot; 2024 &ndash; 2026</span>
+      <h1>Award <span class="accent">Winners</span></h1>
+      <p class="hero-sub">Every winning film from the Indiana Independent Film Festival,
+        season by season &mdash; with official certificates.</p>
     </section>
 
-    <nav class="agg-nav" aria-label="Jump to season">
-      <a class="agg-chip agg-chip-home" href="/">&larr; Home</a>
-      <a class="agg-chip" href="#season-six">Season Six</a>
-      <a class="agg-chip" href="#season-five">Season Five</a>
-      <a class="agg-chip" href="#season-four">Season Four</a>
-      <a class="agg-chip" href="#season-three">Season Three</a>
-      <a class="agg-chip" href="#season-two">Season Two</a>
-      <a class="agg-chip" href="#season-one">Season One</a>
+    <nav class="jump" aria-label="Jump to season">
+      <a class="chip" href="#season-six">Season Six</a>
+      <a class="chip" href="#season-five">Season Five</a>
+      <a class="chip" href="#season-four">Season Four</a>
+      <a class="chip" href="#season-three">Season Three</a>
+      <a class="chip" href="#season-two">Season Two</a>
+      <a class="chip" href="#season-one">Season One</a>
     </nav>
 
-    <section class="agg-season" id="season-six">
-      <header class="agg-season-head">
-        <span class="agg-season-no" aria-hidden="true">06</span>
-        <div class="agg-season-titles">
-          <h2 class="agg-season-title">Season Six</h2>
-          <p class="agg-season-meta">February – May 2026 &mdash; 29 awards</p>
+    <section class="season" id="season-six">
+      <div class="season-head">
+        <div>
+          <h2>Season Six</h2>
+          <p class="season-meta">February – May 2026</p>
         </div>
-        <a class="agg-top" href="#top">Back to top &uarr;</a>
-      </header>
-      <div class="agg-rows">
-        <div class="agg-row">
-          <span class="agg-cat">Best Film — Short</span>
-          <span class="agg-film">Memento Mori</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s6/best-film-short.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Director — Short</span>
-          <span class="agg-film">Our Monsters</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s6/best-director-short.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Actress — Short</span>
-          <span class="agg-film">Moments From Motherhood / Krystyn Sayre</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s6/best-actress-short.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Script — Short</span>
-          <span class="agg-film">Shelf Life</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s6/best-script-short.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Narrative — Short</span>
-          <span class="agg-film">Bus No. 9</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s6/best-narrative-short.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Documentary — Short</span>
-          <span class="agg-film">Dionysos Avignon In Flesh And Shadow</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s6/best-documentary-short.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Experimental — Short</span>
-          <span class="agg-film">Michel Steiner 64 Agendas</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s6/best-experimental-short.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Sci — Fi Or Fantasy — Short</span>
-          <span class="agg-film">Limited Slip</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s6/best-sci-fi-or-fantasy-short.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Thriller — Short</span>
-          <span class="agg-film">Wolf At The Crossroads</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s6/best-thriller-short.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Comedy — Short</span>
-          <span class="agg-film">The Master Puppeteer</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s6/best-comedy-short.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Drama — Short</span>
-          <span class="agg-film">Faithless</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s6/best-drama-short.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Horror — Short</span>
-          <span class="agg-film">The Collector</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s6/best-horror-short.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Ultra — Short (Under 3 Minutes)</span>
-          <span class="agg-film">Words From The Midnight Monster</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s6/best-ultra-short-under-3-minutes.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Screenplay — Short</span>
-          <span class="agg-film">Ex Parte Crow Dog</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s6/best-screenplay-short.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Cinematography — Short</span>
-          <span class="agg-film">The Harpies</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s6/best-cinematography-short.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Film — Feature</span>
-          <span class="agg-film">First String 2: The Greenwood 20: Quest For The Great Dante</span>
-          <span class="agg-certs">
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Script (Unproduced) — Feature</span>
-          <span class="agg-film">Crustaceus</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s6/best-script-unproduced-feature.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Documentary — Feature</span>
-          <span class="agg-film">Together For Water</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s6/best-documentary-feature.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Experimental — Feature</span>
-          <span class="agg-film">Our Brilliant Destruction</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s6/best-experimental-feature.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Screenplay — Feature</span>
-          <span class="agg-film">Major Minor Details</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s6/best-screenplay-feature.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Comedy — Feature</span>
-          <span class="agg-film">60 Days</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s6/best-comedy-feature.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Drama — Feature</span>
-          <span class="agg-film">First String 2: The Greenwood 20: Quest For The Great Dante</span>
-          <span class="agg-certs">
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Cinematography — Feature</span>
-          <span class="agg-film">Colombano &amp; La 21Esima Fetta</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s6/best-cinematography-feature.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best First — Time Filmmaker</span>
-          <span class="agg-film">The Dandelion Girl</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s6/best-first-time-filmmaker.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Music Video</span>
-          <span class="agg-film">Sexy City Lights</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s6/best-music-video.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Web Series / Pilot Episode</span>
-          <span class="agg-film">The Killers Journalist</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s6/best-web-series-pilot-episode.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Student Film</span>
-          <span class="agg-film">The Cowgirl</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s6/best-student-film.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Dance Film</span>
-          <span class="agg-film">Schumann: A Love Story</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s6/best-dance-film.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Producer — Short</span>
-          <span class="agg-film">Music In The Air</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s6/best-producer-short.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
+        <span class="count-badge">29 awards</span>
+      </div>
+      <div class="wgrid">
+        <article class="wcard">
+          <p class="wcat">Best Film — Short</p>
+          <h3 class="wfilm">Memento Mori</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s6/best-film-short.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Director — Short</p>
+          <h3 class="wfilm">Our Monsters</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s6/best-director-short.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Actress — Short</p>
+          <h3 class="wfilm">Moments From Motherhood / Krystyn Sayre</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s6/best-actress-short.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Script — Short</p>
+          <h3 class="wfilm">Shelf Life</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s6/best-script-short.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Narrative — Short</p>
+          <h3 class="wfilm">Bus No. 9</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s6/best-narrative-short.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Documentary — Short</p>
+          <h3 class="wfilm">Dionysos Avignon In Flesh And Shadow</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s6/best-documentary-short.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Experimental — Short</p>
+          <h3 class="wfilm">Michel Steiner 64 Agendas</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s6/best-experimental-short.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Sci-Fi Or Fantasy — Short</p>
+          <h3 class="wfilm">Limited Slip</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s6/best-sci-fi-or-fantasy-short.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Thriller — Short</p>
+          <h3 class="wfilm">Wolf At The Crossroads</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s6/best-thriller-short.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Comedy — Short</p>
+          <h3 class="wfilm">The Master Puppeteer</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s6/best-comedy-short.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Drama — Short</p>
+          <h3 class="wfilm">Faithless</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s6/best-drama-short.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Horror — Short</p>
+          <h3 class="wfilm">The Collector</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s6/best-horror-short.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Ultra-Short (Under 3 Minutes)</p>
+          <h3 class="wfilm">Words From The Midnight Monster</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s6/best-ultra-short-under-3-minutes.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Screenplay — Short</p>
+          <h3 class="wfilm">Ex Parte Crow Dog</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s6/best-screenplay-short.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Cinematography — Short</p>
+          <h3 class="wfilm">The Harpies</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s6/best-cinematography-short.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Film — Feature</p>
+          <h3 class="wfilm">First String 2: The Greenwood 20: Quest For The Great Dante</h3>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Script (Unproduced) — Feature</p>
+          <h3 class="wfilm">Crustaceus</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s6/best-script-unproduced-feature.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Documentary — Feature</p>
+          <h3 class="wfilm">Together For Water</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s6/best-documentary-feature.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Experimental — Feature</p>
+          <h3 class="wfilm">Our Brilliant Destruction</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s6/best-experimental-feature.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Screenplay — Feature</p>
+          <h3 class="wfilm">Major Minor Details</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s6/best-screenplay-feature.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Comedy — Feature</p>
+          <h3 class="wfilm">60 Days</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s6/best-comedy-feature.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Drama — Feature</p>
+          <h3 class="wfilm">First String 2: The Greenwood 20: Quest For The Great Dante</h3>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Cinematography — Feature</p>
+          <h3 class="wfilm">Colombano &amp; La 21Esima Fetta</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s6/best-cinematography-feature.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best First-Time Filmmaker</p>
+          <h3 class="wfilm">The Dandelion Girl</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s6/best-first-time-filmmaker.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Music Video</p>
+          <h3 class="wfilm">Sexy City Lights</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s6/best-music-video.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Web Series / Pilot Episode</p>
+          <h3 class="wfilm">The Killers Journalist</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s6/best-web-series-pilot-episode.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Student Film</p>
+          <h3 class="wfilm">The Cowgirl</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s6/best-student-film.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Dance Film</p>
+          <h3 class="wfilm">Schumann: A Love Story</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s6/best-dance-film.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Producer — Short</p>
+          <h3 class="wfilm">Music In The Air</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s6/best-producer-short.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
       </div>
     </section>
 
-    <section class="agg-season" id="season-five">
-      <header class="agg-season-head">
-        <span class="agg-season-no" aria-hidden="true">05</span>
-        <div class="agg-season-titles">
-          <h2 class="agg-season-title">Season Five</h2>
-          <p class="agg-season-meta">October 2025 – January 2026 &mdash; 27 awards</p>
+    <section class="season" id="season-five">
+      <div class="season-head">
+        <div>
+          <h2>Season Five</h2>
+          <p class="season-meta">October 2025 – January 2026</p>
         </div>
-        <a class="agg-top" href="#top">Back to top &uarr;</a>
-      </header>
-      <div class="agg-rows">
-        <div class="agg-row">
-          <span class="agg-cat">Best Film — Short</span>
-          <span class="agg-film">Different Than Yesterday</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s5/BEST-FILM-SHORT.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Director — Short</span>
-          <span class="agg-film">The Ghost Of Summers Past</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s5/BEST-DIRECTOR-SHORT.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Actor — Short</span>
-          <span class="agg-film">Real Mother / Case Walker</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s5/BEST-ACTOR-SHORT.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Actress — Short</span>
-          <span class="agg-film">Cool Headed Girl / Rose Jones</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s5/BEST-ACTRESS-SHORT.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Script — Short</span>
-          <span class="agg-film">The Veil Of Silence</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s5/BEST-SCRIPT-SHORT.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Script (Unproduced) — Short</span>
-          <span class="agg-film">The Rockette</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s5/BEST-SCRIPT-UNPRODUCED-SHORT.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Documentary — Short</span>
-          <span class="agg-film">Between The Great Plains</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s5/BEST-DOCUMENTARY-SHORT.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Experimental — Short</span>
-          <span class="agg-film">Moisture</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s5/BEST-EXPERIMENTAL-SHORT.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Animated — Short</span>
-          <span class="agg-film">Out In The West</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s5/BEST-ANIMATED-SHORT.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Sci — Fi Or Fantasy — Short</span>
-          <span class="agg-film">Memoria Obscura</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s5/BEST-SCI-FI-OR-FANTASY-SHORT.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Thriller — Short</span>
-          <span class="agg-film">Perturbed</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s5/BEST-THRILLER-SHORT.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Comedy — Short</span>
-          <span class="agg-film">Shut Up And Suffer</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s5/BEST-COMEDY-SHORT.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Drama — Short</span>
-          <span class="agg-film">The Cow</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s5/BEST-DRAMA-SHORT.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Horror — Short</span>
-          <span class="agg-film">Bugaboo</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s5/BEST-HORROR-SHORT.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Ultra — Short (Under 3 Minutes)</span>
-          <span class="agg-film">The Recreation</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s5/BEST-ULTRA-SHORT-UNDER-3-MINUTES.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Screenplay — Short</span>
-          <span class="agg-film">The Veil Of Silence</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s5/BEST-SCREENPLAY-SHORT.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Cinematography — Short</span>
-          <span class="agg-film">Alone Together</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s5/BEST-CINEMATOGRAPHY-SHORT.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Script (Unproduced) — Feature</span>
-          <span class="agg-film">Sweet Child's Nemesis</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s5/BEST-SCRIPT-UNPRODUCED-FEATURE.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Documentary — Feature</span>
-          <span class="agg-film">Morgan Wood "Everything Always Happens So Much"</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s5/BEST-DOCUMENTARY-FEATURE.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Sci — Fi Or Fantasy — Feature</span>
-          <span class="agg-film">Journey</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s5/BEST-SCI-FI-OR-FANTASY-FEATURE.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best First — Time Filmmaker</span>
-          <span class="agg-film">Fangs</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s5/BEST-FIRST-TIME-FILMMAKER.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best LGBTQ+ Film</span>
-          <span class="agg-film">Period</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s5/BEST-LGBTQ-FILM.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best AI — Generated Or AI — Themed Film</span>
-          <span class="agg-film">The Old Bench In New York</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s5/BEST-AI-GENERATED-OR-AI-THEMED-FILM.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Music Video</span>
-          <span class="agg-film">Grandpa's Got A Brand New Pill</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s5/BEST-MUSIC-VIDEO.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Web Series / Pilot Episode</span>
-          <span class="agg-film">Dark Corners</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s5/BEST-WEB-SERIES-PILOT-EPISODE.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Student Film</span>
-          <span class="agg-film">The Waywarede</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s5/BEST-STUDENT-FILM.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Micro — Budget Film</span>
-          <span class="agg-film">A Lady's Love</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s5/BEST-MICRO-BUDGET-FILM.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
+        <span class="count-badge">27 awards</span>
+      </div>
+      <div class="wgrid">
+        <article class="wcard">
+          <p class="wcat">Best Film — Short</p>
+          <h3 class="wfilm">Different Than Yesterday</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s5/BEST-FILM-SHORT.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Director — Short</p>
+          <h3 class="wfilm">The Ghost Of Summers Past</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s5/BEST-DIRECTOR-SHORT.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Actor — Short</p>
+          <h3 class="wfilm">Real Mother / Case Walker</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s5/BEST-ACTOR-SHORT.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Actress — Short</p>
+          <h3 class="wfilm">Cool Headed Girl / Rose Jones</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s5/BEST-ACTRESS-SHORT.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Script — Short</p>
+          <h3 class="wfilm">The Veil Of Silence</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s5/BEST-SCRIPT-SHORT.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Script (Unproduced) — Short</p>
+          <h3 class="wfilm">The Rockette</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s5/BEST-SCRIPT-UNPRODUCED-SHORT.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Documentary — Short</p>
+          <h3 class="wfilm">Between The Great Plains</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s5/BEST-DOCUMENTARY-SHORT.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Experimental — Short</p>
+          <h3 class="wfilm">Moisture</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s5/BEST-EXPERIMENTAL-SHORT.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Animated — Short</p>
+          <h3 class="wfilm">Out In The West</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s5/BEST-ANIMATED-SHORT.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Sci-Fi Or Fantasy — Short</p>
+          <h3 class="wfilm">Memoria Obscura</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s5/BEST-SCI-FI-OR-FANTASY-SHORT.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Thriller — Short</p>
+          <h3 class="wfilm">Perturbed</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s5/BEST-THRILLER-SHORT.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Comedy — Short</p>
+          <h3 class="wfilm">Shut Up And Suffer</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s5/BEST-COMEDY-SHORT.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Drama — Short</p>
+          <h3 class="wfilm">The Cow</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s5/BEST-DRAMA-SHORT.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Horror — Short</p>
+          <h3 class="wfilm">Bugaboo</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s5/BEST-HORROR-SHORT.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Ultra-Short (Under 3 Minutes)</p>
+          <h3 class="wfilm">The Recreation</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s5/BEST-ULTRA-SHORT-UNDER-3-MINUTES.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Screenplay — Short</p>
+          <h3 class="wfilm">The Veil Of Silence</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s5/BEST-SCREENPLAY-SHORT.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Cinematography — Short</p>
+          <h3 class="wfilm">Alone Together</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s5/BEST-CINEMATOGRAPHY-SHORT.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Script (Unproduced) — Feature</p>
+          <h3 class="wfilm">Sweet Child's Nemesis</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s5/BEST-SCRIPT-UNPRODUCED-FEATURE.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Documentary — Feature</p>
+          <h3 class="wfilm">Morgan Wood "Everything Always Happens So Much"</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s5/BEST-DOCUMENTARY-FEATURE.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Sci-Fi Or Fantasy — Feature</p>
+          <h3 class="wfilm">Journey</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s5/BEST-SCI-FI-OR-FANTASY-FEATURE.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best First-Time Filmmaker</p>
+          <h3 class="wfilm">Fangs</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s5/BEST-FIRST-TIME-FILMMAKER.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best LGBTQ+ Film</p>
+          <h3 class="wfilm">Period</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s5/BEST-LGBTQ-FILM.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best AI-Generated Or AI-Themed Film</p>
+          <h3 class="wfilm">The Old Bench In New York</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s5/BEST-AI-GENERATED-OR-AI-THEMED-FILM.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Music Video</p>
+          <h3 class="wfilm">Grandpa's Got A Brand New Pill</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s5/BEST-MUSIC-VIDEO.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Web Series / Pilot Episode</p>
+          <h3 class="wfilm">Dark Corners</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s5/BEST-WEB-SERIES-PILOT-EPISODE.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Student Film</p>
+          <h3 class="wfilm">The Waywarede</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s5/BEST-STUDENT-FILM.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Micro-Budget Film</p>
+          <h3 class="wfilm">A Lady's Love</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s5/BEST-MICRO-BUDGET-FILM.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
       </div>
     </section>
 
-    <section class="agg-season" id="season-four">
-      <header class="agg-season-head">
-        <span class="agg-season-no" aria-hidden="true">04</span>
-        <div class="agg-season-titles">
-          <h2 class="agg-season-title">Season Four</h2>
-          <p class="agg-season-meta">September 2025 &mdash; 15 awards</p>
+    <section class="season" id="season-four">
+      <div class="season-head">
+        <div>
+          <h2>Season Four</h2>
+          <p class="season-meta">September 2025</p>
         </div>
-        <a class="agg-top" href="#top">Back to top &uarr;</a>
-      </header>
-      <div class="agg-rows">
-        <div class="agg-row">
-          <span class="agg-cat">Best Short Film</span>
-          <span class="agg-film">July 4th, East New York</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s4/SHORT-FILM.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best International Narrative</span>
-          <span class="agg-film">Old Well</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s4/INTERNATIONAL-NARRATIVE.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Experimental</span>
-          <span class="agg-film">Dynamics</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s4/EXPERIMENTAL.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Documentary</span>
-          <span class="agg-film">Inherited Shame</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s4/DOCUMENTARY.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Animation</span>
-          <span class="agg-film">Rose Petals</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s4/ANIMATION.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Student</span>
-          <span class="agg-film">The New Immigrants - Hong Kongers</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s4/STUDENT.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Director</span>
-          <span class="agg-film">Artold Bernice's Cheek</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s4/DIRECTOR.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Screenplay</span>
-          <span class="agg-film">Artold Bernice's Cheek</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s4/SCREENPLAY.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Script</span>
-          <span class="agg-film">Jump</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s4/SCRIPT.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Unproduced Script</span>
-          <span class="agg-film">Crustaceus</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s4/UNPRODUCED-SCRIPT.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Short Short</span>
-          <span class="agg-film">The Mud Hole</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s4/SHORT-SHORT.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best First — Time Director</span>
-          <span class="agg-film">The Mud Hole</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s4/FIRST-TIME-DIRECTOR.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Cinematography</span>
-          <span class="agg-film">Survival Instinct</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s4/CINEMATOGRAPHY.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Editing</span>
-          <span class="agg-film">Survival Instinct</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s4/EDITING.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Sci — Fi</span>
-          <span class="agg-film">Jump</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s4/SCI-FI.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
+        <span class="count-badge">15 awards</span>
+      </div>
+      <div class="wgrid">
+        <article class="wcard">
+          <p class="wcat">Best Short Film</p>
+          <h3 class="wfilm">July 4th, East New York</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s4/SHORT-FILM.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best International Narrative</p>
+          <h3 class="wfilm">Old Well</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s4/INTERNATIONAL-NARRATIVE.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Experimental</p>
+          <h3 class="wfilm">Dynamics</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s4/EXPERIMENTAL.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Documentary</p>
+          <h3 class="wfilm">Inherited Shame</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s4/DOCUMENTARY.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Animation</p>
+          <h3 class="wfilm">Rose Petals</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s4/ANIMATION.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Student</p>
+          <h3 class="wfilm">The New Immigrants - Hong Kongers</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s4/STUDENT.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Director</p>
+          <h3 class="wfilm">Artold Bernice's Cheek</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s4/DIRECTOR.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Screenplay</p>
+          <h3 class="wfilm">Artold Bernice's Cheek</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s4/SCREENPLAY.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Script</p>
+          <h3 class="wfilm">Jump</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s4/SCRIPT.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Unproduced Script</p>
+          <h3 class="wfilm">Crustaceus</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s4/UNPRODUCED-SCRIPT.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Short Short</p>
+          <h3 class="wfilm">The Mud Hole</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s4/SHORT-SHORT.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best First-Time Director</p>
+          <h3 class="wfilm">The Mud Hole</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s4/FIRST-TIME-DIRECTOR.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Cinematography</p>
+          <h3 class="wfilm">Survival Instinct</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s4/CINEMATOGRAPHY.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Editing</p>
+          <h3 class="wfilm">Survival Instinct</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s4/EDITING.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Sci-Fi</p>
+          <h3 class="wfilm">Jump</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s4/SCI-FI.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
       </div>
     </section>
 
-    <section class="agg-season" id="season-three">
-      <header class="agg-season-head">
-        <span class="agg-season-no" aria-hidden="true">03</span>
-        <div class="agg-season-titles">
-          <h2 class="agg-season-title">Season Three</h2>
-          <p class="agg-season-meta">May 2025 &mdash; 14 awards</p>
+    <section class="season" id="season-three">
+      <div class="season-head">
+        <div>
+          <h2>Season Three</h2>
+          <p class="season-meta">May 2025</p>
         </div>
-        <a class="agg-top" href="#top">Back to top &uarr;</a>
-      </header>
-      <div class="agg-rows">
-        <div class="agg-row">
-          <span class="agg-cat">Best Short Film</span>
-          <span class="agg-film">a Friend in the Night</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s3/SHORT-FILM.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Experimental</span>
-          <span class="agg-film">The Volcano and the Baby</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s3/EXPERIMENTAL.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Documentary</span>
-          <span class="agg-film">The Mirror Parajanov</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s3/DOCUMENTARY.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Animation</span>
-          <span class="agg-film">Making Emmie Smile</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s3/ANIMATION.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Student</span>
-          <span class="agg-film">The Great Golden Carrot Caper</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s3/STUDENT.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Director & Sci — Fi</span>
-          <span class="agg-film">The Days of Knight: Chapter 1</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s3/DIRECTOR-SCI-FI.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Screenplay</span>
-          <span class="agg-film">Single At Christmas</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s3/SCREENPLAY.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Unproduced Script</span>
-          <span class="agg-film">Want Love-the Film</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s3/UNPRODUCED-SCRIPT.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Short Short</span>
-          <span class="agg-film">Treasure Imagination</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s3/SHORT-SHORT.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Web Series & First — Time Director</span>
-          <span class="agg-film">Kaleb & Ms.Kelsey</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s3/FIRST-TIME-DIRECTOR-WEB-SERIES.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Tv Pilot</span>
-          <span class="agg-film">Cafe Romeo</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s3/TV-PILOT.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Actress</span>
-          <span class="agg-film">Carissa Tells It All / Caitlin Burt</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s3/ACTRESS.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Actor</span>
-          <span class="agg-film">Law's World : Lipstick Bandit / Law Artis</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s3/ACTOR.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best LGBTQ</span>
-          <span class="agg-film">Identity</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s3/LGBTQ.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
+        <span class="count-badge">14 awards</span>
+      </div>
+      <div class="wgrid">
+        <article class="wcard">
+          <p class="wcat">Best Short Film</p>
+          <h3 class="wfilm">a Friend in the Night</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s3/SHORT-FILM.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Experimental</p>
+          <h3 class="wfilm">The Volcano and the Baby</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s3/EXPERIMENTAL.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Documentary</p>
+          <h3 class="wfilm">The Mirror Parajanov</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s3/DOCUMENTARY.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Animation</p>
+          <h3 class="wfilm">Making Emmie Smile</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s3/ANIMATION.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Student</p>
+          <h3 class="wfilm">The Great Golden Carrot Caper</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s3/STUDENT.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Director & Sci-Fi</p>
+          <h3 class="wfilm">The Days of Knight: Chapter 1</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s3/DIRECTOR-SCI-FI.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Screenplay</p>
+          <h3 class="wfilm">Single At Christmas</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s3/SCREENPLAY.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Unproduced Script</p>
+          <h3 class="wfilm">Want Love-the Film</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s3/UNPRODUCED-SCRIPT.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Short Short</p>
+          <h3 class="wfilm">Treasure Imagination</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s3/SHORT-SHORT.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Web Series & First-Time Director</p>
+          <h3 class="wfilm">Kaleb & Ms.Kelsey</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s3/FIRST-TIME-DIRECTOR-WEB-SERIES.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best TV Pilot</p>
+          <h3 class="wfilm">Cafe Romeo</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s3/TV-PILOT.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Actress</p>
+          <h3 class="wfilm">Carissa Tells It All / Caitlin Burt</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s3/ACTRESS.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Actor</p>
+          <h3 class="wfilm">Law's World : Lipstick Bandit / Law Artis</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s3/ACTOR.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best LGBTQ</p>
+          <h3 class="wfilm">Identity</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s3/LGBTQ.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
       </div>
     </section>
 
-    <section class="agg-season" id="season-two">
-      <header class="agg-season-head">
-        <span class="agg-season-no" aria-hidden="true">02</span>
-        <div class="agg-season-titles">
-          <h2 class="agg-season-title">Season Two</h2>
-          <p class="agg-season-meta">December 2024 &mdash; 18 awards</p>
+    <section class="season" id="season-two">
+      <div class="season-head">
+        <div>
+          <h2>Season Two</h2>
+          <p class="season-meta">December 2024</p>
         </div>
-        <a class="agg-top" href="#top">Back to top &uarr;</a>
-      </header>
-      <div class="agg-rows">
-        <div class="agg-row">
-          <span class="agg-cat">Best Film</span>
-          <span class="agg-film">Antarctica Land for All</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s2/SHORT-FILM.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Experimental</span>
-          <span class="agg-film">Pink City Film</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s2/EXPERIMENTAL.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Animation</span>
-          <span class="agg-film">Snow White and the Seven Dwarfs</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s2/ANIMATION.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Student</span>
-          <span class="agg-film">Quirk</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s2/STUDENT.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Director</span>
-          <span class="agg-film">Toby</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s2/DIRECTOR.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Screenplay</span>
-          <span class="agg-film">Abnormal Fixation</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s2/SCREENPLAY.pdf role=" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Unproduced Script</span>
-          <span class="agg-film">Revelation</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s2/UNPRODUCED-SCRIPT.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Short Short</span>
-          <span class="agg-film">Feu-Follet</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s2/SHORT-SHORT.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best First — Time Director</span>
-          <span class="agg-film">The Days of Knight</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s2/FIRST-TIME-DIRECTOR.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Composer</span>
-          <span class="agg-film">47</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s2/COMPOSER.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Music Video</span>
-          <span class="agg-film">Jungle Out There</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s2/MUSIC-VIDEO.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Tv Pilot</span>
-          <span class="agg-film">Cariddi's Graveyard: Tales of Mare Nostrum</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s2/TV-PILOT.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Actress</span>
-          <span class="agg-film">Pink City Film / Mirijam Verena Jeremic</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s2/ACTRESS.jpeg" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Editing</span>
-          <span class="agg-film">Albuquerque Mosaic</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s2/EDITING.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Web Series</span>
-          <span class="agg-film">Abnormal Fixation</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s2/WEB-SERIES.jpeg" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Documentary</span>
-          <span class="agg-film">Anacostia Portraits</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s2/DOCUMENTARY.jpeg" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best International Narrative</span>
-          <span class="agg-film">Quirk</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s2/INTERNATIONAL-NARRATIVE.jpeg" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Cinematography</span>
-          <span class="agg-film">TutuTango</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s2/CINEMATOGRAPHY.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
+        <span class="count-badge">18 awards</span>
+      </div>
+      <div class="wgrid">
+        <article class="wcard">
+          <p class="wcat">Best Film</p>
+          <h3 class="wfilm">Antarctica Land for All</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s2/SHORT-FILM.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Experimental</p>
+          <h3 class="wfilm">Pink City Film</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s2/EXPERIMENTAL.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Animation</p>
+          <h3 class="wfilm">Snow White and the Seven Dwarfs</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s2/ANIMATION.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Student</p>
+          <h3 class="wfilm">Quirk</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s2/STUDENT.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Director</p>
+          <h3 class="wfilm">Toby</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s2/DIRECTOR.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Screenplay</p>
+          <h3 class="wfilm">Abnormal Fixation</h3>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Unproduced Script</p>
+          <h3 class="wfilm">Revelation</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s2/UNPRODUCED-SCRIPT.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Short Short</p>
+          <h3 class="wfilm">Feu-Follet</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s2/SHORT-SHORT.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best First-Time Director</p>
+          <h3 class="wfilm">The Days of Knight</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s2/FIRST-TIME-DIRECTOR.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Composer</p>
+          <h3 class="wfilm">47</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s2/COMPOSER.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Music Video</p>
+          <h3 class="wfilm">Jungle Out There</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s2/MUSIC-VIDEO.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best TV Pilot</p>
+          <h3 class="wfilm">Cariddi's Graveyard: Tales of Mare Nostrum</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s2/TV-PILOT.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Actress</p>
+          <h3 class="wfilm">Pink City Film / Mirijam Verena Jeremic</h3>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Editing</p>
+          <h3 class="wfilm">Albuquerque Mosaic</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s2/EDITING.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Web Series</p>
+          <h3 class="wfilm">Abnormal Fixation</h3>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Documentary</p>
+          <h3 class="wfilm">Anacostia Portraits</h3>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best International Narrative</p>
+          <h3 class="wfilm">Quirk</h3>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Cinematography</p>
+          <h3 class="wfilm">TutuTango</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s2/CINEMATOGRAPHY.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
       </div>
     </section>
 
-    <section class="agg-season" id="season-one">
-      <header class="agg-season-head">
-        <span class="agg-season-no" aria-hidden="true">01</span>
-        <div class="agg-season-titles">
-          <h2 class="agg-season-title">Season One</h2>
-          <p class="agg-season-meta">August 2024 &mdash; 19 awards</p>
+    <section class="season" id="season-one">
+      <div class="season-head">
+        <div>
+          <h2>Season One</h2>
+          <p class="season-meta">August 2024</p>
         </div>
-        <a class="agg-top" href="#top">Back to top &uarr;</a>
-      </header>
-      <div class="agg-rows">
-        <div class="agg-row">
-          <span class="agg-cat">Best Film</span>
-          <span class="agg-film">Dojo</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s1/best-film.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Experimental</span>
-          <span class="agg-film">Burning Love</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s1/best-experimental.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Animation</span>
-          <span class="agg-film">The Forest of the Honey Bees</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s1/best-animation.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Student</span>
-          <span class="agg-film">Meat the One</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s1/best-student.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Director</span>
-          <span class="agg-film">The Scalpel</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s1/best-director.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Screenplay</span>
-          <span class="agg-film">Escape</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s1/best-screenplay.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Script</span>
-          <span class="agg-film">Vanités</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s1/best-script.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Unproduced Script</span>
-          <span class="agg-film">My Town</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s1/best-unproduced-script.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Short Short</span>
-          <span class="agg-film">Edge of Invisibility</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s1/best-short-short.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best First — Time Director</span>
-          <span class="agg-film">Lines of a Woman</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s1/best-first-time-director.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Composer</span>
-          <span class="agg-film">Lines of a Woman</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s1/best-composer.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Music Video</span>
-          <span class="agg-film">The Girl Who Faded Away</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s1/best-music-video.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Tv Pilot</span>
-          <span class="agg-film">Tescbury's Tales</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s1/best-tv-pilot.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Actor</span>
-          <span class="agg-film">Dojo / Jon Paul</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s1/best-actor.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Actress</span>
-          <span class="agg-film">Impossible Secret / Sofia Sotiria Mavrou</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s1/best-actress.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Editing</span>
-          <span class="agg-film">ÀSAKA</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s1/best-editing.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best LGBTQ</span>
-          <span class="agg-film">BERGAMOT</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s1/best-lgbtq.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Sci — Fi</span>
-          <span class="agg-film">Drone Runner II</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s1/best-scifi.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
-        <div class="agg-row">
-          <span class="agg-cat">Best Cinematography</span>
-          <span class="agg-film">ÀSAKA</span>
-          <span class="agg-certs">
-            <a class="agg-cert" href="https://indianafes.info/certs/s1/best-cinematography.pdf" target="_blank" rel="noopener">PDF</a>
-          </span>
-        </div>
+        <span class="count-badge">19 awards</span>
+      </div>
+      <div class="wgrid">
+        <article class="wcard">
+          <p class="wcat">Best Film</p>
+          <h3 class="wfilm">Dojo</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s1/best-film.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Experimental</p>
+          <h3 class="wfilm">Burning Love</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s1/best-experimental.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Animation</p>
+          <h3 class="wfilm">The Forest of the Honey Bees</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s1/best-animation.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Student</p>
+          <h3 class="wfilm">Meat the One</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s1/best-student.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Director</p>
+          <h3 class="wfilm">The Scalpel</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s1/best-director.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Screenplay</p>
+          <h3 class="wfilm">Escape</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s1/best-screenplay.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Script</p>
+          <h3 class="wfilm">Vanités</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s1/best-script.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Unproduced Script</p>
+          <h3 class="wfilm">My Town</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s1/best-unproduced-script.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Short Short</p>
+          <h3 class="wfilm">Edge of Invisibility</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s1/best-short-short.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best First-Time Director</p>
+          <h3 class="wfilm">Lines of a Woman</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s1/best-first-time-director.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Composer</p>
+          <h3 class="wfilm">Lines of a Woman</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s1/best-composer.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Music Video</p>
+          <h3 class="wfilm">The Girl Who Faded Away</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s1/best-music-video.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best TV Pilot</p>
+          <h3 class="wfilm">Tescbury's Tales</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s1/best-tv-pilot.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Actor</p>
+          <h3 class="wfilm">Dojo / Jon Paul</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s1/best-actor.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Actress</p>
+          <h3 class="wfilm">Impossible Secret / Sofia Sotiria Mavrou</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s1/best-actress.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Editing</p>
+          <h3 class="wfilm">ÀSAKA</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s1/best-editing.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best LGBTQ</p>
+          <h3 class="wfilm">BERGAMOT</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s1/best-lgbtq.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Sci-Fi</p>
+          <h3 class="wfilm">Drone Runner II</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s1/best-scifi.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
+        <article class="wcard">
+          <p class="wcat">Best Cinematography</p>
+          <h3 class="wfilm">ÀSAKA</h3>
+          <a class="mini-btn" href="https://indianafes.info/certs/s1/best-cinematography.pdf" target="_blank" rel="noopener">Certificate</a>
+        </article>
       </div>
     </section>
+
+    <a class="btn to-top" href="#top">&uarr; Back to top</a>
   </main>
 
   <footer class="footer">
-    <div class="footer-inner">
-      <span>&copy; 2026 Indiana Independent Film Festival</span>
-      <nav class="footer-links">
-        <a href="mailto:support@indianafes.info">support@indianafes.info</a>
-        <a href="https://www.instagram.com/indianafilmfestival" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://filmfreeway.com/IndianaIndependent" target="_blank" rel="noopener">FilmFreeway</a>
-      </nav>
-    </div>
+    <span>&copy; 2026 Indiana Independent Film Festival</span>
+    <span><a href="mailto:support@indianafes.info">support@indianafes.info</a> &middot; <a href="https://www.instagram.com/indianafilmfestival" target="_blank" rel="noopener">Instagram</a> &middot; <a href="https://filmfreeway.com/IndianaIndependent" target="_blank" rel="noopener">FilmFreeway</a></span>
   </footer>
 </body>
 </html>
