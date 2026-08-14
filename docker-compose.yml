@@ -46,14 +46,14 @@ services:
     volumes:
       - ./site-content/indianashort/web:/usr/share/nginx/html
       - ./site-content/indianashort/nginx:/etc/nginx/conf.d
-      # - ./site-content/indianashort/movies:/var/www/html/videos
+      - ./site-content/indianashort/movies:/var/www/html/videos
       - ./site-content/indianashort/certs:/var/www/html/certs
     networks:
       - proxy
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=proxy"
-      - "traefik.http.routers.indianashort.rule=Host(`indianafes.info`)"
+      - "traefik.http.routers.indianashort.rule=Host(`indianafes.info`) || Host(`screening.indianafes.info`)"
       - "traefik.http.routers.indianashort.entrypoints=websecure"
       - "traefik.http.routers.indianashort.tls=true"
       - "traefik.http.routers.indianashort.tls.certresolver=letsencrypt"
@@ -240,21 +240,3 @@ services:
   #     - "traefik.http.routers.parisscreen.tls.certresolver=letsencrypt"
   #     - "traefik.http.services.parisscreen.loadbalancer.server.port=80"
 
-  # screening:
-  #   image: nginx:alpine
-  #   container_name: screening
-  #   restart: unless-stopped
-  #   volumes:
-  #     - ./site-content/screening/web:/usr/share/nginx/html
-  #     - ./site-content/screening/nginx:/etc/nginx/conf.d
-  #     - ./site-content/screening/movies:/var/www/html/videos
-  #   networks:
-  #     - proxy
-  #   labels:
-  #     - "traefik.enable=true"
-  #     - "traefik.docker.network=proxy"
-  #     - "traefik.http.routers.screening.rule=Host(`screening.indianafes.info`)"
-  #     - "traefik.http.routers.screening.entrypoints=websecure"
-  #     - "traefik.http.routers.screening.tls=true"
-  #     - "traefik.http.routers.screening.tls.certresolver=letsencrypt"
-  #     - "traefik.http.services.screening.loadbalancer.server.port=80"
