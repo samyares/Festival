@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>California Women Film Festival</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Squadfree
+  * Template URL: https://bootstrapmade.com/squadfree-free-bootstrap-template-creative/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/minlogo.jpg" alt="CWFF Logo" class="me-2">
+        <h1 class="sitename">California Women Film Festival</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li>
+            <a href="#" class="nav-link-highlight" data-bs-toggle="modal" data-bs-target="#screeningModal">Screening</a>
+          
+          </li>
+          <li><a href="#hero" class="active">Home</a></li>
+          <!-- <li><a href="#about">Winners</a></li> -->
+          <li><a href="#call-to-action">Submit</a></li>
+          <li><a href="#faq">Q&A</a></li>
+          <li><a href="#about">About</a></li>
+          <li class="dropdown"><a href="#winners"><span>Winners</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <!-- <li><a href="#">Dropdown 1</a></li> -->
+              <li class="dropdown"><a href="#"><span>2025</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#" data-bs-toggle="modal" data-bs-target="#winnersSession1Modal">Session 1: April–June</a></li>
+                  <li><a href="#" data-bs-toggle="modal" data-bs-target="#winnersSession2Modal">Session 2: July–November</a></li>
+                </ul>
+              </li>
+              <li class="dropdown"><a href="#"><span>2026</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#" data-bs-toggle="modal" data-bs-target="#winnersSession3Modal">Session 3: January–April</a></li>
+                  <li><a href="#" data-bs-toggle="modal" data-bs-target="#winnersSession4Modal">Session 4: April–August</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section accent-background">
+      <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
+
+      <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
+        <h2>Welcome to California Women Film Festival</h2>
+        <p>Where the Stories of Women Illuminate the Silver Screen, Against the California Sun.</p>
+        <a href="#about" class="btn-scroll" title="Scroll Down"><i class="bi bi-chevron-down"></i></a>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Us Section -->
+    <section id="about" class="about section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>About Us</h2>
+        <p>California Women Film Festival</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-justify">
+            <p>
+              The California Woman Film Festival is a bold and independent platform dedicated to showcasing the creative power, depth, and diversity of women in film. Born out of a desire to amplify the voices too often overlooked in the mainstream industry, our festival celebrates female-driven storytelling in all its forms—raw, poetic, daring, and unapologetically honest.            </p>
+            <p>
+              We champion independent cinema that pushes boundaries and challenges conventions, created by women who dare to tell their truths. Whether it's a first-time filmmaker or an established visionary, we believe every story told from a woman's perspective has the power to shift culture, provoke thought, and move hearts.
+            </p>
+            <p>
+              As a fully online film festival, we provide a digital stage where selected films are featured and recognized without the constraints of physical venues. Our goal is to make space for underrepresented voices and to celebrate the work of women in cinema with a global audience. This format allows for accessibility, flexibility, and a wider reach—making it easier for filmmakers and audiences alike to connect through the art of film.            </p>
+            <p>
+              We are proudly independent, fiercely inclusive, and rooted in the belief that women's stories are not a niche—they are essential. The California Woman Film Festival exists to uplift those stories and honor the women who bring them to life.            </p>
+          </div>
+        </div>
+      </div>
+    </section><!-- End About Us Section -->
+
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action section accent-background">
+
+      <img src="assets/img/cta-bg.jpg" alt="">
+
+      <div class="container">
+        <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-xl-10">
+            <div class="text-center">
+              <h3>Submit</h3>
+              <p>Submit your work to the California Woman Film Festival on FilmFreeway and let your story be seen, honored, and remembered.</p>
+              <a class="cta-btn" href="https://filmfreeway.com/festivals/87718?utm_campaign=California+Women+Film+Festival&utm_medium=External&utm_source=Submission+Button">Submit Your Work</a>
+              <!-- <a href="" target="_blank" title="Click to submit on FilmFreeway"><img src="https://public-assets.filmfreeway.com/submission_buttons/v2/sm_submission_btn@2x-purple-gradient.png" title="Click to submit on FilmFreeway" width="263" height="49"></a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Call To Action Section -->
+
+
+    <!-- Winners Section -->
+    <section id="winners" class="services section winners-section">
+
+      <div class="container" data-aos="fade-up">
+        <div class="winners-panel mx-auto">
+          <div class="winners-panel-main section-title">
+            <h2>Winners</h2>
+            <p class="lead winners-panel-lead">Discover the outstanding films and filmmakers recognized across our festival sessions.</p>
+            <div class="row g-3 justify-content-center winners-panel-actions">
+              <div class="col-12 col-md-6 d-grid">
+                <button type="button" class="winners-session-btn w-100" data-bs-toggle="modal" data-bs-target="#winnersSession1Modal">
+                  <span class="winners-session-icon"><i class="bi bi-trophy-fill" aria-hidden="true"></i></span>
+                  <span class="winners-session-copy"><strong>Session 1</strong><small>April–June 2025</small></span>
+                  <i class="bi bi-arrow-right winners-session-arrow" aria-hidden="true"></i>
+                </button>
+              </div>
+              <div class="col-12 col-md-6 d-grid">
+                <button type="button" class="winners-session-btn w-100" data-bs-toggle="modal" data-bs-target="#winnersSession2Modal">
+                  <span class="winners-session-icon"><i class="bi bi-trophy-fill" aria-hidden="true"></i></span>
+                  <span class="winners-session-copy"><strong>Session 2</strong><small>July–November 2025</small></span>
+                  <i class="bi bi-arrow-right winners-session-arrow" aria-hidden="true"></i>
+                </button>
+              </div>
+              <div class="col-12 col-md-6 d-grid">
+                <button type="button" class="winners-session-btn w-100" data-bs-toggle="modal" data-bs-target="#winnersSession3Modal">
+                  <span class="winners-session-icon"><i class="bi bi-trophy-fill" aria-hidden="true"></i></span>
+                  <span class="winners-session-copy"><strong>Session 3</strong><small>January–April 2026</small></span>
+                  <i class="bi bi-arrow-right winners-session-arrow" aria-hidden="true"></i>
+                </button>
+              </div>
+              <div class="col-12 col-md-6 d-grid">
+                <button type="button" class="winners-session-btn w-100" data-bs-toggle="modal" data-bs-target="#winnersSession4Modal">
+                  <span class="winners-session-icon"><i class="bi bi-trophy-fill" aria-hidden="true"></i></span>
+                  <span class="winners-session-copy"><strong>Session 4</strong><small>April–August 2026</small></span>
+                  <i class="bi bi-arrow-right winners-session-arrow" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="winners-panel-footer">
+            <p class="winners-panel-note"><i class="bi bi-file-earmark-pdf me-1" aria-hidden="true"></i>Each list includes categories and a link to download the official certificate.</p>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Winners Section -->
+
+
+    <!-- Faq Section -->
+    <section id="faq" class="faq section light-background">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Frequently Asked Questions</h2>
+        <!-- <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p> -->
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row faq-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-5 d-flex">
+            <i class="bi bi-question-circle"></i>
+            <h4>Who can submit films to the festival?</h4>
+          </div>
+          <div class="col-lg-7">
+            <p>
+              While the festival highlights and celebrates the work of women filmmakers, it is not mandatory for a film to be made by women. We welcome all filmmakers who are passionate about telling compelling, impactful stories that center around the experiences, voices, and creativity of women.            </p>
+          </div>
+        </div><!-- End F.A.Q Item-->
+
+        <div class="row faq-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-5 d-flex">
+            <i class="bi bi-question-circle"></i>
+            <h4>How can I submit my film?</h4>
+          </div>
+          <div class="col-lg-7">
+            <p>
+              You can submit your film through FilmFreeway, our official submission platform. Simply create an account on FilmFreeway, upload your film, and follow the submission instructions for the California Woman Film Festival.             </p>
+          </div>
+        </div><!-- End F.A.Q Item-->
+
+        <div class="row faq-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="col-lg-5 d-flex">
+            <i class="bi bi-question-circle"></i>
+            <h4>Is this festival online?</h4>
+          </div>
+          <div class="col-lg-7">
+            <p>
+              Yes, the California Woman Film Festival is fully online. All selected films will be showcased digitally, allowing audiences from all over the world to view and engage with the work, no matter where they are located.            </p>
+          </div>
+        </div><!-- End F.A.Q Item-->
+
+        <div class="row faq-item" data-aos="fade-up" data-aos-delay="400">
+          <div class="col-lg-5 d-flex">
+            <i class="bi bi-question-circle"></i>
+            <h4>Where can I find the submission deadline?</h4>
+          </div>
+          <div class="col-lg-7">
+            <p>
+              The submission deadline for the festival can be found on our FilmFreeway page. Please visit our FilmFreeway page to check for all submission dates, including early and final deadlines.            </p>
+          </div>
+        </div><!-- End F.A.Q Item-->
+
+        <div class="row faq-item" data-aos="fade-up" data-aos-delay="500">
+          <div class="col-lg-5 d-flex">
+            <i class="bi bi-question-circle"></i>
+            <h4>Is there a submission fee?</h4>
+          </div>
+          <div class="col-lg-7">
+            <p>
+              Yes, there is a submission fee. The fees vary depending on the type of submission (short film, feature film, etc.) and the submission deadline. Please check our FilmFreeway page for specific fee details.
+            </p>
+          </div>
+        </div>
+
+
+        <div class="row faq-item" data-aos="fade-up" data-aos-delay="500">
+          <div class="col-lg-5 d-flex">
+            <i class="bi bi-question-circle"></i>
+            <h4>What kind of films are you looking for?</h4>
+          </div>
+          <div class="col-lg-7">
+            <p>
+              We are looking for films that showcase the unique perspectives, experiences, and creative visions of women filmmakers. We encourage submissions that push boundaries, explore new narratives, and offer fresh, impactful stories that resonate with diverse audiences. We accept films in all genres, from documentary to fiction, experimental to animation.
+            </p>
+          </div>
+        </div>
+
+
+        <div class="row faq-item" data-aos="fade-up" data-aos-delay="500">
+          <div class="col-lg-5 d-flex">
+            <i class="bi bi-question-circle"></i>
+            <h4>Can I submit multiple films?</h4>
+          </div>
+          <div class="col-lg-7">
+            <p>
+              Absolutely! You can submit as many films as you like, as long as each submission meets our eligibility criteria and guidelines. Each film will need to be submitted separately through FilmFreeway.
+            </p>
+          </div>
+        </div>
+
+        <div class="row faq-item" data-aos="fade-up" data-aos-delay="500">
+          <div class="col-lg-5 d-flex">
+            <i class="bi bi-question-circle"></i>
+            <h4>Can I submit a film that has already been shown at other festivals?</h4>
+          </div>
+          <div class="col-lg-7">
+            <p>
+              Yes, we accept films that have been previously shown at other festivals. We believe in showcasing a wide range of work and are open to films that have had exposure elsewhere.
+            </p>
+          </div>
+        </div>
+
+        <div class="row faq-item" data-aos="fade-up" data-aos-delay="500">
+          <div class="col-lg-5 d-flex">
+            <i class="bi bi-question-circle"></i>
+            <h4>What is the eligibility requirement for the films?</h4>
+          </div>
+          <div class="col-lg-7">
+            <p>
+              Yes, we accept films that have been previously shown at other festivals. We believe in showcasing a wide range of work and are open to films that have had exposure elsewhere.
+            </p>
+          </div>
+        </div>
+
+        <div class="row faq-item" data-aos="fade-up" data-aos-delay="500">
+          <div class="col-lg-5 d-flex">
+            <i class="bi bi-question-circle"></i>
+            <h4>Do films need to be in English?</h4>
+          </div>
+          <div class="col-lg-7">
+            <p>
+              Films must be in English or have English subtitles. This ensures that a global audience can engage with and appreciate your work.
+            </p>
+          </div>
+        </div>
+
+        <div class="row faq-item" data-aos="fade-up" data-aos-delay="500">
+          <div class="col-lg-5 d-flex">
+            <i class="bi bi-question-circle"></i>
+            <h4>When will I know if my film is selected?</h4>
+          </div>
+          <div class="col-lg-7">
+            <p>
+              All filmmakers will be notified via email once the selection process is complete. Please be patient as we carefully review all submissions.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Faq Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <!-- <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p> -->
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4 justify-content-center">
+
+          <div class="col-lg-6">
+
+            <div class="info-wrap">
+
+              <!-- <div class="info-item text-center mb-5" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon-circle mb-3">
+                  <i class="bi bi-geo-alt"></i>
+                </div>
+                <h3>Address</h3>
+                <p>A108 Adam Street, New York, NY 535022</p>
+              </div> -->
+
+              <!-- <div class="info-item text-center mb-5" data-aos="fade-up" data-aos-delay="300">
+                <div class="icon-circle mb-3">
+                  <i class="bi bi-telephone"></i>
+                </div>
+                <h3>Call Us</h3>
+                <p>+1 5589 55488 55</p>
+              </div> -->
+
+              <div class="info-item text-center mb-5" data-aos="fade-up" data-aos-delay="400">
+                <div class="icon-circle mb-3">
+                  <i class="bi bi-envelope"></i>
+                </div>
+                <h3>Email Us</h3>
+                <p>contact@cawff.online</p>
+              </div><!-- End Info Item -->
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4 justify-content-center">
+        <div class="col-lg-4 col-md-6 footer-about text-center">
+          <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+            <span class="sitename">Live with Cinema</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <!-- <p>A108 Adam Street</p>
+            <p>New York, NY 535022</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+            <p><strong>Email:</strong> <span>info@example.com</span></p> -->
+          </div>
+          <div class="social-links d-flex mt-4 justify-content-center">
+            <!-- <a href=""><i class="bi bi-twitter-x"></i></a> -->
+            <a href="https://filmfreeway.com/CaliforniaWomenFilmFestival"><i class="bi bi-film"></i></a>
+            <!-- <a href=""><i class="bi bi-instagram"></i></a> -->
+            <!-- <a href=""><i class="bi bi-linkedin"></i></a> -->
+          </div>
+        </div>
+
+
+
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">California Women Film Festival</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <style>
+    .icon-circle {
+      width: 80px;
+      height: 80px;
+      background: #f8f9fa;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .icon-circle i {
+      font-size: 32px;
+      color: #0d6efd;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .info-item h3 {
+      color: #37517e;
+      margin-bottom: 10px;
+    }
+
+    .info-item p {
+      color: #6c757d;
+    }
+
+    /* Highlight style for Screening nav link */
+    #header .navmenu > ul > li > a.nav-link-highlight {
+      background-color: #ffc107; /* Bootstrap warning yellow */
+      color: #212529 !important; /* dark text for contrast */
+      padding: 9px 18px;
+      margin-right: 12px;
+      border-radius: 999px;
+      font-weight: 600;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.14);
+    }
+
+    #header .navmenu > ul > li > a.nav-link-highlight:hover {
+      background-color: #e0a800; /* darker yellow on hover */
+      color: #212529 !important;
+      transform: translateY(-1px);
+    }
+
+    @media (min-width: 1200px) {
+      #header .navmenu > ul > li > a.active,
+      #header .navmenu > ul > li > a.active:focus {
+        position: relative;
+        background-color: transparent;
+      }
+
+      #header .navmenu > ul > li > a.active::after {
+        content: "";
+        position: absolute;
+        right: 15px;
+        bottom: 4px;
+        left: 15px;
+        height: 2px;
+        border-radius: 2px;
+        background-color: var(--nav-hover-color);
+      }
+    }
+  </style>
+
+  <!-- Winners Session 1 Modal -->
+  <div class="modal fade" id="winnersSession1Modal" tabindex="-1" aria-labelledby="winnersSession1ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="winnersSession1ModalLabel">Session 1: April–June 2025 Winners</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped align-middle">
+              <thead class="table-dark">
+                <tr>
+                  <th>Category</th>
+                  <th>Winner</th>
+                  <th>Download Certificate</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Best Short Film</td><td>Laughing Again</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s1/best-short-film.pdf" download>Download</a></td></tr>
+                <tr><td>Best Short Director</td><td>Heavenly Bodies</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s1/best-short-director.pdf" download>Download</a></td></tr>
+                <tr><td>Best Short Actress</td><td>A-MORS / Eleonora Gasparotto</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s1/best-short-actress.pdf" download>Download</a></td></tr>
+                <tr><td>Best Short Actor</td><td>Place of Hawks / Nate Sapriken</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s1/best-short-actor.pdf" download>Download</a></td></tr>
+                <tr><td>Best Short Script</td><td>Dysphoria?</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s1/best-short-script.pdf" download>Download</a></td></tr>
+                <tr><td>Best Short Documentary</td><td>Nina</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s1/best-short-documentary.pdf" download>Download</a></td></tr>
+                <tr><td>Best Short Narrative</td><td>SHE</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s1/best-short-narrative.pdf" download>Download</a></td></tr>
+                <tr><td>Best Feature Film</td><td>Citrotoxic</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s1/best-feature-film.pdf" download>Download</a></td></tr>
+                <tr><td>Best Feature Director</td><td>The Life Coach</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s1/best-feature-director.pdf" download>Download</a></td></tr>
+                <tr><td>Best Feature Actress</td><td>The Life Coach / Lindo Osifo</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s1/best-feature-actress.pdf" download>Download</a></td></tr>
+                <tr><td>Best Feature Actor</td><td>Thank You For Her / K Evans</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s1/best-feature-actor.pdf" download>Download</a></td></tr>
+                <tr><td>Best Feature Script</td><td>My Name is Henrietta</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s1/best-feature-script.pdf" download>Download</a></td></tr>
+                <tr><td>Best Feature Documentary</td><td>Julia Alvarez: A Life Reimagined</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s1/best-feature-documentary.pdf" download>Download</a></td></tr>
+                <tr><td>Best Feature Narrative</td><td>Mother - Sisterhood in the wild</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s1/best-feature-narrative.pdf" download>Download</a></td></tr>
+                <tr><td>Best Film About Women</td><td>Under Mango Trees</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s1/best-film-about-women.pdf" download>Download</a></td></tr>
+                <tr><td>Best Student</td><td>Unsilenced</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s1/best-student.pdf" download>Download</a></td></tr>
+                <tr><td>Best Animation</td><td>Ball Lightning</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s1/best-animation.pdf" download>Download</a></td></tr>
+                <tr><td>Best Cinematographer</td><td>Place of Hawks</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s1/best-cinematographer.pdf" download>Download</a></td></tr>
+                <tr><td>Best Producer</td><td>Aneyshia</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s1/best-producer.pdf" download>Download</a></td></tr>
+                <tr><td>Best Composer</td><td>Achaiah 7-Love Into Patience</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s1/best-composer.pdf" download>Download</a></td></tr>
+                <tr><td>Best Human Rights</td><td>Dishonour</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s1/best-human-rights.pdf" download>Download</a></td></tr>
+                <tr><td>Best Unproduced Script</td><td>Red Sea</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s1/best-unproduced-script.pdf" download>Download</a></td></tr>
+                <tr><td>Best Biographical Film</td><td>Professor Maria Kopp</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s1/best-biographical-film.pdf" download>Download</a></td></tr>
+                <tr><td>Best Youth Artist</td><td>Thank You For Her</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s1/best-youth-artist.pdf" download>Download</a></td></tr>
+                <tr><td>Best First Time Filmmaker</td><td>It's Not Me, It's You</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s1/best-first-time-filmmaker.pdf" download>Download</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Winners Session 1 Modal -->
+
+  <!-- Winners Session 2 Modal -->
+  <div class="modal fade" id="winnersSession2Modal" tabindex="-1" aria-labelledby="winnersSession2ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="winnersSession2ModalLabel">Session 2: July–November 2025 Winners</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped align-middle">
+              <thead class="table-dark">
+                <tr>
+                  <th>Category</th>
+                  <th>Winner</th>
+                  <th>Download Certificate</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Best Short Film</td><td>Ponderation</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s2/best-short-film.pdf" download>Download</a></td></tr>
+                <tr><td>Best Short Director</td><td>Hen Mama and the Forest Wolves</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s2/best-short-director.pdf" download>Download</a></td></tr>
+                <tr><td>Best Short Actress</td><td>Health Matters: Pregnancy/Christina Chow</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s2/best-short-actress.pdf" download>Download</a></td></tr>
+                <tr><td>Best Short Actor</td><td>Not a Love Story/Andrea Valsoano</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s2/best-short-actor.pdf" download>Download</a></td></tr>
+                <tr><td>Best Short Script</td><td>Babyshower</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s2/best-short-script.pdf" download>Download</a></td></tr>
+                <tr><td>Best Short Documentary</td><td>Dreamweavers - Gidja Walker OAM</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s2/best-short-documentary.pdf" download>Download</a></td></tr>
+                <tr><td>Best Short Narrative</td><td>Empty Your Pockets</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s2/best-short-narrative.pdf" download>Download</a></td></tr>
+                <tr><td>Best Feature Film</td><td>Highly Explosive</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s2/best-feature-film.pdf" download>Download</a></td></tr>
+                <tr><td>Best Feature Director</td><td>From the Midnight Sun to Eternity</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s2/best-feature-director.pdf" download>Download</a></td></tr>
+                <tr><td>Best Feature Actress</td><td>Punch/Alina Nastase</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s2/best-feature-actress.pdf" download>Download</a></td></tr>
+                <tr><td>Best Feature Script</td><td>It's An Italian Thing! No, It's a Black Thing!</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s2/best-feature-script.pdf" download>Download</a></td></tr>
+                <tr><td>Best Feature Documentary</td><td>No Flowers</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s2/best-feature-documentary.pdf" download>Download</a></td></tr>
+                <tr><td>Best Feature Narrative</td><td>From the Midnight Sun to Eternity</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s2/best-feature-narrative.pdf" download>Download</a></td></tr>
+                <tr><td>Best Film About Women</td><td>Hollow</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s2/best-film-about-women.pdf" download>Download</a></td></tr>
+                <tr><td>Best Student</td><td>Iris</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s2/best-student.pdf" download>Download</a></td></tr>
+                <tr><td>Best Animation</td><td>Bippy the Little Robot</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s2/best-animation.pdf" download>Download</a></td></tr>
+                <tr><td>Best Cinematographer</td><td>Will You Find Me?</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s2/best-cinematographer.pdf" download>Download</a></td></tr>
+                <tr><td>Best Producer</td><td>Chance Encounter</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s2/best-producer.pdf" download>Download</a></td></tr>
+                <tr><td>Best LGBTQ</td><td>In Hell With Ivo</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s2/best-lgbtq.pdf" download>Download</a></td></tr>
+                <tr><td>Best Composer</td><td>Amazon Variations</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s2/best-composer.pdf" download>Download</a></td></tr>
+                <tr><td>Best Experimental</td><td>In Viadi</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s2/best-experimental.pdf" download>Download</a></td></tr>
+                <tr><td>Best Human Rights</td><td>Aeiou</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s2/best-human-rights.pdf" download>Download</a></td></tr>
+                <tr><td>Best Unproduced Script</td><td>Journey Through the Dark</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s2/best-unproduced-script.pdf" download>Download</a></td></tr>
+                <tr><td>Best Biographical Film</td><td>Don't Look Away</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s2/best-biographical-film.pdf" download>Download</a></td></tr>
+                <tr><td>Best Al</td><td>Spaceborn</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s2/best-al.pdf" download>Download</a></td></tr>
+                <tr><td>Best Thriller</td><td>Diamond Dust</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s2/best-thriller.pdf" download>Download</a></td></tr>
+                <tr><td>Best First Time Filmmaker</td><td>Love Of An Icon: The Legend of Crocodile Dundee</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s2/best-first-time-filmmaker.pdf" download>Download</a></td></tr>
+                <tr><td>Best Women's Rights</td><td>Her Name is Libertad</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s2/best-womens-rights.pdf" download>Download</a></td></tr>
+                <tr><td>Best Student Director</td><td>My Fighter</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s2/best-student-director.pdf" download>Download</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Winners Session 2 Modal -->
+
+  <!-- Winners Session 3 Modal -->
+  <div class="modal fade" id="winnersSession3Modal" tabindex="-1" aria-labelledby="winnersSession3ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="winnersSession3ModalLabel">Session 3: January–April 2026 Winners</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped align-middle">
+              <thead class="table-dark">
+                <tr>
+                  <th>Category</th>
+                  <th>Winner</th>
+                  <th>Download Certificate</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Best Short Film</td><td>The Isle</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s3/best-short-film.pdf" download>Download</a></td></tr>
+                <tr><td>Best Short Director</td><td>Maya's Three Star Sphere - Faith, Courage, And Love</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s3/best-short-director.pdf" download>Download</a></td></tr>
+                <tr><td>Best Short Actress</td><td>The Session - Idalina Leandro</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s3/best-short-actress.pdf" download>Download</a></td></tr>
+                <tr><td>Best Short Script</td><td>How To Build A House</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s3/best-short-script.pdf" download>Download</a></td></tr>
+                <tr><td>Best Short Documentary</td><td>Fragments Of Memory</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s3/best-short-documentary.pdf" download>Download</a></td></tr>
+                <tr><td>Best Short Dance</td><td>The Dust Of This Place</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s3/best-short-dance-film.pdf" download>Download</a></td></tr>
+                <tr><td>Best Short Narrative</td><td>Behind A Smile</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s3/best-short-narrative.pdf" download>Download</a></td></tr>
+                <tr><td>Best Feature Film</td><td>Crimson Fields, The Feature</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s3/best-feature-film.pdf" download>Download</a></td></tr>
+                <tr><td>Best Feature Director</td><td>Norseman - Human Endurance</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s3/best-feature-director.pdf" download>Download</a></td></tr>
+                <tr><td>Best Feature Actress</td><td>A Year In London - Melanie Liburd</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s3/best-feature-actress.pdf" download>Download</a></td></tr>
+                <tr><td>Best Feature Actor</td><td>The Last Goodbye - Enric Molina Soler</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s3/best-feature-actor.pdf" download>Download</a></td></tr>
+                <tr><td>Best Feature Script</td><td>The Blue Above And The Gold Within</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s3/best-feature-script.pdf" download>Download</a></td></tr>
+                <tr><td>Best Feature Documentary</td><td>Morgan Wood "Everything Always Happens So Much"</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s3/best-feature-documentary.pdf" download>Download</a></td></tr>
+                <tr><td>Best Feature Narrative</td><td>The Last Goodbye</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s3/best-feature-narrative.pdf" download>Download</a></td></tr>
+                <tr><td>Best Film About Women</td><td>A Brave Old World</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s3/best-film-about-women.pdf" download>Download</a></td></tr>
+                <tr><td>Best Student</td><td>The Country Gentlewoman: Christmas Edition</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s3/best-student.pdf" download>Download</a></td></tr>
+                <tr><td>Best Animation</td><td>Lifted</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s3/best-animation.pdf" download>Download</a></td></tr>
+                <tr><td>Best Cinematographer</td><td>The Pause</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s3/best-cinematographer.pdf" download>Download</a></td></tr>
+                <tr><td>Best Producer</td><td>Anhedonia</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s3/best-producer.pdf" download>Download</a></td></tr>
+                <tr><td>Best LGBTQ</td><td>Silent Crosses</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s3/best-lgbtq.pdf" download>Download</a></td></tr>
+                <tr><td>Best Composer</td><td>Malevolent</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s3/best-composer.pdf" download>Download</a></td></tr>
+                <tr><td>Best Experimental</td><td>Akin</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s3/best-experimental.pdf" download>Download</a></td></tr>
+                <tr><td>Best Human Rights</td><td>I Will Never Forget You</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s3/best-human-rights.pdf" download>Download</a></td></tr>
+                <tr><td>Best Unproduced Script</td><td>You Look Beautiful Tonight</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s3/best-unproduced-script.pdf" download>Download</a></td></tr>
+                <tr><td>Best Al</td><td>A Nest In My Heart</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s3/best-al.pdf" download>Download</a></td></tr>
+                <tr><td>Best Music Video</td><td>Out Of The Blue</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s3/best-music-video.pdf" download>Download</a></td></tr>
+                <tr><td>Best First Time Filmmaker</td><td>The Overlook</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s3/best-first-time-filmmaker.pdf" download>Download</a></td></tr>
+                <tr><td>Best Women's Rights</td><td>Captive Women</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s3/best-women%27s-rights.pdf" download>Download</a></td></tr>
+                <tr><td>Best Trailer</td><td>The Support Sake Tour</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s3/best-trailer.pdf" download>Download</a></td></tr>
+                <tr><td>Best Inspiration Film</td><td>Help</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s3/best-inspiration-film.pdf" download>Download</a></td></tr>
+                <tr><td>Best Ensemble Acting</td><td>A Ghost's Journey</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s3/best-ensemble-acting.pdf" download>Download</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Winners Session 3 Modal -->
+
+  <!-- Winners Session 4 Modal -->
+  <div class="modal fade" id="winnersSession4Modal" tabindex="-1" aria-labelledby="winnersSession4ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="winnersSession4ModalLabel">Session 4: April–August 2026 Winners</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped align-middle">
+              <thead class="table-dark">
+                <tr>
+                  <th>Category</th>
+                  <th>Winner</th>
+                  <th>Download Certificate</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Best Short Film</td><td>Subterranean</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-short-film.pdf" download>Download</a></td></tr>
+                <tr><td>Best Short Director</td><td>While You Watched</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-short-director.pdf" download>Download</a></td></tr>
+                <tr><td>Best Short Actress</td><td>Sweet Spiral/Angela King</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-short-actress.pdf" download>Download</a></td></tr>
+                <tr><td>Best Short Script</td><td>Lambs</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-short-script.pdf" download>Download</a></td></tr>
+                <tr><td>Best Short Documentary</td><td>Mukatila (Women Warrior)</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-short-documentary.pdf" download>Download</a></td></tr>
+                <tr><td>Best Short Narrative</td><td>The Blind Man's Confessions</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-short-narrative.pdf" download>Download</a></td></tr>
+                <tr><td>Best Feature Film</td><td>My Mother Sandra</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-feature-film.pdf" download>Download</a></td></tr>
+                <tr><td>Best Feature Dance Film</td><td>A Philadelphia Tap Dance Story</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-feature-dance-film.pdf" download>Download</a></td></tr>
+                <tr><td>Best Feature Director</td><td>A Philadelphia Tap Dance Story</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-feature-director.pdf" download>Download</a></td></tr>
+                <tr><td>Best Feature Script</td><td>In The Garden: Anchors Of Faith</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-feature-script.pdf" download>Download</a></td></tr>
+                <tr><td>Best Feature Documentary</td><td>From Cult To Queer</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-feature-documentary.pdf" download>Download</a></td></tr>
+                <tr><td>Best Film About Women</td><td>La Machetera</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-film-about-women.pdf" download>Download</a></td></tr>
+                <tr><td>Best Student</td><td>Light</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-student.pdf" download>Download</a></td></tr>
+                <tr><td>Best Cinematographer</td><td>While You Watched</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-cinematographer.pdf" download>Download</a></td></tr>
+                <tr><td>Best Producer</td><td>Stars</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-producer.pdf" download>Download</a></td></tr>
+                <tr><td>Best LGBTQ</td><td>Miss Personality</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-lgbtq.pdf" download>Download</a></td></tr>
+                <tr><td>Best Experimental</td><td>This Endless Sea</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-experimental.pdf" download>Download</a></td></tr>
+                <tr><td>Best Human Rights</td><td>26 Seconds - Usa Border Crisis</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-human-rights.pdf" download>Download</a></td></tr>
+                <tr><td>Best Unproduced Script</td><td>Mordechai And Klaus</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-unproduced-script.pdf" download>Download</a></td></tr>
+                <tr><td>Best Biographical Film</td><td>On The Deck</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-biographical-film.pdf" download>Download</a></td></tr>
+                <tr><td>Best Thriller</td><td>Memory Hunters</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-thriller.pdf" download>Download</a></td></tr>
+                <tr><td>Best Music Video</td><td>Our Brilliant Destruction</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-music-video.pdf" download>Download</a></td></tr>
+                <tr><td>Best First Time Filmmaker</td><td>After The Fire</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-first-time-filmmaker.pdf" download>Download</a></td></tr>
+                <tr><td>Best Student Director</td><td>The Date</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-student-director.pdf" download>Download</a></td></tr>
+                <tr><td>Best Trailer</td><td>The Blind Man's Confessions</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-trailer.pdf" download>Download</a></td></tr>
+                <tr><td>Best Inspiration Film</td><td>Pathway To Hope</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-inspiration-film.pdf" download>Download</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Winners Session 4 Modal -->
+
+  <!-- Screening Modal -->
+  <div class="modal fade" id="screeningModal" tabindex="-1" aria-labelledby="screeningModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="screeningModalLabel"><i class="bi bi-film me-2"></i>Screening</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <p class="fs-5 mb-3">The screening event will take place on <strong>August 15, 2026</strong>.</p>
+          <p class="text-muted mb-3">The exact screening time will be announced soon.</p>
+          <i class="bi bi-calendar-event" style="font-size: 2rem; color: #ffc107;"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Screening Modal -->
+
+</body>
+
+</html>

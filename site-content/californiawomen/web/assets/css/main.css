@@ -1014,18 +1014,76 @@ section,
 }
 
 .winners-section .winners-session-btn {
-  font-weight: 600;
-  white-space: normal;
-  line-height: 1.35;
-  min-height: 3.25rem;
+  appearance: none;
+  min-height: 5.25rem;
+  padding: 1rem 1.1rem;
   display: flex;
   align-items: center;
+  gap: 0.9rem;
+  text-align: left;
+  color: var(--heading-color);
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 65%);
+  border-radius: 12px;
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--heading-color), transparent 94%);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.winners-section .winners-session-btn:hover,
+.winners-section .winners-session-btn:focus-visible {
+  border-color: var(--accent-color);
+  box-shadow: 0 8px 22px color-mix(in srgb, var(--heading-color), transparent 88%);
+  transform: translateY(-2px);
+}
+
+.winners-section .winners-session-btn:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--accent-color), transparent 65%);
+  outline-offset: 2px;
+}
+
+.winners-section .winners-session-icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  flex: 0 0 2.75rem;
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  text-align: center;
+  color: #7a5700;
+  background: #fff3cd;
+  border-radius: 50%;
+}
+
+.winners-section .winners-session-copy {
+  min-width: 0;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.winners-section .winners-session-copy strong {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.winners-section .winners-session-copy small {
+  margin-top: 0.25rem;
+  font-size: 0.82rem;
+  color: color-mix(in srgb, var(--default-color), transparent 28%);
+}
+
+.winners-section .winners-session-arrow {
+  flex: 0 0 auto;
+  color: var(--accent-color);
+  transition: transform 0.25s ease;
+}
+
+.winners-section .winners-session-btn:hover .winners-session-arrow {
+  transform: translateX(3px);
 }
 
 .winners-section .winners-panel-footer {
-  padding: 1.35rem 1.5rem 1.6rem;
+  padding: 1rem 1.5rem 1.15rem;
   text-align: center;
   background: linear-gradient(
     180deg,
@@ -1091,6 +1149,138 @@ section,
 .winners-section .winners-panel-note .bi {
   vertical-align: -0.1em;
   opacity: 0.85;
+}
+
+/* Winners modals */
+.modal[id^="winnersSession"] .modal-content {
+  overflow: hidden;
+  border: 0;
+  border-radius: 16px;
+  box-shadow: 0 24px 70px rgba(20, 45, 56, 0.22);
+}
+
+.modal[id^="winnersSession"] .modal-header {
+  padding: 1.15rem 1.4rem;
+  color: var(--contrast-color);
+  background: linear-gradient(135deg, var(--heading-color), #3f7388);
+  border: 0;
+}
+
+.modal[id^="winnersSession"] .modal-title {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: inherit;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.modal[id^="winnersSession"] .modal-title::before {
+  content: "\f5e6";
+  display: inline-flex;
+  width: 2rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  color: #7a5700;
+  background-color: #ffc107;
+  border-radius: 50%;
+  font-family: "bootstrap-icons";
+  font-size: 0.9rem;
+  font-weight: normal;
+}
+
+.modal[id^="winnersSession"] .btn-close {
+  opacity: 0.85;
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+.modal[id^="winnersSession"] .btn-close:hover {
+  opacity: 1;
+}
+
+.modal[id^="winnersSession"] .modal-body {
+  padding: 0;
+  background-color: #f7f9fa;
+}
+
+.modal[id^="winnersSession"] .table-responsive {
+  max-height: min(72vh, 720px);
+}
+
+.modal[id^="winnersSession"] .table {
+  margin: 0;
+  border: 0;
+  --bs-table-striped-bg: rgba(103, 176, 209, 0.055);
+}
+
+.modal[id^="winnersSession"] .table thead {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.modal[id^="winnersSession"] .table thead th {
+  padding: 0.85rem 1rem;
+  color: color-mix(in srgb, var(--heading-color), transparent 8%);
+  background: #eaf3f7;
+  border-color: #d8e6ec;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+}
+
+.modal[id^="winnersSession"] .table tbody td {
+  padding: 0.72rem 1rem;
+  background-color: transparent;
+  border-color: #e2e9ec;
+  vertical-align: middle;
+}
+
+.modal[id^="winnersSession"] .table tbody td:first-child {
+  color: var(--heading-color);
+  font-weight: 600;
+}
+
+.modal[id^="winnersSession"] .table tbody tr:hover {
+  background-color: rgba(103, 176, 209, 0.1);
+}
+
+.modal[id^="winnersSession"] .table .btn-primary {
+  padding: 0.42rem 0.8rem;
+  color: var(--heading-color);
+  background-color: transparent;
+  border: 1px solid var(--accent-color);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.modal[id^="winnersSession"] .table .btn-primary:hover,
+.modal[id^="winnersSession"] .table .btn-primary:focus {
+  color: var(--contrast-color);
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+@media (max-width: 575px) {
+  .modal[id^="winnersSession"] .modal-dialog {
+    margin: 0.75rem;
+  }
+
+  .modal[id^="winnersSession"] .modal-header {
+    padding: 1rem;
+  }
+
+  .modal[id^="winnersSession"] .modal-title {
+    font-size: 0.95rem;
+  }
+
+  .modal[id^="winnersSession"] .table thead th,
+  .modal[id^="winnersSession"] .table tbody td {
+    padding: 0.65rem 0.75rem;
+  }
 }
 
 /*--------------------------------------------------------------

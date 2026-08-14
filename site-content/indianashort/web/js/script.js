@@ -107,6 +107,7 @@ $(window).on('load', function() {
 function loadGoogleMapsAPI() {
     var script = document.createElement("script");
     var mapdiv = document.getElementById('gmaps');
+    if (!mapdiv) return; // page has no map — skip
     var mapsapi = mapdiv.getAttribute('data-maps-apikey');
     // This script has a callback function that will run when the script has
     // finished loading.

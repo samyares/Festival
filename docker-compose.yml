@@ -1,210 +1,260 @@
 volumes:
-  certs:
   londonwomen_node_modules:
   londonwomen_next:
 
+networks:
+  proxy:
+    external: true
+    name: proxy
+
 services:
-  traefik:
-    image: traefik:v3.6.10
-    container_name: traefik
-    ports:
-      - "80:80"
-      - "443:443"
-    command:
-      - "--api.insecure=true" # Enable the Traefik dashboard on port 8080
-      - "--providers.docker=true" # Enable Docker as a provider
-      - "--entrypoints.web.address=:80" # Define entrypoint for HTTP
-      - "--entrypoints.websecure.address=:443" # Define entrypoint for HTTPS
-      - --entrypoints.web.http.redirections.entrypoint.to=websecure
-      - --entrypoints.web.http.redirections.entrypoint.scheme=https
-      # Set up LetsEncrypt
-      - --certificatesresolvers.letsencrypt.acme.dnschallenge=true
-      - --certificatesresolvers.letsencrypt.acme.dnschallenge.provider=cloudflare
-      - --certificatesresolvers.letsencrypt.acme.email=samprada3@gmail.com
-      - --certificatesresolvers.letsencrypt.acme.storage=/letsencrypt/acme.json
-      # Set up the TLS configuration for our websecure listener
-      - --entrypoints.websecure.http.tls=true
-      - --entrypoints.websecure.http.tls.certResolver=letsencrypt
-      - --entrypoints.websecure.http.tls.domains[0].main=pwcf.info
-      - --entrypoints.websecure.http.tls.domains[0].sans=*.pwcf.info
-      - --entrypoints.websecure.http.tls.domains[1].main=ottawafilm.site
-      - --entrypoints.websecure.http.tls.domains[1].sans=*.ottawafilm.site
-      - --entrypoints.websecure.http.tls.domains[2].main=indianafes.info
-      - --entrypoints.websecure.http.tls.domains[2].sans=*.indianafes.info
-      - --entrypoints.websecure.http.tls.domains[3].main=framesofnewyork.online
-      - --entrypoints.websecure.http.tls.domains[3].sans=*.framesofnewyork.online
-      - --entrypoints.websecure.http.tls.domains[4].main=londonwomenfilmfestival.info
-      - --entrypoints.websecure.http.tls.domains[4].sans=*.londonwomenfilmfestival.info
-      - --entrypoints.websecure.http.tls.domains[5].main=cawff.online
-      - --entrypoints.websecure.http.tls.domains[5].sans=*.cawff.online
-
-      - --metrics.prometheus=true
-      - --metrics.prometheus.addEntryPointsLabels=true
-      - --metrics.prometheus.addrouterslabels=true
-      - --metrics.prometheus.addServicesLabels=true
-    environment:
-      - TZ=Asia/Tehran
-      - "CLOUDFLARE_EMAIL=samprada3@gmail.com"
-      - "CLOUDFLARE_API_KEY=a18bae34d559bb88a6ccd2b9eb527cfef83d6"
-      - "CLOUDFLARE_DNS_API_TOKEN=umo7u4rwHEdB4Ej-V9Y8q3cNQieQNOuP5ZHJwfGLV"
-      - "CLOUDFLARE_ZONE_API_TOKEN=Z656Qi90j1pvAD4ETdMI912Wl3ZImTBKy0xcPPIU"
-    volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock:ro"
-      - certs:/letsencrypt
-    labels:
-      - "traefik.http.services.traefik.loadbalancer.server.port=8080"
-      - "traefik.http.routers.traefik.rule=Host(`traefik.pwcf.info`)"
-      - "traefik.http.routers.traefik.entrypoints=websecure"
-      - "traefik.http.routers.traefik.tls.certresolver=letsencrypt"
-
-  # whoami:
-  #   image: docker.io/traefik/whoami:v1.10.1
-  #   labels:
-  #   - traefik.http.routers.whoami.rule=Host(`whoami.pwcf.info`)
-  #   - traefik.http.services.whoami.loadbalancer.server.port=80
-  #   - traefik.http.routers.whoami.entrypoints=websecure
-  #   - traefik.http.routers.whoami.tls.certresolver=letsencrypt
-
   pariswomencinefest:
     image: nginx:alpine
     container_name: pariswomencinefest
+    restart: unless-stopped
     volumes:
       - ./site-content/pariswomencinefest/web:/usr/share/nginx/html
       - ./site-content/pariswomencinefest/nginx:/etc/nginx/conf.d
       - ./site-content/pariswomencinefest/certs:/var/www/html/certs
       - ./site-content/pariswomencinefest/movies:/var/www/html/movies
+    networks:
+      - proxy
     labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=proxy"
       - "traefik.http.routers.pariswomencinefest.rule=Host(`pwcf.info`)"
       - "traefik.http.routers.pariswomencinefest.entrypoints=websecure"
+      - "traefik.http.routers.pariswomencinefest.tls=true"
+      - "traefik.http.routers.pariswomencinefest.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.pariswomencinefest.service=pariswomencinefest"
       - "traefik.http.services.pariswomencinefest.loadbalancer.server.port=80"
-      - traefik.http.routers.pariswomencinefest.tls.certresolver=letsencrypt
+      # www.pwcf.info -> pwcf.info (keeps path + query)
+      - "traefik.http.routers.pariswomencinefest-www.rule=Host(`www.pwcf.info`)"
+      - "traefik.http.routers.pariswomencinefest-www.entrypoints=websecure"
+      - "traefik.http.routers.pariswomencinefest-www.tls=true"
+      - "traefik.http.routers.pariswomencinefest-www.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.pariswomencinefest-www.service=pariswomencinefest"
+      - "traefik.http.routers.pariswomencinefest-www.middlewares=pariswomencinefest-www-to-apex"
+      - "traefik.http.middlewares.pariswomencinefest-www-to-apex.redirectregex.regex=^https://www\\.pwcf\\.info/(.*)"
+      - "traefik.http.middlewares.pariswomencinefest-www-to-apex.redirectregex.replacement=https://pwcf.info/$${1}"
+      - "traefik.http.middlewares.pariswomencinefest-www-to-apex.redirectregex.permanent=true"
 
   indianashort:
     image: nginx:alpine
     container_name: indianashort
+    restart: unless-stopped
     volumes:
       - ./site-content/indianashort/web:/usr/share/nginx/html
       - ./site-content/indianashort/nginx:/etc/nginx/conf.d
       # - ./site-content/indianashort/movies:/var/www/html/videos
-      - ./site-content/indianashort/certs/:/var/www/html/certs
+      - ./site-content/indianashort/certs:/var/www/html/certs
+    networks:
+      - proxy
     labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=proxy"
       - "traefik.http.routers.indianashort.rule=Host(`indianafes.info`)"
       - "traefik.http.routers.indianashort.entrypoints=websecure"
+      - "traefik.http.routers.indianashort.tls=true"
+      - "traefik.http.routers.indianashort.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.indianashort.service=indianashort"
       - "traefik.http.services.indianashort.loadbalancer.server.port=80"
-      - traefik.http.routers.indianashort.tls.certresolver=letsencrypt
+      # www.indianafes.info -> indianafes.info (keeps path + query)
+      - "traefik.http.routers.indianashort-www.rule=Host(`www.indianafes.info`)"
+      - "traefik.http.routers.indianashort-www.entrypoints=websecure"
+      - "traefik.http.routers.indianashort-www.tls=true"
+      - "traefik.http.routers.indianashort-www.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.indianashort-www.service=indianashort"
+      - "traefik.http.routers.indianashort-www.middlewares=indianashort-www-to-apex"
+      - "traefik.http.middlewares.indianashort-www-to-apex.redirectregex.regex=^https://www\\.indianafes\\.info/(.*)"
+      - "traefik.http.middlewares.indianashort-www-to-apex.redirectregex.replacement=https://indianafes.info/$${1}"
+      - "traefik.http.middlewares.indianashort-www-to-apex.redirectregex.permanent=true"
 
   ottawa:
     image: nginx:alpine
     container_name: ottawa
+    restart: unless-stopped
     volumes:
       - ./site-content/ottawafilm/web:/usr/share/nginx/html
       - ./site-content/ottawafilm/nginx:/etc/nginx/conf.d
       - ./site-content/ottawafilm/certs:/var/www/html/certs
-      - ./site-content/ottawafilm/movies:/var/www/html/movies 
+      - ./site-content/ottawafilm/movies:/var/www/html/movies
+    networks:
+      - proxy
     labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=proxy"
       - "traefik.http.routers.ottawa.rule=Host(`ottawafilm.site`)"
       - "traefik.http.routers.ottawa.entrypoints=websecure"
-      - "traefik.http.services.ottawa.loadbalancer.server.port=80"
+      - "traefik.http.routers.ottawa.tls=true"
       - "traefik.http.routers.ottawa.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.ottawa.service=ottawa"
+      - "traefik.http.services.ottawa.loadbalancer.server.port=80"
+      - "traefik.http.routers.ottawa-www.rule=Host(`www.ottawafilm.site`)"
+      - "traefik.http.routers.ottawa-www.entrypoints=websecure"
+      - "traefik.http.routers.ottawa-www.tls=true"
+      - "traefik.http.routers.ottawa-www.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.ottawa-www.service=ottawa"
+      - "traefik.http.routers.ottawa-www.middlewares=ottawa-www-to-apex"
+      - "traefik.http.middlewares.ottawa-www-to-apex.redirectregex.regex=^https://www\\.ottawafilm\\.site/(.*)"
+      - "traefik.http.middlewares.ottawa-www-to-apex.redirectregex.replacement=https://ottawafilm.site/$${1}"
+      - "traefik.http.middlewares.ottawa-www-to-apex.redirectregex.permanent=true"
 
   frameofnewyork:
     image: nginx:alpine
     container_name: frameofnewyork
+    restart: unless-stopped
     volumes:
       - ./site-content/frameofnewyork/web:/usr/share/nginx/html
       - ./site-content/frameofnewyork/nginx:/etc/nginx/conf.d
       - ./site-content/frameofnewyork/certs:/var/www/html/certs
+    networks:
+      - proxy
     labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=proxy"
       - "traefik.http.routers.frameofnewyork.rule=Host(`framesofnewyork.online`)"
       - "traefik.http.routers.frameofnewyork.entrypoints=websecure"
-      - "traefik.http.services.frameofnewyork.loadbalancer.server.port=80"
+      - "traefik.http.routers.frameofnewyork.tls=true"
       - "traefik.http.routers.frameofnewyork.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.frameofnewyork.service=frameofnewyork"
+      - "traefik.http.services.frameofnewyork.loadbalancer.server.port=80"
+      # www.framesofnewyork.online -> framesofnewyork.online (keeps path + query)
+      - "traefik.http.routers.frameofnewyork-www.rule=Host(`www.framesofnewyork.online`)"
+      - "traefik.http.routers.frameofnewyork-www.entrypoints=websecure"
+      - "traefik.http.routers.frameofnewyork-www.tls=true"
+      - "traefik.http.routers.frameofnewyork-www.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.frameofnewyork-www.service=frameofnewyork"
+      - "traefik.http.routers.frameofnewyork-www.middlewares=frameofnewyork-www-to-apex"
+      - "traefik.http.middlewares.frameofnewyork-www-to-apex.redirectregex.regex=^https://www\\.framesofnewyork\\.online/(.*)"
+      - "traefik.http.middlewares.frameofnewyork-www-to-apex.redirectregex.replacement=https://framesofnewyork.online/$${1}"
+      - "traefik.http.middlewares.frameofnewyork-www-to-apex.redirectregex.permanent=true"
 
   californiawomen:
     image: nginx:alpine
     container_name: californiawomen
+    restart: unless-stopped
     volumes:
       - ./site-content/californiawomen/web:/usr/share/nginx/html
       - ./site-content/californiawomen/nginx:/etc/nginx/conf.d
       - ./site-content/californiawomen/certs:/var/www/html/certs
+    networks:
+      - proxy
     labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=proxy"
       - "traefik.http.routers.californiawomen.rule=Host(`cawff.online`)"
       - "traefik.http.routers.californiawomen.entrypoints=websecure"
-      - "traefik.http.services.californiawomen.loadbalancer.server.port=80"
+      - "traefik.http.routers.californiawomen.tls=true"
       - "traefik.http.routers.californiawomen.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.californiawomen.service=californiawomen"
+      - "traefik.http.services.californiawomen.loadbalancer.server.port=80"
+      # www.cawff.online -> cawff.online (keeps path + query)
+      - "traefik.http.routers.californiawomen-www.rule=Host(`www.cawff.online`)"
+      - "traefik.http.routers.californiawomen-www.entrypoints=websecure"
+      - "traefik.http.routers.californiawomen-www.tls=true"
+      - "traefik.http.routers.californiawomen-www.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.californiawomen-www.service=californiawomen"
+      - "traefik.http.routers.californiawomen-www.middlewares=californiawomen-www-to-apex"
+      - "traefik.http.middlewares.californiawomen-www-to-apex.redirectregex.regex=^https://www\\.cawff\\.online/(.*)"
+      - "traefik.http.middlewares.californiawomen-www-to-apex.redirectregex.replacement=https://cawff.online/$${1}"
+      - "traefik.http.middlewares.californiawomen-www-to-apex.redirectregex.permanent=true"
 
-  # cineloom:
+  # whoami:
+  #   image: docker.io/traefik/whoami:v1.10.1
+  #   container_name: whoami
+  #   restart: unless-stopped
+  #   networks:
+  #     - proxy
+  #   labels:
+  #     - "traefik.enable=true"
+  #     - "traefik.docker.network=proxy"
+  #     - "traefik.http.routers.whoami.rule=Host(`whoami.pwcf.info`)"
+  #     - "traefik.http.routers.whoami.entrypoints=websecure"
+  #     - "traefik.http.routers.whoami.tls=true"
+  #     - "traefik.http.routers.whoami.tls.certresolver=letsencrypt"
+  #     - "traefik.http.services.whoami.loadbalancer.server.port=80"
+
+  cineloom:
+    image: nginx:alpine
+    container_name: cineloom
+    restart: unless-stopped
+    volumes:
+      - ./site-content/cineloom/web:/usr/share/nginx/html
+      - ./site-content/cineloom/nginx:/etc/nginx/conf.d
+      - ./site-content/cineloom/web:/var/www/html/certs
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=proxy"
+      - "traefik.http.routers.cineloom.rule=Host(`cineloom.cawff.online`) || Host(`cineloom.framesofnewyork.online`)"
+      - "traefik.http.routers.cineloom.entrypoints=websecure"
+      - "traefik.http.routers.cineloom.tls=true"
+      - "traefik.http.routers.cineloom.tls.certresolver=letsencrypt"
+      - "traefik.http.services.cineloom.loadbalancer.server.port=80"
+
+  londonwomen:
+    container_name: londonwomen
+    image: sammkz/londonwomen:latest
+    restart: always
+    environment:
+      - NODE_ENV=production
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=proxy"
+      - "traefik.http.routers.londonwomen.rule=Host(`londonwomenfilmfestival.info`)"
+      - "traefik.http.routers.londonwomen.entrypoints=websecure"
+      - "traefik.http.routers.londonwomen.tls=true"
+      - "traefik.http.routers.londonwomen.tls.certresolver=letsencrypt"
+      - "traefik.http.services.londonwomen.loadbalancer.server.port=3000"
+      # www.londonwomenfilmfestival.info -> londonwomenfilmfestival.info (keeps path + query)
+      - "traefik.http.routers.londonwomen-www.rule=Host(`www.londonwomenfilmfestival.info`)"
+      - "traefik.http.routers.londonwomen-www.entrypoints=websecure"
+      - "traefik.http.routers.londonwomen-www.tls=true"
+      - "traefik.http.routers.londonwomen-www.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.londonwomen-www.service=londonwomen"
+      - "traefik.http.routers.londonwomen-www.middlewares=londonwomen-www-to-apex"
+      - "traefik.http.middlewares.londonwomen-www-to-apex.redirectregex.regex=^https://www\\.londonwomenfilmfestival\\.info/(.*)"
+      - "traefik.http.middlewares.londonwomen-www-to-apex.redirectregex.replacement=https://londonwomenfilmfestival.info/$${1}"
+      - "traefik.http.middlewares.londonwomen-www-to-apex.redirectregex.permanent=true"
+
+  # parisscreen:
   #   image: nginx:alpine
-  #   container_name: cineloom
+  #   container_name: parisscreen
+  #   restart: unless-stopped
   #   volumes:
-  #     - ./site-content/cineloom/web:/usr/share/nginx/html
-  #     - ./site-content/cineloom/nginx:/etc/nginx/conf.d
-  #     - ./site-content/cineloom/web:/var/www/html/certs
+  #     - ./site-content/parisscreen/web:/usr/share/nginx/html
+  #     - ./site-content/parisscreen/nginx:/etc/nginx/conf.d
+  #     - ./site-content/parisscreen/movies:/var/www/html/videos
+  #   networks:
+  #     - proxy
   #   labels:
-  #     - "traefik.http.routers.cineloom.rule=Host(`cineloom.framesofnewyork.online`)"
-  #     - "traefik.http.routers.cineloom.entrypoints=websecure"
-  #     - "traefik.http.services.cineloom.loadbalancer.server.port=80"
-  #     - "traefik.http.routers.cineloom.tls.certresolver=letsencrypt"
-
-
-  # londonwomen:
-  #   container_name: londonwomen
-  #   image: sammkz/londonwomen:latest
-  #   restart: always
-  #   environment:
-  #       - NODE_ENV=production
-  #   labels:
-  #       - "traefik.http.routers.londonwomen.rule=Host(`londonwomenfilmfestival.info`)"
-  #       - "traefik.http.routers.londonwomen.entrypoints=websecure"
-  #       - "traefik.http.services.londonwomen.loadbalancer.server.port=3000"
-  #       - "traefik.http.routers.londonwomen.tls.certresolver=letsencrypt"
-
-        
-#  parisscreen:
-#    image: nginx:alpine
-#    container_name: parisscreen
-#    volumes:
-#      - ./site-content/parisscreen/web:/usr/share/nginx/html
-#      - ./site-content/parisscreen/nginx:/etc/nginx/conf.d
-#      - ./site-content/parisscreen/movies:/var/www/html/videos
-#    labels:
-#      - "traefik.http.routers.parisscreen.rule=Host(`screen.pwcf.info`)"
-#      - "traefik.http.routers.parisscreen.entrypoints=websecure"
-#      - "traefik.http.services.parisscreen.loadbalancer.server.port=80"
-#      - "traefik.http.routers.parisscreen.tls.certresolver=letsencrypt"
+  #     - "traefik.enable=true"
+  #     - "traefik.docker.network=proxy"
+  #     - "traefik.http.routers.parisscreen.rule=Host(`screen.pwcf.info`)"
+  #     - "traefik.http.routers.parisscreen.entrypoints=websecure"
+  #     - "traefik.http.routers.parisscreen.tls=true"
+  #     - "traefik.http.routers.parisscreen.tls.certresolver=letsencrypt"
+  #     - "traefik.http.services.parisscreen.loadbalancer.server.port=80"
 
   # screening:
   #   image: nginx:alpine
   #   container_name: screening
+  #   restart: unless-stopped
   #   volumes:
   #     - ./site-content/screening/web:/usr/share/nginx/html
   #     - ./site-content/screening/nginx:/etc/nginx/conf.d
   #     - ./site-content/screening/movies:/var/www/html/videos
+  #   networks:
+  #     - proxy
   #   labels:
+  #     - "traefik.enable=true"
+  #     - "traefik.docker.network=proxy"
   #     - "traefik.http.routers.screening.rule=Host(`screening.indianafes.info`)"
   #     - "traefik.http.routers.screening.entrypoints=websecure"
-  #     - "traefik.http.services.screening.loadbalancer.server.port=80"
+  #     - "traefik.http.routers.screening.tls=true"
   #     - "traefik.http.routers.screening.tls.certresolver=letsencrypt"
-
-  # n8n:
-  #   image: docker.io/n8nio/n8n:latest
-  #   container_name: n8n
-  #   restart: always
-  #   environment:
-  #     - GENERIC_TIMEZONE=Asia/Tehran
-  #     - TZ=Asia/Tehran
-  #     - N8N_BASIC_AUTH_ACTIVE=true
-  #     - N8N_BASIC_AUTH_USER=admin
-  #     - N8N_BASIC_AUTH_PASSWORD=Sin@2025
-  #     - WEBHOOK_TUNNEL_URL=https://n8n.indianafes.info/
-  #     - N8N_HOST=n8n.indianafes.info
-  #     - N8N_PROTOCOL=https
-  #     - N8N_PORT=443
-  #   volumes:
-  #     - n8n_data:/home/node/.n8n
-  #   labels:
-  #     - traefik.enable=true
-  #     - traefik.http.routers.n8n.rule=Host(`n8n.indianafes.info`)
-  #     - traefik.http.routers.n8n.entrypoints=websecure
-  #     - traefik.http.services.n8n.loadbalancer.server.port=443
-  #     - traefik.http.routers.n8n.tls.certresolver=letsencrypt
+  #     - "traefik.http.services.screening.loadbalancer.server.port=80"

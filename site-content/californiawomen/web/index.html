@@ -49,8 +49,7 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li>
-            <!-- <a href="https://cineloom.cawff.online/" class="nav-link-highlight" data-bs-toggle="modal" data-bs-target="#screeningModal">Screening</a> -->
-            <a href="https://cineloom.cawff.online/" class="nav-link-highlight">Screening</a>
+            <a href="#" class="nav-link-highlight" data-bs-toggle="modal" data-bs-target="#screeningModal">Screening</a>
           
           </li>
           <li><a href="#hero" class="active">Home</a></li>
@@ -65,15 +64,14 @@
                 <ul>
                   <li><a href="#" data-bs-toggle="modal" data-bs-target="#winnersSession1Modal">Session 1: April–June</a></li>
                   <li><a href="#" data-bs-toggle="modal" data-bs-target="#winnersSession2Modal">Session 2: July–November</a></li>
-                  <li><a href="#" data-bs-toggle="modal" data-bs-target="#winnersSession3Modal">Session 3: January–April 2026</a></li>
-                  <!-- <li><a href="#">Session 2: Apr 2025</a></li> -->
-                  <!-- <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li> -->
                 </ul>
               </li>
-              <!-- <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 4</a></li> -->
+              <li class="dropdown"><a href="#"><span>2026</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#" data-bs-toggle="modal" data-bs-target="#winnersSession3Modal">Session 3: January–April</a></li>
+                  <li><a href="#" data-bs-toggle="modal" data-bs-target="#winnersSession4Modal">Session 4: April–August</a></li>
+                </ul>
+              </li>
             </ul>
           </li>
         </ul>
@@ -152,30 +150,37 @@
             <h2>Winners</h2>
             <p class="lead winners-panel-lead">Discover the outstanding films and filmmakers recognized across our festival sessions.</p>
             <div class="row g-3 justify-content-center winners-panel-actions">
-              <div class="col-12 col-md-4 d-grid">
-                <button type="button" class="btn btn-warning btn-lg shadow-sm px-4 py-3 winners-session-btn w-100" data-bs-toggle="modal" data-bs-target="#winnersSession1Modal">
-                  <i class="bi bi-trophy-fill me-2" aria-hidden="true"></i>Show Session 1 Winners
+              <div class="col-12 col-md-6 d-grid">
+                <button type="button" class="winners-session-btn w-100" data-bs-toggle="modal" data-bs-target="#winnersSession1Modal">
+                  <span class="winners-session-icon"><i class="bi bi-trophy-fill" aria-hidden="true"></i></span>
+                  <span class="winners-session-copy"><strong>Session 1</strong><small>April–June 2025</small></span>
+                  <i class="bi bi-arrow-right winners-session-arrow" aria-hidden="true"></i>
                 </button>
               </div>
-              <div class="col-12 col-md-4 d-grid">
-                <button type="button" class="btn btn-warning btn-lg shadow-sm px-4 py-3 winners-session-btn w-100" data-bs-toggle="modal" data-bs-target="#winnersSession2Modal">
-                  <i class="bi bi-trophy-fill me-2" aria-hidden="true"></i>Show Session 2 Winners
+              <div class="col-12 col-md-6 d-grid">
+                <button type="button" class="winners-session-btn w-100" data-bs-toggle="modal" data-bs-target="#winnersSession2Modal">
+                  <span class="winners-session-icon"><i class="bi bi-trophy-fill" aria-hidden="true"></i></span>
+                  <span class="winners-session-copy"><strong>Session 2</strong><small>July–November 2025</small></span>
+                  <i class="bi bi-arrow-right winners-session-arrow" aria-hidden="true"></i>
                 </button>
               </div>
-              <div class="col-12 col-md-4 d-grid">
-                <button type="button" class="btn btn-warning btn-lg shadow-sm px-4 py-3 winners-session-btn w-100" data-bs-toggle="modal" data-bs-target="#winnersSession3Modal">
-                  <i class="bi bi-trophy-fill me-2" aria-hidden="true"></i>Show Session 3 Winners
+              <div class="col-12 col-md-6 d-grid">
+                <button type="button" class="winners-session-btn w-100" data-bs-toggle="modal" data-bs-target="#winnersSession3Modal">
+                  <span class="winners-session-icon"><i class="bi bi-trophy-fill" aria-hidden="true"></i></span>
+                  <span class="winners-session-copy"><strong>Session 3</strong><small>January–April 2026</small></span>
+                  <i class="bi bi-arrow-right winners-session-arrow" aria-hidden="true"></i>
+                </button>
+              </div>
+              <div class="col-12 col-md-6 d-grid">
+                <button type="button" class="winners-session-btn w-100" data-bs-toggle="modal" data-bs-target="#winnersSession4Modal">
+                  <span class="winners-session-icon"><i class="bi bi-trophy-fill" aria-hidden="true"></i></span>
+                  <span class="winners-session-copy"><strong>Session 4</strong><small>April–August 2026</small></span>
+                  <i class="bi bi-arrow-right winners-session-arrow" aria-hidden="true"></i>
                 </button>
               </div>
             </div>
           </div>
           <div class="winners-panel-footer">
-            <p class="winners-panel-footer-label">Festival sessions</p>
-            <ul class="winners-session-list">
-              <li><span class="winners-session-chip">Session 1</span><span class="winners-session-dates">Apr–Jun 2025</span></li>
-              <li><span class="winners-session-chip">Session 2</span><span class="winners-session-dates">Jul–Nov 2025</span></li>
-              <li><span class="winners-session-chip">Session 3</span><span class="winners-session-dates">Jan–Apr 2026</span></li>
-            </ul>
             <p class="winners-panel-note"><i class="bi bi-file-earmark-pdf me-1" aria-hidden="true"></i>Each list includes categories and a link to download the official certificate.</p>
           </div>
         </div>
@@ -428,7 +433,6 @@
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
@@ -474,13 +478,36 @@
     #header .navmenu > ul > li > a.nav-link-highlight {
       background-color: #ffc107; /* Bootstrap warning yellow */
       color: #212529 !important; /* dark text for contrast */
-      padding: 8px 16px;
-      border-radius: 0;
+      padding: 9px 18px;
+      margin-right: 12px;
+      border-radius: 999px;
+      font-weight: 600;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.14);
     }
 
     #header .navmenu > ul > li > a.nav-link-highlight:hover {
       background-color: #e0a800; /* darker yellow on hover */
       color: #212529 !important;
+      transform: translateY(-1px);
+    }
+
+    @media (min-width: 1200px) {
+      #header .navmenu > ul > li > a.active,
+      #header .navmenu > ul > li > a.active:focus {
+        position: relative;
+        background-color: transparent;
+      }
+
+      #header .navmenu > ul > li > a.active::after {
+        content: "";
+        position: absolute;
+        right: 15px;
+        bottom: 4px;
+        left: 15px;
+        height: 2px;
+        border-radius: 2px;
+        background-color: var(--nav-hover-color);
+      }
     }
   </style>
 
@@ -653,6 +680,60 @@
   </div>
   <!-- End Winners Session 3 Modal -->
 
+  <!-- Winners Session 4 Modal -->
+  <div class="modal fade" id="winnersSession4Modal" tabindex="-1" aria-labelledby="winnersSession4ModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="winnersSession4ModalLabel">Session 4: April–August 2026 Winners</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="table-responsive">
+            <table class="table table-bordered table-striped align-middle">
+              <thead class="table-dark">
+                <tr>
+                  <th>Category</th>
+                  <th>Winner</th>
+                  <th>Download Certificate</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Best Short Film</td><td>Subterranean</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-short-film.pdf" download>Download</a></td></tr>
+                <tr><td>Best Short Director</td><td>While You Watched</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-short-director.pdf" download>Download</a></td></tr>
+                <tr><td>Best Short Actress</td><td>Sweet Spiral/Angela King</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-short-actress.pdf" download>Download</a></td></tr>
+                <tr><td>Best Short Script</td><td>Lambs</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-short-script.pdf" download>Download</a></td></tr>
+                <tr><td>Best Short Documentary</td><td>Mukatila (Women Warrior)</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-short-documentary.pdf" download>Download</a></td></tr>
+                <tr><td>Best Short Narrative</td><td>The Blind Man's Confessions</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-short-narrative.pdf" download>Download</a></td></tr>
+                <tr><td>Best Feature Film</td><td>My Mother Sandra</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-feature-film.pdf" download>Download</a></td></tr>
+                <tr><td>Best Feature Dance Film</td><td>A Philadelphia Tap Dance Story</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-feature-dance-film.pdf" download>Download</a></td></tr>
+                <tr><td>Best Feature Director</td><td>A Philadelphia Tap Dance Story</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-feature-director.pdf" download>Download</a></td></tr>
+                <tr><td>Best Feature Script</td><td>In The Garden: Anchors Of Faith</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-feature-script.pdf" download>Download</a></td></tr>
+                <tr><td>Best Feature Documentary</td><td>From Cult To Queer</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-feature-documentary.pdf" download>Download</a></td></tr>
+                <tr><td>Best Film About Women</td><td>La Machetera</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-film-about-women.pdf" download>Download</a></td></tr>
+                <tr><td>Best Student</td><td>Light</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-student.pdf" download>Download</a></td></tr>
+                <tr><td>Best Cinematographer</td><td>While You Watched</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-cinematographer.pdf" download>Download</a></td></tr>
+                <tr><td>Best Producer</td><td>Stars</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-producer.pdf" download>Download</a></td></tr>
+                <tr><td>Best LGBTQ</td><td>Miss Personality</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-lgbtq.pdf" download>Download</a></td></tr>
+                <tr><td>Best Experimental</td><td>This Endless Sea</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-experimental.pdf" download>Download</a></td></tr>
+                <tr><td>Best Human Rights</td><td>26 Seconds - Usa Border Crisis</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-human-rights.pdf" download>Download</a></td></tr>
+                <tr><td>Best Unproduced Script</td><td>Mordechai And Klaus</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-unproduced-script.pdf" download>Download</a></td></tr>
+                <tr><td>Best Biographical Film</td><td>On The Deck</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-biographical-film.pdf" download>Download</a></td></tr>
+                <tr><td>Best Thriller</td><td>Memory Hunters</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-thriller.pdf" download>Download</a></td></tr>
+                <tr><td>Best Music Video</td><td>Our Brilliant Destruction</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-music-video.pdf" download>Download</a></td></tr>
+                <tr><td>Best First Time Filmmaker</td><td>After The Fire</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-first-time-filmmaker.pdf" download>Download</a></td></tr>
+                <tr><td>Best Student Director</td><td>The Date</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-student-director.pdf" download>Download</a></td></tr>
+                <tr><td>Best Trailer</td><td>The Blind Man's Confessions</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-trailer.pdf" download>Download</a></td></tr>
+                <tr><td>Best Inspiration Film</td><td>Pathway To Hope</td><td><a class="btn btn-primary btn-sm" href="https://cawff.online/certs/s4/best-inspiration-film.pdf" download>Download</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Winners Session 4 Modal -->
+
   <!-- Screening Modal -->
   <div class="modal fade" id="screeningModal" tabindex="-1" aria-labelledby="screeningModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
@@ -662,9 +743,12 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body text-center">
-          <!-- <p class="fs-5 mb-3">The screening day is on <strong>7 July 2025</strong> and is not open now.</p> -->
-          <p class="fs-5 mb-3">The screening is on 12 April.</p>
-          <i class="bi bi-calendar-event" style="font-size: 2rem; color: #ffc107;"></i>
+          <p class="fs-5 mb-2">The Season&nbsp;4 screening is running <strong>August 15&ndash;17, 2026</strong>.</p>
+          <p class="text-muted mb-4">Enter the screening room with the ticket code from your invitation.</p>
+          <a href="https://cineloom.cawff.online/" target="_blank" rel="noopener" class="btn btn-warning btn-lg fw-semibold px-4 mb-2">
+            <i class="bi bi-play-circle me-2"></i>Enter the screening room
+          </a>
+          <p class="text-muted small mt-2 mb-0">Trouble getting in? Contact us and we&rsquo;ll help.</p>
         </div>
       </div>
     </div>

@@ -11732,3 +11732,131 @@ html {
     left: -2vw;
   }
 }
+/* Page transitions: smooth cross-fade when navigating between pages
+   (cross-document View Transitions API — Chrome, Edge, Safari 18.2+;
+   older browsers fall back to a simple fade-in on page load) */
+@view-transition {
+  navigation: auto;
+}
+::view-transition-old(root) {
+  animation-duration: 0.25s;
+  animation-timing-function: ease;
+}
+::view-transition-new(root) {
+  animation-duration: 0.25s;
+  animation-timing-function: ease;
+}
+@supports not (view-transition-name: root) {
+  @media (prefers-reduced-motion: no-preference) {
+    body {
+      animation: pwcf-page-fade 0.35s ease both;
+    }
+  }
+}
+@keyframes pwcf-page-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}
+
+/* ---- PWCF design polish ---- */
+html {
+  scroll-behavior: smooth;
+}
+::selection {
+  background: rgba(226, 30, 128, 0.2);
+}
+
+/* Sticky translucent navbar */
+.navbar-pwcf {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 1px 0 rgba(33, 37, 41, 0.08);
+}
+.navbar-pwcf .nav-link {
+  position: relative;
+}
+.navbar-pwcf .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0.5rem;
+  right: 0.5rem;
+  bottom: 0.1rem;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(135deg, #e21e80 0%, #1e30f3 100%);
+  opacity: 0;
+  transform: scaleX(0.4);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.navbar-pwcf .nav-link:hover::after,
+.navbar-pwcf .nav-link.active::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* Soft gradient hero background */
+.hero-pwcf {
+  background:
+    radial-gradient(55rem 30rem at 85% 0%, rgba(226, 30, 128, 0.07), transparent 60%),
+    radial-gradient(50rem 30rem at 0% 100%, rgba(30, 48, 243, 0.07), transparent 60%);
+}
+
+/* Feature cards */
+.card-pwcf {
+  height: 100%;
+  border: 0;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 0.5rem 1.5rem rgba(30, 48, 243, 0.07);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-pwcf:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: 0 1rem 2rem rgba(226, 30, 128, 0.12);
+}
+.icon-pwcf {
+  width: 3rem;
+  height: 3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, #e21e80 0%, #1e30f3 100%);
+  color: #fff;
+  font-size: 1.25rem;
+}
+
+/* Stats band */
+.stat-pwcf .stat-number {
+  font-weight: 800;
+  font-size: 2rem;
+  background: linear-gradient(135deg, #e21e80, #1e30f3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.stat-pwcf .stat-label {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .card-pwcf,
+  .navbar-pwcf .nav-link::after {
+    transition: none;
+  }
+}

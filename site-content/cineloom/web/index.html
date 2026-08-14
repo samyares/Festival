@@ -1,71 +1,119 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CinéLoom</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <title>CinéLoom — Private Screening Room</title>
+  <meta name="description" content="CinéLoom — a private screening room for award-winning festival films.">
+  <meta name="theme-color" content="#0b0b10">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="styles.css" rel="stylesheet">
   <link rel="icon" type="image/png" href="cineloom-logo.png">
 </head>
 <body>
-  <div class="gradient"></div>
-  <header class="cinefest-header">
-    <img src="cineloom-logo.png" alt="CinéLoom Logo" class="cinefest-logo" style="background:none;width:44px;height:44px;object-fit:contain;box-shadow:none;">
-    <span class="cinefest-title">CinéLoom</span>
+
+  <!-- Ambient background -->
+  <div class="bg-glow" aria-hidden="true"></div>
+  <div class="bg-grain" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#" id="brandHome">
+      <img src="cineloom-logo.png" alt="" class="brand-logo">
+      <span class="brand-name">Ciné<em>Loom</em></span>
+    </a>
+    <button class="exit-btn" id="exitBtn" type="button" hidden>
+      <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/><path d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/></svg>
+      <span>Use another ticket</span>
+    </button>
   </header>
-  <div class="container" style="z-index:2;position:relative;">
-    <div id="ticket-section" class="ticket-section">
-      <div class="ticket-form">
-        <h2>Welcome to CinéLoom</h2>
-        <p class="text-light mb-4">Enter your ticket code to access your festival</p>
-        <div class="input-group mb-3">
-          <input type="text" id="ticketInput" class="form-control form-control-lg" placeholder="Enter your ticket code" aria-label="Ticket code">
-          <button class="btn btn-primary btn-lg px-4" type="button" id="submitTicket">Enter</button>
-        </div>
-      </div>
-    </div>
-    <div id="home-section" style="display:none;">
-      <div class="festival-section-title">Your Festival</div>
-      <div class="festival-cards" id="festivalCards"></div>
-    </div>
-    <div id="categories-section" style="display:none;">
-      <button class="btn btn-link text-light mb-3" id="backToHome">&larr; Back to Festival</button>
-      <div class="category-list" id="categoryList"></div>
-    </div>
-  </div>
 
-  <div class="ticket-notification" id="ticketNotification">
-    Invalid ticket code. Please try again.
-  </div>
+  <main class="page">
 
-  <!-- Video Modal -->
-  <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content bg-dark">
-        <div class="modal-header border-0">
-          <h5 class="modal-title" id="videoModalLabel"></h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body p-0">
-          <div class="ratio ratio-16x9">
-            <video id="modalVideo" controls controlsList="nodownload" style="width:100%;height:100%;background:#000;">
-              <source id="modalVideoSource" src="" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
+    <!-- ═══ Ticket gate ═══ -->
+    <section class="gate" id="gateSection">
+      <div class="gate-inner">
+        <p class="gate-eyebrow">Private screening room</p>
+        <h1 class="gate-title">Ciné<em>Loom</em></h1>
+        <p class="gate-sub">Award-winning cinema, reserved for you.</p>
+
+        <div class="ticket-card" id="ticketCard">
+          <div class="ticket-stub" aria-hidden="true">
+            <span>Admit One</span>
+          </div>
+          <div class="ticket-body">
+            <label class="ticket-label" for="ticketInput">Ticket code</label>
+            <div class="ticket-row">
+              <input type="text" id="ticketInput" autocomplete="off" autocapitalize="characters"
+                     spellcheck="false" aria-label="Ticket code">
+              <button class="btn-gold" type="button" id="submitTicket">
+                <span>Enter</span>
+                <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M1 8a.5.5 0 0 1 .5-.5h11.793L10.146 4.354a.5.5 0 1 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/></svg>
+              </button>
+            </div>
+            <p class="ticket-hint">You'll find your code on your festival invitation.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ═══ Festival winners ═══ -->
+    <section class="festival" id="festivalSection" hidden>
+      <div class="festival-hero">
+        <div class="festival-logo-frame">
+          <img src="" alt="" id="festivalLogo" class="festival-logo">
+        </div>
+        <p class="festival-eyebrow">Winners showcase</p>
+        <h1 class="festival-name" id="festivalName"></h1>
+        <p class="festival-date" id="festivalDate">
+          <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/></svg>
+          <span id="festivalDateText"></span>
+        </p>
+        <p class="festival-desc" id="festivalDesc"></p>
+      </div>
+
+      <div class="section-divider">
+        <span class="divider-line" aria-hidden="true"></span>
+        <h2 class="divider-title">Award Winners</h2>
+        <span class="divider-line" aria-hidden="true"></span>
+      </div>
+
+      <div class="winners-grid" id="winnersGrid"></div>
+    </section>
+
+  </main>
+
+  <!-- Toast -->
+  <div class="toast" id="ticketNotification" role="alert">Invalid ticket code. Please try again.</div>
+
+  <!-- Video lightbox -->
+  <div class="lightbox" id="videoLightbox" hidden>
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <div class="lightbox-panel" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle">
+      <div class="lightbox-head">
+        <div class="lightbox-titles">
+          <p class="lightbox-category" id="lightboxCategory"></p>
+          <h3 class="lightbox-title" id="lightboxTitle"></h3>
+        </div>
+        <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close">
+          <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/></svg>
+        </button>
+      </div>
+      <div class="lightbox-stage">
+        <video id="modalVideo" controls controlsList="nodownload" playsinline preload="metadata">
+          <source id="modalVideoSource" src="" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
       </div>
     </div>
   </div>
 
   <footer class="footer">
-    &copy; 2025 CinéLoom. All rights reserved.
+    <span>&copy; 2026 CinéLoom · All rights reserved</span>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="data.js"></script>
   <script src="main.js"></script>
 </body>
-</html> 
+</html>
