@@ -25,11 +25,14 @@
       --serif: 'Playfair Display', Georgia, serif;
       --sans: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
       --ease: cubic-bezier(0.22, 1, 0.36, 1);
+      --sidebar-w: 350px;
     }
 
     * { box-sizing: border-box; }
 
     [hidden] { display: none !important; }
+
+    html, body { height: 100%; }
 
     body {
       margin: 0;
@@ -37,38 +40,202 @@
       color: var(--ink);
       font-family: var(--sans);
       line-height: 1.5;
-      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    /* ── Auto-hiding sidebar ── */
+
+    .edge-zone {
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 14px;
+      z-index: 32;
+    }
+
+    .sidebar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: min(88vw, var(--sidebar-w));
       display: flex;
       flex-direction: column;
+      background: var(--cream);
+      border-right: 2px solid var(--ink);
+      box-shadow: 6px 0 0 0 rgba(44, 24, 16, 0.12);
+      z-index: 35;
+      transform: translateX(-103%);
+      transition: transform 0.35s var(--ease);
     }
 
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 10;
+    body.sb-open .sidebar { transform: translateX(0); }
+
+    .peek {
+      position: fixed;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 34;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 0.85rem clamp(1.1rem, 4vw, 2.6rem);
-      background: var(--cream);
-      border-bottom: 2px solid var(--ink);
+      gap: 0.5rem;
+      padding: 0.8rem 0.7rem 0.8rem 0.55rem;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #fff;
+      background: var(--orange);
+      border: 2px solid var(--ink);
+      border-left: 0;
+      border-radius: 0 12px 12px 0;
+      box-shadow: 3px 3px 0 0 var(--ink);
+      cursor: pointer;
+      transition: transform 0.35s var(--ease), opacity 0.25s;
     }
 
-    .brand { display: flex; align-items: center; gap: 0.8rem; text-decoration: none; color: var(--ink); }
-    .brand img { height: 30px; width: auto; display: block; }
-    .brand span { font-weight: 700; font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; white-space: nowrap; }
+    .peek:hover { padding-left: 0.9rem; }
 
-    .top-links { display: flex; gap: 0.7rem; }
+    body.sb-open .peek { transform: translate(-110%, -50%); opacity: 0; pointer-events: none; }
+
+    .side-head {
+      flex-shrink: 0;
+      padding: 1rem 1.1rem 0.9rem;
+      border-bottom: 2px solid var(--ink);
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.7rem;
+    }
+
+    .side-head-info { min-width: 0; }
+
+    .brand { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; color: var(--ink); margin-bottom: 0.75rem; }
+    .brand img { height: 24px; width: auto; display: block; }
+    .brand span { font-weight: 700; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap; }
+
+    .side-title { margin: 0; font-family: var(--sc); font-weight: 900; font-size: 1.55rem; line-height: 1.05; }
+    .side-title .accent { color: var(--orange); }
+
+    .side-meta { margin: 0.25rem 0 0; font-size: 0.78rem; font-weight: 500; color: var(--ink-soft); }
+
+    .side-close {
+      flex-shrink: 0;
+      width: 38px;
+      height: 38px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ink);
+      background: var(--cream-card);
+      border: 2px solid var(--ink);
+      border-radius: 10px;
+      box-shadow: 2px 2px 0 0 var(--ink);
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .side-close:hover { transform: translate(-1px, -1px); box-shadow: 3px 3px 0 0 var(--ink); }
+
+    .films {
+      flex: 1;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(44, 24, 16, 0.35) transparent;
+      padding: 0.65rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .film-row {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      width: 100%;
+      padding: 0.55rem 0.7rem;
+      background: var(--cream-card);
+      border: 2px solid var(--ink);
+      border-radius: 12px;
+      box-shadow: 3px 3px 0 0 var(--ink);
+      color: inherit;
+      font: inherit;
+      text-align: left;
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+    }
+
+    .film-row:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 0 var(--ink); }
+
+    .film-row.active { background: var(--orange); color: #fff; }
+    .film-row.active .film-cat { color: #fff; opacity: 0.9; }
+    .film-row.active .film-no { color: #fff; background: rgba(255, 255, 255, 0.22); border-color: #fff; }
+
+    .film-no {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 1.85rem;
+      height: 1.85rem;
+      font-weight: 700;
+      font-size: 0.7rem;
+      color: var(--ink);
+      background: var(--orange-soft);
+      border: 2px solid var(--ink);
+      border-radius: 8px;
+    }
+
+    .film-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 0.02rem; }
+
+    .film-cat {
+      font-weight: 700;
+      font-size: 0.6rem;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--orange);
+    }
+
+    .film-title { font-family: var(--serif); font-weight: 700; font-size: 0.94rem; line-height: 1.26; }
+
+    .fcheck {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.5rem;
+      height: 1.5rem;
+      font-weight: 700;
+      font-size: 0.72rem;
+      color: #fff;
+      background: var(--green);
+      border: 2px solid var(--ink);
+      border-radius: 50%;
+    }
+
+    .side-foot {
+      flex-shrink: 0;
+      display: flex;
+      gap: 0.5rem;
+      padding: 0.8rem 0.85rem;
+      border-top: 2px solid var(--ink);
+    }
 
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.5rem 1.1rem;
+      justify-content: center;
+      gap: 0.45rem;
+      padding: 0.5rem 1rem;
       font-family: var(--sans);
       font-weight: 700;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       color: var(--ink);
       background: var(--cream-card);
       border: 2px solid var(--ink);
@@ -83,268 +250,157 @@
     .btn:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 0 var(--ink); }
     .btn:active { transform: translate(1px, 1px); box-shadow: 2px 2px 0 0 var(--ink); }
     .btn.solid { background: var(--orange); color: #fff; }
+    .side-foot .btn { flex: 1; }
 
-    .page {
-      flex: 1;
-      width: 100%;
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 clamp(1.1rem, 4vw, 2.6rem);
+    .backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 33;
+      background: rgba(44, 24, 16, 0.35);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
     }
 
-    .hero { text-align: center; padding: clamp(2rem, 5vh, 3.4rem) 0 1.2rem; }
+    /* ── Stage ── */
 
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.45rem 1rem;
-      font-weight: 700;
-      font-size: 0.8rem;
-      background: var(--cream-card);
-      border: 2px solid var(--ink);
-      border-radius: 10px;
-      box-shadow: 3px 3px 0 0 var(--ink);
-      margin-bottom: 1.5rem;
+    .stage {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 0 clamp(1rem, 3.5vw, 2.4rem);
     }
 
-    .badge .star { color: var(--orange); }
-
-    h1 {
-      margin: 0;
-      font-family: var(--sc);
-      font-weight: 900;
-      font-size: clamp(2.4rem, 6.5vw, 4.2rem);
-      line-height: 1.05;
-    }
-
-    h1 .accent { color: var(--orange); }
-
-    .hero-sub { margin: 0.9rem auto 1.4rem; max-width: 34rem; color: var(--ink-soft); font-size: 1rem; }
-
-    .hero-actions {
+    .stage-top {
+      flex-shrink: 0;
       display: flex;
       align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
+      justify-content: space-between;
       gap: 0.9rem;
-      padding-bottom: 0.4rem;
+      padding: 0.85rem 0;
     }
+
+    .stage-title { display: flex; align-items: center; gap: 0.8rem; min-width: 0; }
+
+    .stage-title img { height: 28px; width: auto; }
+
+    .stage-title .txt {
+      font-family: var(--sc);
+      font-weight: 700;
+      font-size: 1.15rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .stage-title .txt .accent { color: var(--orange); }
+
+    .stage-actions { display: flex; align-items: center; gap: 0.6rem; }
 
     .progress-pill {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.5rem 1rem;
+      gap: 0.45rem;
+      padding: 0.45rem 0.9rem;
       font-weight: 700;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       background: var(--cream-card);
       border: 2px solid var(--ink);
       border-radius: 999px;
       box-shadow: 3px 3px 0 0 var(--ink);
+      white-space: nowrap;
     }
 
     .progress-pill .dot { color: var(--green); }
 
-    /* ── Film wall ── */
-
-    .wall {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 1.1rem;
-      padding: 1.6rem 0 3rem;
-    }
-
-    .fcard {
+    .stage-body {
+      flex: 1;
+      min-height: 0;
       display: flex;
       flex-direction: column;
-      gap: 0.4rem;
-      padding: 1rem 1.15rem 1.15rem;
-      background: var(--cream-card);
-      border: 2px solid var(--ink);
-      border-radius: 14px;
-      box-shadow: 5px 5px 0 0 var(--ink);
-      transition: transform 0.15s, box-shadow 0.15s;
-      cursor: pointer;
-    }
-
-    .fcard:hover { transform: translate(-3px, -3px); box-shadow: 8px 8px 0 0 var(--ink); }
-
-    .fcard.watched { background: #f4ede0; }
-
-    .fcard-top { display: flex; align-items: center; justify-content: space-between; }
-
-    .fnum {
-      display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-width: 2rem;
-      height: 2rem;
-      font-weight: 700;
-      font-size: 0.78rem;
-      background: var(--orange-soft);
-      border: 2px solid var(--ink);
-      border-radius: 9px;
+      gap: 0.8rem;
+      padding-bottom: 1.1rem;
     }
 
-    .fcheck {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 1.7rem;
-      height: 1.7rem;
-      font-weight: 700;
-      color: #fff;
-      background: var(--green);
-      border: 2px solid var(--ink);
-      border-radius: 50%;
+    .now {
+      max-width: min(100%, 920px);
+      width: 100%;
+      display: none;
+      align-items: baseline;
+      gap: 0.7rem;
+      padding: 0 0.2rem;
     }
 
-    .fcat {
-      margin: 0.4rem 0 0;
+    .now.show { display: flex; }
+
+    .now .cat {
       font-weight: 700;
       font-size: 0.7rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--orange);
+      white-space: nowrap;
     }
 
-    .ftitle {
-      margin: 0;
-      flex: 1;
+    .now .title {
       font-family: var(--serif);
       font-weight: 700;
-      font-size: 1.16rem;
-      line-height: 1.28;
-    }
-
-    .play-btn {
-      align-self: flex-start;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      margin-top: 0.6rem;
-      padding: 0.4rem 1rem;
-      font-family: var(--sans);
-      font-weight: 700;
-      font-size: 0.8rem;
-      color: #fff;
-      background: var(--orange);
-      border: 2px solid var(--ink);
-      border-radius: 10px;
-      box-shadow: 2px 2px 0 0 var(--ink);
-      cursor: pointer;
-      transition: transform 0.15s, box-shadow 0.15s;
-    }
-
-    .play-btn:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 0 var(--ink); }
-
-    .footer {
-      border-top: 2px solid var(--ink);
-      padding: 1.3rem clamp(1.1rem, 4vw, 2.6rem);
-      text-align: center;
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--ink-soft);
-    }
-
-    /* ── Lightbox player ── */
-
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      z-index: 50;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.9rem;
-      padding: clamp(0.8rem, 3vw, 2.2rem);
-      background: rgba(28, 15, 8, 0.88);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.25s;
-    }
-
-    .lightbox.open { opacity: 1; pointer-events: auto; }
-
-    .lb-head {
-      width: min(100%, 960px);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-
-    .lb-info { min-width: 0; }
-
-    .lb-cat {
-      margin: 0;
-      font-weight: 700;
-      font-size: 0.72rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--orange);
-    }
-
-    .lb-title {
-      margin: 0.1rem 0 0;
-      font-family: var(--serif);
-      font-weight: 700;
-      font-size: clamp(1.05rem, 3vw, 1.5rem);
-      color: #fff;
+      font-size: 1.08rem;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
     }
 
-    .lb-close {
-      flex-shrink: 0;
-      width: 46px;
-      height: 46px;
-      display: inline-flex;
+    .player {
+      position: relative;
+      width: min(100%, 920px);
+      aspect-ratio: 16 / 9;
+      max-height: calc(100% - 110px);
+      background: #171310;
+      border: 2px solid var(--ink);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 8px 8px 0 0 var(--ink);
+    }
+
+    .player video { width: 100%; height: 100%; display: block; background: #171310; }
+
+    .player-idle {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      color: var(--ink);
+      gap: 0.9rem;
+      text-align: center;
       background: var(--cream-card);
-      border: 2px solid var(--ink);
-      border-radius: 12px;
-      box-shadow: 3px 3px 0 0 var(--ink);
-      cursor: pointer;
-      transition: transform 0.15s, box-shadow 0.15s;
+      transition: opacity 0.3s, visibility 0.3s;
+      padding: 1.2rem;
     }
 
-    .lb-close:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 0 var(--ink); }
+    .player-idle.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
 
-    .lb-player {
-      width: min(100%, 960px);
-      aspect-ratio: 16 / 9;
-      max-height: calc(100vh - 190px);
-      background: #000;
-      border: 2px solid var(--ink);
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 8px 8px 0 0 rgba(0, 0, 0, 0.6);
-    }
+    .player-idle .big { font-family: var(--sc); font-weight: 900; font-size: clamp(1.3rem, 3vw, 2rem); }
+    .player-idle .big .accent { color: var(--orange); }
+    .player-idle .small { font-weight: 500; font-size: 0.9rem; color: var(--ink-soft); }
 
-    .lb-player video { width: 100%; height: 100%; display: block; background: #000; }
-
-    .lb-nav {
-      width: min(100%, 960px);
+    .stage-nav {
+      width: min(100%, 920px);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1rem;
+      gap: 0.8rem;
     }
 
-    .lb-count { font-weight: 700; font-size: 0.85rem; color: rgba(255, 250, 242, 0.8); }
-
-    .lb-btns { display: flex; gap: 0.6rem; }
+    .lb-count { font-weight: 700; font-size: 0.85rem; color: var(--ink-soft); }
 
     .toast {
       position: fixed;
       left: 50%;
-      bottom: 1.4rem;
+      bottom: 1.3rem;
       transform: translate(-50%, 250%);
       z-index: 60;
       padding: 0.75rem 1.2rem;
@@ -364,374 +420,281 @@
 
     :focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
 
-    @media (max-width: 620px) {
-      .brand span { display: none; }
-      .wall { grid-template-columns: 1fr; }
+    @media (max-width: 700px) {
+      body.sb-open .backdrop { opacity: 1; pointer-events: auto; }
+      .stage-title .txt { display: none; }
+      .stage-nav .btn { padding: 0.5rem 0.8rem; }
     }
   </style>
 </head>
-<body>
+<body class="sb-open">
 
-  <header class="topbar">
-    <a class="brand" href="/">
-      <img src="images/freedom.png" alt="Indiana">
-      <span>Independent Film Festival</span>
-    </a>
-    <nav class="top-links">
-      <a class="btn" href="/">Home</a>
-      <a class="btn" href="/winners.html">Winners</a>
-    </nav>
-  </header>
+  <div class="edge-zone" id="edgeZone" aria-hidden="true"></div>
 
-  <main class="page">
-    <section class="hero">
-      <span class="badge"><span class="star">&#9733;</span> Screening Room &middot; Season Six</span>
-      <h1>Watch the <span class="accent">Winners</span></h1>
-      <p class="hero-sub">All 26 winning films of Season Six, May 2026.
-        Press play on any film, or run the whole programme &mdash; each film flows into the next.</p>
-      <div class="hero-actions">
-        <button class="btn solid" id="playAll" type="button">&#9654;&nbsp; Play the full programme</button>
-        <span class="progress-pill"><span class="dot">&#9679;</span> <span id="watchedCount">0</span> of 26 watched</span>
+  <button class="peek" id="peek" type="button" aria-label="Show the film list">&#9776;&nbsp;Films</button>
+
+  <div class="backdrop" id="backdrop" aria-hidden="true"></div>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="side-head">
+      <div class="side-head-info">
+        <a class="brand" href="/">
+          <img src="images/freedom.png" alt="Indiana">
+          <span>Independent Film Festival</span>
+        </a>
+        <h1 class="side-title">Season <span class="accent">Six</span></h1>
+        <p class="side-meta">May 2026 &middot; 26 films &middot; plays continuously</p>
       </div>
-    </section>
-
-    <section class="wall" id="wall" aria-label="Winning films">
-      <article class="fcard" data-i="0">
-        <div class="fcard-top">
-          <span class="fnum">01</span>
-          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
-        </div>
-        <p class="fcat">Best Film — Short</p>
-        <h3 class="ftitle">Memento Mori</h3>
-        <button class="play-btn" type="button" aria-label="Play Memento Mori">
-          <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/></svg>
-          Watch
-        </button>
-      </article>
-      <article class="fcard" data-i="1">
-        <div class="fcard-top">
-          <span class="fnum">02</span>
-          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
-        </div>
-        <p class="fcat">Best Director — Short</p>
-        <h3 class="ftitle">Our Monsters</h3>
-        <button class="play-btn" type="button" aria-label="Play Our Monsters">
-          <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/></svg>
-          Watch
-        </button>
-      </article>
-      <article class="fcard" data-i="2">
-        <div class="fcard-top">
-          <span class="fnum">03</span>
-          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
-        </div>
-        <p class="fcat">Best Actress — Short</p>
-        <h3 class="ftitle">Moments From Motherhood / Krystyn Sayre</h3>
-        <button class="play-btn" type="button" aria-label="Play Moments From Motherhood / Krystyn Sayre">
-          <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/></svg>
-          Watch
-        </button>
-      </article>
-      <article class="fcard" data-i="3">
-        <div class="fcard-top">
-          <span class="fnum">04</span>
-          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
-        </div>
-        <p class="fcat">Best Script — Short</p>
-        <h3 class="ftitle">Shelf Life</h3>
-        <button class="play-btn" type="button" aria-label="Play Shelf Life">
-          <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/></svg>
-          Watch
-        </button>
-      </article>
-      <article class="fcard" data-i="4">
-        <div class="fcard-top">
-          <span class="fnum">05</span>
-          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
-        </div>
-        <p class="fcat">Best Narrative — Short</p>
-        <h3 class="ftitle">Bus No. 9</h3>
-        <button class="play-btn" type="button" aria-label="Play Bus No. 9">
-          <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/></svg>
-          Watch
-        </button>
-      </article>
-      <article class="fcard" data-i="5">
-        <div class="fcard-top">
-          <span class="fnum">06</span>
-          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
-        </div>
-        <p class="fcat">Best Documentary — Short</p>
-        <h3 class="ftitle">Dionysos Avignon In Flesh And Shadow</h3>
-        <button class="play-btn" type="button" aria-label="Play Dionysos Avignon In Flesh And Shadow">
-          <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/></svg>
-          Watch
-        </button>
-      </article>
-      <article class="fcard" data-i="6">
-        <div class="fcard-top">
-          <span class="fnum">07</span>
-          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
-        </div>
-        <p class="fcat">Best Experimental — Short</p>
-        <h3 class="ftitle">Michel Steiner 64 Agendas</h3>
-        <button class="play-btn" type="button" aria-label="Play Michel Steiner 64 Agendas">
-          <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/></svg>
-          Watch
-        </button>
-      </article>
-      <article class="fcard" data-i="7">
-        <div class="fcard-top">
-          <span class="fnum">08</span>
-          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
-        </div>
-        <p class="fcat">Best Sci-Fi Or Fantasy — Short</p>
-        <h3 class="ftitle">Limited Slip</h3>
-        <button class="play-btn" type="button" aria-label="Play Limited Slip">
-          <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/></svg>
-          Watch
-        </button>
-      </article>
-      <article class="fcard" data-i="8">
-        <div class="fcard-top">
-          <span class="fnum">09</span>
-          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
-        </div>
-        <p class="fcat">Best Thriller — Short</p>
-        <h3 class="ftitle">Wolf At The Crossroads</h3>
-        <button class="play-btn" type="button" aria-label="Play Wolf At The Crossroads">
-          <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/></svg>
-          Watch
-        </button>
-      </article>
-      <article class="fcard" data-i="9">
-        <div class="fcard-top">
-          <span class="fnum">10</span>
-          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
-        </div>
-        <p class="fcat">Best Comedy — Short</p>
-        <h3 class="ftitle">The Master Puppeteer</h3>
-        <button class="play-btn" type="button" aria-label="Play The Master Puppeteer">
-          <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/></svg>
-          Watch
-        </button>
-      </article>
-      <article class="fcard" data-i="10">
-        <div class="fcard-top">
-          <span class="fnum">11</span>
-          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
-        </div>
-        <p class="fcat">Best Drama — Short</p>
-        <h3 class="ftitle">Faithless</h3>
-        <button class="play-btn" type="button" aria-label="Play Faithless">
-          <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/></svg>
-          Watch
-        </button>
-      </article>
-      <article class="fcard" data-i="11">
-        <div class="fcard-top">
-          <span class="fnum">12</span>
-          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
-        </div>
-        <p class="fcat">Best Horror — Short</p>
-        <h3 class="ftitle">The Collector</h3>
-        <button class="play-btn" type="button" aria-label="Play The Collector">
-          <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/></svg>
-          Watch
-        </button>
-      </article>
-      <article class="fcard" data-i="12">
-        <div class="fcard-top">
-          <span class="fnum">13</span>
-          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
-        </div>
-        <p class="fcat">Best Ultra-Short (Under 3 Minutes)</p>
-        <h3 class="ftitle">Words From The Midnight Monster</h3>
-        <button class="play-btn" type="button" aria-label="Play Words From The Midnight Monster">
-          <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/></svg>
-          Watch
-        </button>
-      </article>
-      <article class="fcard" data-i="13">
-        <div class="fcard-top">
-          <span class="fnum">14</span>
-          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
-        </div>
-        <p class="fcat">Best Producer — Short</p>
-        <h3 class="ftitle">Music In The Air</h3>
-        <button class="play-btn" type="button" aria-label="Play Music In The Air">
-          <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/></svg>
-          Watch
-        </button>
-      </article>
-      <article class="fcard" data-i="14">
-        <div class="fcard-top">
-          <span class="fnum">15</span>
-          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
-        </div>
-        <p class="fcat">Best Cinematography — Short</p>
-        <h3 class="ftitle">The Harpies</h3>
-        <button class="play-btn" type="button" aria-label="Play The Harpies">
-          <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/></svg>
-          Watch
-        </button>
-      </article>
-      <article class="fcard" data-i="15">
-        <div class="fcard-top">
-          <span class="fnum">16</span>
-          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
-        </div>
-        <p class="fcat">Best Film — Feature · Best Drama — Feature</p>
-        <h3 class="ftitle">First String 2: The Greenwood 20: Quest For The Great Dante</h3>
-        <button class="play-btn" type="button" aria-label="Play First String 2: The Greenwood 20: Quest For The Great Dante">
-          <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/></svg>
-          Watch
-        </button>
-      </article>
-      <article class="fcard" data-i="16">
-        <div class="fcard-top">
-          <span class="fnum">17</span>
-          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
-        </div>
-        <p class="fcat">Best Documentary — Feature</p>
-        <h3 class="ftitle">Together For Water</h3>
-        <button class="play-btn" type="button" aria-label="Play Together For Water">
-          <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/></svg>
-          Watch
-        </button>
-      </article>
-      <article class="fcard" data-i="17">
-        <div class="fcard-top">
-          <span class="fnum">18</span>
-          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
-        </div>
-        <p class="fcat">Best Experimental — Feature</p>
-        <h3 class="ftitle">Our Brilliant Destruction</h3>
-        <button class="play-btn" type="button" aria-label="Play Our Brilliant Destruction">
-          <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/></svg>
-          Watch
-        </button>
-      </article>
-      <article class="fcard" data-i="18">
-        <div class="fcard-top">
-          <span class="fnum">19</span>
-          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
-        </div>
-        <p class="fcat">Best Comedy — Feature</p>
-        <h3 class="ftitle">60 Days</h3>
-        <button class="play-btn" type="button" aria-label="Play 60 Days">
-          <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/></svg>
-          Watch
-        </button>
-      </article>
-      <article class="fcard" data-i="19">
-        <div class="fcard-top">
-          <span class="fnum">20</span>
-          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
-        </div>
-        <p class="fcat">Best Film — Feature · Best Drama — Feature</p>
-        <h3 class="ftitle">First String 2: The Greenwood 20: Quest For The Great Dante</h3>
-        <button class="play-btn" type="button" aria-label="Play First String 2: The Greenwood 20: Quest For The Great Dante">
-          <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/></svg>
-          Watch
-        </button>
-      </article>
-      <article class="fcard" data-i="20">
-        <div class="fcard-top">
-          <span class="fnum">21</span>
-          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
-        </div>
-        <p class="fcat">Best Cinematography — Feature</p>
-        <h3 class="ftitle">Colombano &amp; La 21Esima Fetta</h3>
-        <button class="play-btn" type="button" aria-label="Play Colombano &amp; La 21Esima Fetta">
-          <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/></svg>
-          Watch
-        </button>
-      </article>
-      <article class="fcard" data-i="21">
-        <div class="fcard-top">
-          <span class="fnum">22</span>
-          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
-        </div>
-        <p class="fcat">Best First-Time Filmmaker</p>
-        <h3 class="ftitle">The Dandelion Girl</h3>
-        <button class="play-btn" type="button" aria-label="Play The Dandelion Girl">
-          <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/></svg>
-          Watch
-        </button>
-      </article>
-      <article class="fcard" data-i="22">
-        <div class="fcard-top">
-          <span class="fnum">23</span>
-          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
-        </div>
-        <p class="fcat">Best Music Video</p>
-        <h3 class="ftitle">Sexy City Lights</h3>
-        <button class="play-btn" type="button" aria-label="Play Sexy City Lights">
-          <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/></svg>
-          Watch
-        </button>
-      </article>
-      <article class="fcard" data-i="23">
-        <div class="fcard-top">
-          <span class="fnum">24</span>
-          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
-        </div>
-        <p class="fcat">Best Web Series / Pilot Episode</p>
-        <h3 class="ftitle">The Killers Journalist</h3>
-        <button class="play-btn" type="button" aria-label="Play The Killers Journalist">
-          <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/></svg>
-          Watch
-        </button>
-      </article>
-      <article class="fcard" data-i="24">
-        <div class="fcard-top">
-          <span class="fnum">25</span>
-          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
-        </div>
-        <p class="fcat">Best Student Film</p>
-        <h3 class="ftitle">The Cowgirl</h3>
-        <button class="play-btn" type="button" aria-label="Play The Cowgirl">
-          <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/></svg>
-          Watch
-        </button>
-      </article>
-      <article class="fcard" data-i="25">
-        <div class="fcard-top">
-          <span class="fnum">26</span>
-          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
-        </div>
-        <p class="fcat">Best Dance Film</p>
-        <h3 class="ftitle">Schumann: A Love Story</h3>
-        <button class="play-btn" type="button" aria-label="Play Schumann: A Love Story">
-          <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/></svg>
-          Watch
-        </button>
-      </article>
-    </section>
-  </main>
-
-  <footer class="footer">&copy; 2026 Indiana Independent Film Festival &middot; Private screening &mdash; please don&rsquo;t redistribute</footer>
-
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lbTitle">
-    <div class="lb-head">
-      <div class="lb-info">
-        <p class="lb-cat" id="lbCat"></p>
-        <h2 class="lb-title" id="lbTitle"></h2>
-      </div>
-      <button class="lb-close" id="lbClose" type="button" aria-label="Close">
-        <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/></svg>
+      <button class="side-close" id="sideClose" type="button" aria-label="Hide the film list">
+        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/></svg>
       </button>
     </div>
-    <div class="lb-player">
-      <video id="video" controls controlsList="nodownload" playsinline preload="metadata"></video>
+    <nav class="films" id="films" aria-label="Winning films">
+        <button class="film-row" type="button" data-i="0">
+          <span class="film-no">01</span>
+          <span class="film-text">
+            <span class="film-cat">Best Film — Short</span>
+            <span class="film-title">Memento Mori</span>
+          </span>
+          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
+        </button>
+        <button class="film-row" type="button" data-i="1">
+          <span class="film-no">02</span>
+          <span class="film-text">
+            <span class="film-cat">Best Director — Short</span>
+            <span class="film-title">Our Monsters</span>
+          </span>
+          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
+        </button>
+        <button class="film-row" type="button" data-i="2">
+          <span class="film-no">03</span>
+          <span class="film-text">
+            <span class="film-cat">Best Actress — Short</span>
+            <span class="film-title">Moments From Motherhood / Krystyn Sayre</span>
+          </span>
+          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
+        </button>
+        <button class="film-row" type="button" data-i="3">
+          <span class="film-no">04</span>
+          <span class="film-text">
+            <span class="film-cat">Best Script — Short</span>
+            <span class="film-title">Shelf Life</span>
+          </span>
+          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
+        </button>
+        <button class="film-row" type="button" data-i="4">
+          <span class="film-no">05</span>
+          <span class="film-text">
+            <span class="film-cat">Best Narrative — Short</span>
+            <span class="film-title">Bus No. 9</span>
+          </span>
+          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
+        </button>
+        <button class="film-row" type="button" data-i="5">
+          <span class="film-no">06</span>
+          <span class="film-text">
+            <span class="film-cat">Best Documentary — Short</span>
+            <span class="film-title">Dionysos Avignon In Flesh And Shadow</span>
+          </span>
+          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
+        </button>
+        <button class="film-row" type="button" data-i="6">
+          <span class="film-no">07</span>
+          <span class="film-text">
+            <span class="film-cat">Best Experimental — Short</span>
+            <span class="film-title">Michel Steiner 64 Agendas</span>
+          </span>
+          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
+        </button>
+        <button class="film-row" type="button" data-i="7">
+          <span class="film-no">08</span>
+          <span class="film-text">
+            <span class="film-cat">Best Sci-Fi Or Fantasy — Short</span>
+            <span class="film-title">Limited Slip</span>
+          </span>
+          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
+        </button>
+        <button class="film-row" type="button" data-i="8">
+          <span class="film-no">09</span>
+          <span class="film-text">
+            <span class="film-cat">Best Thriller — Short</span>
+            <span class="film-title">Wolf At The Crossroads</span>
+          </span>
+          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
+        </button>
+        <button class="film-row" type="button" data-i="9">
+          <span class="film-no">10</span>
+          <span class="film-text">
+            <span class="film-cat">Best Comedy — Short</span>
+            <span class="film-title">The Master Puppeteer</span>
+          </span>
+          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
+        </button>
+        <button class="film-row" type="button" data-i="10">
+          <span class="film-no">11</span>
+          <span class="film-text">
+            <span class="film-cat">Best Drama — Short</span>
+            <span class="film-title">Faithless</span>
+          </span>
+          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
+        </button>
+        <button class="film-row" type="button" data-i="11">
+          <span class="film-no">12</span>
+          <span class="film-text">
+            <span class="film-cat">Best Horror — Short</span>
+            <span class="film-title">The Collector</span>
+          </span>
+          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
+        </button>
+        <button class="film-row" type="button" data-i="12">
+          <span class="film-no">13</span>
+          <span class="film-text">
+            <span class="film-cat">Best Ultra-Short (Under 3 Minutes)</span>
+            <span class="film-title">Words From The Midnight Monster</span>
+          </span>
+          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
+        </button>
+        <button class="film-row" type="button" data-i="13">
+          <span class="film-no">14</span>
+          <span class="film-text">
+            <span class="film-cat">Best Producer — Short</span>
+            <span class="film-title">Music In The Air</span>
+          </span>
+          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
+        </button>
+        <button class="film-row" type="button" data-i="14">
+          <span class="film-no">15</span>
+          <span class="film-text">
+            <span class="film-cat">Best Cinematography — Short</span>
+            <span class="film-title">The Harpies</span>
+          </span>
+          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
+        </button>
+        <button class="film-row" type="button" data-i="15">
+          <span class="film-no">16</span>
+          <span class="film-text">
+            <span class="film-cat">Best Film — Feature · Best Drama — Feature</span>
+            <span class="film-title">First String 2: The Greenwood 20: Quest For The Great Dante</span>
+          </span>
+          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
+        </button>
+        <button class="film-row" type="button" data-i="16">
+          <span class="film-no">17</span>
+          <span class="film-text">
+            <span class="film-cat">Best Documentary — Feature</span>
+            <span class="film-title">Together For Water</span>
+          </span>
+          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
+        </button>
+        <button class="film-row" type="button" data-i="17">
+          <span class="film-no">18</span>
+          <span class="film-text">
+            <span class="film-cat">Best Experimental — Feature</span>
+            <span class="film-title">Our Brilliant Destruction</span>
+          </span>
+          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
+        </button>
+        <button class="film-row" type="button" data-i="18">
+          <span class="film-no">19</span>
+          <span class="film-text">
+            <span class="film-cat">Best Comedy — Feature</span>
+            <span class="film-title">60 Days</span>
+          </span>
+          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
+        </button>
+        <button class="film-row" type="button" data-i="19">
+          <span class="film-no">20</span>
+          <span class="film-text">
+            <span class="film-cat">Best Film — Feature · Best Drama — Feature</span>
+            <span class="film-title">First String 2: The Greenwood 20: Quest For The Great Dante</span>
+          </span>
+          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
+        </button>
+        <button class="film-row" type="button" data-i="20">
+          <span class="film-no">21</span>
+          <span class="film-text">
+            <span class="film-cat">Best Cinematography — Feature</span>
+            <span class="film-title">Colombano &amp; La 21Esima Fetta</span>
+          </span>
+          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
+        </button>
+        <button class="film-row" type="button" data-i="21">
+          <span class="film-no">22</span>
+          <span class="film-text">
+            <span class="film-cat">Best First-Time Filmmaker</span>
+            <span class="film-title">The Dandelion Girl</span>
+          </span>
+          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
+        </button>
+        <button class="film-row" type="button" data-i="22">
+          <span class="film-no">23</span>
+          <span class="film-text">
+            <span class="film-cat">Best Music Video</span>
+            <span class="film-title">Sexy City Lights</span>
+          </span>
+          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
+        </button>
+        <button class="film-row" type="button" data-i="23">
+          <span class="film-no">24</span>
+          <span class="film-text">
+            <span class="film-cat">Best Web Series / Pilot Episode</span>
+            <span class="film-title">The Killers Journalist</span>
+          </span>
+          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
+        </button>
+        <button class="film-row" type="button" data-i="24">
+          <span class="film-no">25</span>
+          <span class="film-text">
+            <span class="film-cat">Best Student Film</span>
+            <span class="film-title">The Cowgirl</span>
+          </span>
+          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
+        </button>
+        <button class="film-row" type="button" data-i="25">
+          <span class="film-no">26</span>
+          <span class="film-text">
+            <span class="film-cat">Best Dance Film</span>
+            <span class="film-title">Schumann: A Love Story</span>
+          </span>
+          <span class="fcheck" hidden aria-label="Watched">&#10003;</span>
+        </button>
+    </nav>
+    <div class="side-foot">
+      <a class="btn" href="/">&larr; Home</a>
+      <a class="btn solid" href="/winners.html">All winners</a>
     </div>
-    <div class="lb-nav">
-      <button class="btn" id="lbPrev" type="button">&larr; Previous</button>
-      <span class="lb-count" id="lbCount"></span>
-      <button class="btn" id="lbNext" type="button">Next &rarr;</button>
+  </aside>
+
+  <main class="stage">
+    <div class="stage-top">
+      <div class="stage-title">
+        <img src="images/freedom.png" alt="">
+        <span class="txt">Screening <span class="accent">Room</span></span>
+      </div>
+      <div class="stage-actions">
+        <span class="progress-pill"><span class="dot">&#9679;</span>&nbsp;<span id="watchedCount">0</span>/26 watched</span>
+        <button class="btn solid" id="playAll" type="button">&#9654;&nbsp;Play all</button>
+      </div>
     </div>
-  </div>
+    <div class="stage-body">
+      <div class="now" id="now">
+        <span class="cat" id="nowCat"></span>
+        <span class="title" id="nowTitle"></span>
+      </div>
+      <div class="player">
+        <video id="video" controls controlsList="nodownload" playsinline preload="metadata"></video>
+        <div class="player-idle" id="idle">
+          <div class="big">Pick a film <span class="accent">from the list</span></div>
+          <div class="small">The list slides in from the left edge whenever you need it.</div>
+        </div>
+      </div>
+      <div class="stage-nav">
+        <button class="btn" id="prevBtn" type="button">&larr; Previous</button>
+        <span class="lb-count" id="count">&nbsp;</span>
+        <button class="btn" id="nextBtn" type="button">Next &rarr;</button>
+      </div>
+    </div>
+  </main>
 
   <div class="toast" id="toast" role="status"></div>
 
@@ -739,25 +702,26 @@
   (function () {
     var FILMS = [{"t": "Memento Mori", "c": "Best Film — Short", "s": "/videos/memento-mori.mp4"}, {"t": "Our Monsters", "c": "Best Director — Short", "s": "/videos/our-monsters.mp4"}, {"t": "Moments From Motherhood / Krystyn Sayre", "c": "Best Actress — Short", "s": "/videos/moments-from-motherhood.mp4"}, {"t": "Shelf Life", "c": "Best Script — Short", "s": "/videos/shelf-life.mp4"}, {"t": "Bus No. 9", "c": "Best Narrative — Short", "s": "/videos/bus-no-9.mp4"}, {"t": "Dionysos Avignon In Flesh And Shadow", "c": "Best Documentary — Short", "s": "/videos/dionysos-avignon-in-flesh-and-shadow.mp4"}, {"t": "Michel Steiner 64 Agendas", "c": "Best Experimental — Short", "s": "/videos/michel-steiner-64-agendas.mp4"}, {"t": "Limited Slip", "c": "Best Sci-Fi Or Fantasy — Short", "s": "/videos/limited-slip.mp4"}, {"t": "Wolf At The Crossroads", "c": "Best Thriller — Short", "s": "/videos/wolf-at-the-crossroads.mp4"}, {"t": "The Master Puppeteer", "c": "Best Comedy — Short", "s": "/videos/the-master-puppeteer.mp4"}, {"t": "Faithless", "c": "Best Drama — Short", "s": "/videos/faithless.mp4"}, {"t": "The Collector", "c": "Best Horror — Short", "s": "/videos/the-collector.mp4"}, {"t": "Words From The Midnight Monster", "c": "Best Ultra-Short (Under 3 Minutes)", "s": "/videos/words-from-the-midnight-monster.mp4"}, {"t": "Music In The Air", "c": "Best Producer — Short", "s": "/videos/music-in-the-air.mp4"}, {"t": "The Harpies", "c": "Best Cinematography — Short", "s": "/videos/the-harpies.mp4"}, {"t": "First String 2: The Greenwood 20: Quest For The Great Dante", "c": "Best Film — Feature · Best Drama — Feature", "s": "/videos/first-string-2-the-greenwood-20-quest-for-the-great-dante.mp4"}, {"t": "Together For Water", "c": "Best Documentary — Feature", "s": "/videos/together-for-water.mp4"}, {"t": "Our Brilliant Destruction", "c": "Best Experimental — Feature", "s": "/videos/our-brilliant-destruction.mp4"}, {"t": "60 Days", "c": "Best Comedy — Feature", "s": "/videos/60-days.mp4"}, {"t": "First String 2: The Greenwood 20: Quest For The Great Dante", "c": "Best Film — Feature · Best Drama — Feature", "s": "/videos/first-string-2-the-greenwood-20-quest-for-the-great-dante.mp4"}, {"t": "Colombano &amp; La 21Esima Fetta", "c": "Best Cinematography — Feature", "s": "/videos/colombano-and-la-21esima-fetta.mp4"}, {"t": "The Dandelion Girl", "c": "Best First-Time Filmmaker", "s": "/videos/the-dandelion-girl.mp4"}, {"t": "Sexy City Lights", "c": "Best Music Video", "s": "/videos/sexy-city-lights.mp4"}, {"t": "The Killers Journalist", "c": "Best Web Series / Pilot Episode", "s": "/videos/the-killers-journalist.mp4"}, {"t": "The Cowgirl", "c": "Best Student Film", "s": "/videos/the-cowgirl.mp4"}, {"t": "Schumann: A Love Story", "c": "Best Dance Film", "s": "/videos/schumann-a-love-story.mp4"}];
     var video = document.getElementById('video');
-    var lightbox = document.getElementById('lightbox');
-    var lbCat = document.getElementById('lbCat');
-    var lbTitle = document.getElementById('lbTitle');
-    var lbCount = document.getElementById('lbCount');
+    var idle = document.getElementById('idle');
+    var now = document.getElementById('now');
+    var nowCat = document.getElementById('nowCat');
+    var nowTitle = document.getElementById('nowTitle');
+    var count = document.getElementById('count');
     var toast = document.getElementById('toast');
     var watchedCount = document.getElementById('watchedCount');
-    var cards = [].slice.call(document.querySelectorAll('.fcard'));
-    var current = -1, toastT, lastFocus = null;
+    var sidebar = document.getElementById('sidebar');
+    var rows = [].slice.call(document.querySelectorAll('.film-row'));
+    var current = -1, toastT, hideT;
 
     var watched = {};
     try { watched = JSON.parse(localStorage.getItem('iiff-s6-watched') || '{}'); } catch (e) {}
 
     function renderWatched() {
       var n = 0;
-      cards.forEach(function (c, i) {
+      rows.forEach(function (r, i) {
         var w = !!watched[i];
         if (w) n++;
-        c.classList.toggle('watched', w);
-        c.querySelector('.fcheck').hidden = !w;
+        r.querySelector('.fcheck').hidden = !w;
       });
       watchedCount.textContent = n;
     }
@@ -775,54 +739,53 @@
       toastT = setTimeout(function () { toast.classList.remove('show'); }, 3500);
     }
 
-    function openLb() {
-      if (!lightbox.classList.contains('open')) {
-        lastFocus = document.activeElement;
-        lightbox.classList.add('open');
-        document.body.style.overflow = 'hidden';
-        document.getElementById('lbClose').focus();
-      }
+    function setSidebar(open) {
+      document.body.classList.toggle('sb-open', open);
     }
 
-    function closeLb() {
-      lightbox.classList.remove('open');
-      document.body.style.overflow = '';
-      video.pause();
-      video.removeAttribute('src');
-      video.load();
-      current = -1;
-      if (lastFocus && lastFocus.focus) lastFocus.focus();
-    }
+    document.getElementById('peek').addEventListener('click', function () { setSidebar(true); });
+    document.getElementById('sideClose').addEventListener('click', function () { setSidebar(false); });
+    document.getElementById('backdrop').addEventListener('click', function () { setSidebar(false); });
+    document.getElementById('edgeZone').addEventListener('mouseenter', function () { setSidebar(true); });
+
+    // auto-hide: when the pointer leaves the open sidebar (desktop), tuck it away
+    sidebar.addEventListener('mouseleave', function () {
+      if (current === -1) return; // keep it out while nothing is playing
+      clearTimeout(hideT);
+      hideT = setTimeout(function () { setSidebar(false); }, 600);
+    });
+    sidebar.addEventListener('mouseenter', function () { clearTimeout(hideT); });
 
     function play(i) {
       if (i < 0 || i >= FILMS.length) return;
       current = i;
       var f = FILMS[i];
-      lbCat.textContent = f.c;
-      lbTitle.textContent = f.t;
-      lbCount.textContent = (i + 1) + ' / ' + FILMS.length;
-      openLb();
+      rows.forEach(function (r, j) { r.classList.toggle('active', j === i); });
+      nowCat.textContent = f.c;
+      nowTitle.textContent = f.t;
+      now.classList.add('show');
+      count.textContent = (i + 1) + ' / ' + FILMS.length;
+      idle.classList.add('hidden');
       video.src = f.s;
       video.load();
       var p = video.play();
       if (p && p.catch) p.catch(function () {});
+      rows[i].scrollIntoView({ block: 'nearest' });
+      clearTimeout(hideT);
+      hideT = setTimeout(function () { setSidebar(false); }, 450); // auto-hide after choosing
     }
 
-    cards.forEach(function (c) {
-      c.addEventListener('click', function () { play(parseInt(c.getAttribute('data-i'), 10)); });
+    rows.forEach(function (r) {
+      r.addEventListener('click', function () { play(parseInt(r.getAttribute('data-i'), 10)); });
     });
 
     document.getElementById('playAll').addEventListener('click', function () { play(0); });
-    document.getElementById('lbClose').addEventListener('click', closeLb);
-    document.getElementById('lbPrev').addEventListener('click', function () { if (current > 0) play(current - 1); });
-    document.getElementById('lbNext').addEventListener('click', function () { if (current + 1 < FILMS.length) play(current + 1); });
-
-    lightbox.addEventListener('click', function (e) { if (e.target === lightbox) closeLb(); });
+    document.getElementById('prevBtn').addEventListener('click', function () { if (current > 0) play(current - 1); });
+    document.getElementById('nextBtn').addEventListener('click', function () { if (current + 1 < FILMS.length) play(current + 1); });
 
     document.addEventListener('keydown', function (e) {
-      if (!lightbox.classList.contains('open')) return;
-      if (e.key === 'Escape') closeLb();
-      if (e.key === 'ArrowRight' && current + 1 < FILMS.length) play(current + 1);
+      if (e.key === 'Escape') setSidebar(false);
+      if (e.key === 'ArrowRight' && current > -1 && current + 1 < FILMS.length) play(current + 1);
       if (e.key === 'ArrowLeft' && current > 0) play(current - 1);
     });
 
@@ -833,7 +796,6 @@
         play(current + 1);
       } else {
         showToast('That was the last film \u2014 thanks for watching Season Six!');
-        closeLb();
       }
     });
 
