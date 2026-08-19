@@ -8,8 +8,8 @@ window.festivalsData = [
     year: 2026,
     status: 'active',
     logo: 'data/CaliforniaWomenFilmFestival/logo.jpg',
-    dutyDate: 'Screening: August 15–17, 2026 · Season 4',
-    validTickets: ['C-2026-A4', 'CS4'],
+    dutyDate: 'Season 4 — screened August 15–17, 2026',
+    validTickets: [], // S4 screening ended Aug 17 2026; S5 screens Dec 5 2026
     categories: [
       {
         id: 'best-short-film',
